@@ -1,0 +1,82 @@
+/* Header */
+.site-header {
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--spacing-md) 0;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
+
+/* Footer */
+.site-footer {
+  background: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
+  padding: var(--spacing-lg) 0;
+  margin-top: var(--spacing-lg);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  margin: var(--spacing-md) 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.breadcrumbs a {
+  color: #666;
+}
+
+.breadcrumbs span {
+  margin: 0 4px;
+}
+
+/* FAQ */
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--spacing-md) 0;
+}
+
+.faq-question {
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  color: #555;
+}
+
+/* Callout Box */
+.callout-box {
+  background-color: #e8f4fd;
+  border-left: 4px solid var(--color-primary);
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  border-radius: 4px;
+}
+
+/* AdSense Placeholder */
+.ad-placeholder {
+  background: #f0f0f0;
+  border: 1px dashed #ccc;
+  padding: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+  text-align: center;
+  color: #888;
+  font-size: 0.8rem;
+}
