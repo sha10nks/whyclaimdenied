@@ -5,9 +5,12 @@ const Header = () => {
   return (
     <header className="site-header">
       <div className="container">
-        <Link to="/" className="logo">
-          WhyClaimDenied
-        </Link>
+        <div className="logo">
+          <Link to="/" className="logo-text">
+            WhyClaimDenied
+          </Link>
+          <span className="logo-subtitle">Independent information on insurance claim denials</span>
+        </div>
         <nav>
           {/* Add navigation items here if needed later */}
         </nav>

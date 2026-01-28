@@ -1,82 +1,207 @@
 /* Header */
 .site-header {
-  background: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
-  padding: var(--spacing-md) 0;
+  background: #003366; /* Navy Blue */
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding: var(--spacing-sm) 0;
+  color: #ffffff;
 }
 
 .site-header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo {
-  font-weight: bold;
-  font-size: 1.25rem;
-  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.logo-text:hover {
+  text-decoration: none;
+  color: #e0e0e0;
+}
+
+.logo-subtitle {
+  font-size: 0.85rem;
+  color: #cccccc;
+  font-weight: 400;
+  margin-top: 2px;
 }
 
 /* Footer */
 .site-footer {
-  background: var(--color-bg-alt);
-  border-top: 1px solid var(--color-border);
+  background: #003366; /* Navy Blue matching header */
+  border-top: 1px solid var(--color-border-subtle);
   padding: var(--spacing-lg) 0;
-  margin-top: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
   text-align: center;
   font-size: 0.9rem;
+  color: #cccccc;
+}
+
+.footer-links {
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-links a {
+  color: #ffffff;
+  margin: 0 8px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: #e0e0e0;
+}
+
+.footer-copyright {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-disclaimer {
+  font-size: 0.8rem;
+  margin-top: var(--spacing-sm);
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+  color: #aaaaaa;
 }
 
 /* Breadcrumbs */
 .breadcrumbs {
   margin: var(--spacing-md) 0;
   font-size: 0.9rem;
-  color: #666;
+  color: var(--color-text-muted);
 }
 
 .breadcrumbs a {
-  color: #666;
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+  color: var(--color-link);
 }
 
 .breadcrumbs span {
-  margin: 0 4px;
+  margin: 0 6px;
+  color: #ccc;
 }
 
 /* FAQ */
+.faq-section {
+  margin-top: var(--spacing-lg);
+}
+
 .faq-item {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border-subtle);
   padding: var(--spacing-md) 0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
 }
 
 .faq-question {
   font-weight: 600;
+  font-size: 1.1rem;
   margin-bottom: var(--spacing-sm);
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #222;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+}
+
+.faq-question:hover {
+  color: var(--color-link);
 }
 
 .faq-answer {
-  color: #555;
+  color: var(--color-text-muted);
+  margin-top: var(--spacing-xs);
+  padding-right: var(--spacing-lg);
 }
 
-/* Callout Box */
+/* Callout Box / Fact Sections */
 .callout-box {
-  background-color: #e8f4fd;
-  border-left: 4px solid var(--color-primary);
-  padding: var(--spacing-md);
-  margin: var(--spacing-md) 0;
-  border-radius: 4px;
+  background-color: var(--color-bg-section);
+  border-left: 4px solid var(--color-border-accent);
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.callout-box h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.callout-box p:last-child {
+  margin-bottom: 0;
 }
 
 /* AdSense Placeholder */
 .ad-placeholder {
-  background: #f0f0f0;
-  border: 1px dashed #ccc;
+  background: #fafafa;
+  border: 1px dashed var(--color-ad-border);
   padding: var(--spacing-md);
-  margin: var(--spacing-lg) 0;
+  margin: var(--spacing-xl) 0;
   text-align: center;
-  color: #888;
-  font-size: 0.8rem;
+  color: #999;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ad-label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-size: 0.7rem;
+  color: #bbb;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  :root {
+    --spacing-md: 20px;
+    --spacing-lg: 32px;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .logo-subtitle {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+  }
 }
