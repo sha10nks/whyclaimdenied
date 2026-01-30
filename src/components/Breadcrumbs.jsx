@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 const Breadcrumbs = ({ items }) => {
@@ -7,14 +7,14 @@ const Breadcrumbs = ({ items }) => {
       <div className="container">
         <Link to="/">Home</Link>
         {items.map((item, index) => (
-          <React.Fragment key={index}>
+          <Fragment key={index}>
             <span>&gt;</span>
             {item.link ? (
               <Link to={item.link}>{item.label}</Link>
             ) : (
               <span aria-current="page">{item.label}</span>
             )}
-          </React.Fragment>
+          </Fragment>
         ))}
       </div>
     </nav>

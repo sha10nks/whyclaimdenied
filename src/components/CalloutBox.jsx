@@ -1,5 +1,3 @@
-import React from 'react';
-
 const CalloutBox = ({ children, title }) => {
   return (
     <div className="callout-box">
