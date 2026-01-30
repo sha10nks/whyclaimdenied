@@ -1,24 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.14 42.15">
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.9 50.9">
   <defs>
     <style>
       .cls-1 {
-        fill: #0086ff;
+        fill: none;
       }
 
-      .cls-1, .cls-2 {
-        font-family: FuturaBT-ExtraBlack, 'Futura XBlk BT';
-        font-size: 38.11px;
-        font-weight: 800;
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke-width: 0px;
       }
 
       .cls-2 {
         fill: #fff;
       }
+
+      .cls-3 {
+        fill: #002a44;
+      }
+
+      .cls-4 {
+        fill: #007ddb;
+      }
     </style>
   </defs>
   <g id="Layer_1-2" data-name="Layer 1">
-    <text class="cls-2" transform="translate(.94 32.68)"><tspan x="0" y="0">?</tspan></text>
-    <text class="cls-1" transform="translate(0 33.13)"><tspan x="0" y="0">?</tspan></text>
+    <g>
+      <circle class="cls-2" cx="25.45" cy="25.45" r="25.45"/>
+      <circle class="cls-4" cx="25.06" cy="22.76" r="21.02"/>
+      <path class="cls-3" d="M34.84,20.28c0-3.66-2.97-6.63-6.63-6.63-1.93,0-3.66.83-4.88,2.15,1.01-.62,2.19-.98,3.46-.98,3.66,0,6.63,2.97,6.63,6.63,0,1.73-.67,3.3-1.76,4.48,1.9-1.17,3.17-3.26,3.17-5.65Z"/>
+      <path class="cls-3" d="M20.56,19.73h-8.28c-.06-1.74.17-3.5.75-5.17.65-1.89,1.75-3.64,3.09-5.18-3.05,2.77-4.95,6.79-4.99,10.96h0v.59h9.42v-.5h.03v-.69Z"/>
+      <rect class="cls-3" x="22.62" y="28.08" width="1.43" height="15.65"/>
+      <path class="cls-4" d="M24.05,44.88v5s3.18-3.18,3.18-3.18l3.2,3.2v-5.15c-2.56.63-4.44.22-6.38.13Z"/>
+      <path class="cls-1" d="M26.61.87h-.17c2.67,0,5.21.59,7.48,1.64.12.03.24.07.36.1-2.32-1.11-4.92-1.74-7.67-1.74Z"/>
+    </g>
   </g>
 </svg>

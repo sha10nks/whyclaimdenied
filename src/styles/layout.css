@@ -30,21 +30,15 @@
 }
 
 .logo-image {
-  height: 42px;
+  height: clamp(40px, 6.25vw, 55px);
   width: auto;
   display: block;
+  max-width: min(280px, 80vw);
 }
 
 .logo-text:hover {
   text-decoration: none;
   color: #e0e0e0;
-}
-
-.logo-subtitle {
-  font-size: 0.85rem;
-  color: #cccccc;
-  font-weight: 400;
-  margin-top: 2px;
 }
 
 /* Footer */
@@ -56,6 +50,20 @@
   text-align: center;
   font-size: 0.9rem;
   color: #cccccc;
+}
+
+.footer-logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-logo-image {
+  height: clamp(42px, 7.5vw, 60px);
+  width: auto;
+  display: block;
+  max-width: min(260px, 80vw);
 }
 
 .footer-links {
@@ -207,10 +215,5 @@
   .site-header .container {
     flex-direction: column;
     align-items: flex-start;
-  }
-  
-  .logo-subtitle {
-    display: block;
-    margin-bottom: var(--spacing-xs);
   }
 }

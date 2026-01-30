@@ -4,6 +4,9 @@ const Footer = () => {
   return (
     <footer className="site-footer">
       <div className="container">
+        <Link to="/" className="footer-logo-link" aria-label="WhyClaimDenied home">
+          <img className="footer-logo-image" src="/Logo.svg" alt="WhyClaimDenied" />
+        </Link>
         <div className="footer-links">
           <Link to="/about">About Us</Link> | 
           <Link to="/contact">Contact</Link> | 
