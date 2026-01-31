@@ -1,8 +1,12 @@
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function Contact() {
+  const { search } = useLocation();
+  const isSuccess = new URLSearchParams(search).get('success') === '1';
+
   return (
     <>
       <Helmet>
@@ -20,12 +24,15 @@ export default function Contact() {
 
         <p>Have a question, correction, or suggestion? We read every message.</p>
 
+        {isSuccess ? <p className="contact-note">Thanks — your message was sent.</p> : null}
+
         <form
           className="contact-form"
           name="contact"
           method="POST"
+          action="/contact?success=1"
           data-netlify="true"
-          data-netlify-honeypot="bot-field"
+          netlify-honeypot="bot-field"
         >
           <input type="hidden" name="form-name" value="contact" />
 
