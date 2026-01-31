@@ -12,3 +12,24 @@ export const generateFAQSchema = (faqs) => {
     }))
   };
 };
+
+export const generateArticleSchema = ({ headline, description, canonicalUrl }) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": headline,
+    "description": description,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalUrl,
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "WhyClaimDenied",
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "WhyClaimDenied",
+    },
+  };
+};

@@ -2,19 +2,50 @@
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KPSWKNCJ7M"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-KPSWKNCJ7M');
+      (() => {
+        const isLocalhost =
+          location.hostname === 'localhost' ||
+          location.hostname === '127.0.0.1' ||
+          location.hostname === '[::1]';
+
+        const doNotTrackEnabled =
+          navigator.doNotTrack === '1' ||
+          window.doNotTrack === '1' ||
+          navigator.msDoNotTrack === '1' ||
+          navigator.globalPrivacyControl === true;
+
+        if (isLocalhost || doNotTrackEnabled) return;
+
+        const measurementId = 'G-KPSWKNCJ7M';
+
+        const gtagScript = document.createElement('script');
+        gtagScript.async = true;
+        gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+        document.head.appendChild(gtagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          window.dataLayer.push(arguments);
+        }
+        window.gtag = gtag;
+
+        gtag('js', new Date());
+        gtag('config', measurementId, { anonymize_ip: true });
+      })();
     </script>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg?v=2026-01-31" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WhyClaimDenied</title>
   </head>
   <body>
+    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+      <input name="bot-field" />
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

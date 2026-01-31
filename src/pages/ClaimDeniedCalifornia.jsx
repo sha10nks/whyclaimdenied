@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
 import CalloutBox from '../components/CalloutBox';
 import { getMetaData } from '../seo/meta';
+import StateHubLinks from '../components/StateHubLinks';
 
 const ClaimDeniedCalifornia = () => {
   const meta = getMetaData('claimDenied');
@@ -86,6 +87,8 @@ const ClaimDeniedCalifornia = () => {
             <Link to="/">Return to Home &rarr;</Link>
           </p>
         </section>
+
+        <StateHubLinks currentState="California" />
 
       </main>
 

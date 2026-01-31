@@ -2,48 +2,66 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const Contact = () => {
+export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact Us - WhyClaimDenied</title>
-        <meta name="description" content="Get in touch with the WhyClaimDenied team for website feedback or corrections." />
+        <title>Contact Us | WhyClaimDenied</title>
+        <meta
+          name="description"
+          content="Contact WhyClaimDenied with questions, corrections, or feedback about insurance claim denial information."
+        />
       </Helmet>
-      
+
       <Header />
-      
+
       <main className="container">
         <h1>Contact Us</h1>
-        
-        <p>
-          We appreciate your interest in WhyClaimDenied. If you’ve spotted an error in one of our guides 
-          or have a suggestion for a new topic, we’d love to hear from you.
-        </p>
 
-        <h2>Important: We Cannot Review Your Claim</h2>
-        <p>
-          Please note that <strong>we are not insurance adjusters or attorneys</strong>. We cannot review your specific 
-          claim documents, offer legal advice, or intervene with your insurance company. Emails requesting 
-          personal claim assistance will not receive a response.
-        </p>
+        <p>Have a question, correction, or suggestion? We read every message.</p>
 
-        <h2>How to Reach Us</h2>
-        <p>
-          For general website inquiries, feedback, or press questions, please email us at:
-        </p>
-        
-        <p style={{ fontSize: '1.1rem', fontWeight: '500', color: '#333' }}>
-          hello [at] whyclaimdenied [dot] com
-        </p>
-        
-        <p>
-          We aim to respond to general inquiries within 3-5 business days.
+        <form
+          className="contact-form"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+
+          <p hidden>
+            <label>
+              Don’t fill this out:
+              <input name="bot-field" />
+            </label>
+          </p>
+
+          <label className="contact-label">
+            <span className="contact-label-text">Name (optional)</span>
+            <input className="contact-input" type="text" name="name" autoComplete="name" />
+          </label>
+
+          <label className="contact-label">
+            <span className="contact-label-text">Email</span>
+            <input className="contact-input" type="email" name="email" required autoComplete="email" />
+          </label>
+
+          <label className="contact-label">
+            <span className="contact-label-text">Message</span>
+            <textarea className="contact-textarea" name="message" rows="6" required />
+          </label>
+
+          <button className="contact-submit" type="submit">
+            Send Message
+          </button>
+        </form>
+
+        <p className="contact-note">
+          We don’t offer legal advice and may not be able to respond to every message, but we review all submissions.
         </p>
       </main>
 
       <Footer />
     </>
   );
-};
-
-export default Contact;
+}
