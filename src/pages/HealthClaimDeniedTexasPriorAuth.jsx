@@ -1,19 +1,32 @@
 import { Helmet } from 'react-helmet-async';
+import Breadcrumbs from '../components/Breadcrumbs';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
 
 const HealthClaimDeniedTexasPriorAuth = () => {
   const sd = { "@context": "https://schema.org", "@type": "Article", "headline": "Prior Authorization Missing — Texas Health Insurance Denial", "description": "Why prior authorization denials happen in Texas and how to respond, including plan documents and appeal routes." };
   return (
-    <div className="page-container">
+    <>
       <Helmet>
         <title>Prior Authorization Missing — Texas Health Insurance Denial</title>
         <meta name="description" content="Why prior authorization denials happen in Texas and how to respond, including plan documents and appeal routes." />
         <link rel="canonical" href="https://whyclaimdenied.com/health-insurance-claims-denied-texas/prior-authorization-missing" />
         <script type="application/ld+json">{JSON.stringify(sd)}</script>
       </Helmet>
-      <article className="insurance-guide">
-        <header className="guide-header"><h1>Prior Authorization Missing — Texas Health Insurance Denial</h1></header>
-        <nav className="breadcrumb-nav"><a href="/health-insurance-claims-denied-texas">Texas Health Insurance Denial Guide</a> &gt; Prior Authorization Missing</nav>
+
+      <Header />
+
+      <Breadcrumbs
+        items={[
+          { label: 'Texas', link: '/health-insurance-claims-denied-texas' },
+          { label: 'Health Claim Denials', link: '/health-insurance-claims-denied-texas' },
+          { label: 'Prior Authorization Missing', link: null },
+        ]}
+      />
+
+      <main className="container">
+        <h1>Prior Authorization Missing — Texas Health Insurance Denial</h1>
         <section className="content-section">
           <h2>Why this denial happens</h2>
           <p>Plans often require authorization before certain services. If it wasn’t obtained, claims may be denied.</p>
@@ -28,8 +41,10 @@ const HealthClaimDeniedTexasPriorAuth = () => {
         </section>
         <section className="content-section"><h2>Back to the Texas health denial guide</h2><p><a href="/health-insurance-claims-denied-texas">Return to Health Insurance Claims Denied in Texas</a></p></section>
         <StateHubLinks currentState="Texas" />
-      </article>
-    </div>
+      </main>
+
+      <Footer />
+    </>
   );
 };
 

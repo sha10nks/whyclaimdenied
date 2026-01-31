@@ -1,4 +1,7 @@
 import { Helmet } from 'react-helmet-async';
+import Breadcrumbs from '../components/Breadcrumbs';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
 
 const AutoClaimDeniedTexasExcludedDriver = () => {
@@ -11,7 +14,7 @@ const AutoClaimDeniedTexasExcludedDriver = () => {
   };
 
   return (
-    <div className="page-container">
+    <>
       <Helmet>
         <title>Excluded Driver - Texas Auto Insurance Denial Guide | What to Do</title>
         <meta name="description" content="Understand excluded-driver denials in Texas auto insurance and practical next steps, with Texas Department of Insurance resources." />
@@ -19,15 +22,19 @@ const AutoClaimDeniedTexasExcludedDriver = () => {
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
 
-      <article className="insurance-guide">
-        <header className="guide-header">
-          <h1>Excluded Driver — Texas Auto Insurance Denial</h1>
-          <p className="guide-subtitle">Why insurers deny when a named excluded driver is behind the wheel and what you can do</p>
-        </header>
+      <Header />
 
-        <nav className="breadcrumb-nav">
-          <a href="/auto-insurance-claims-denied-texas">Texas Auto Insurance Denial Guide</a> &gt; Excluded Driver
-        </nav>
+      <Breadcrumbs
+        items={[
+          { label: 'Texas', link: '/auto-insurance-claims-denied-texas' },
+          { label: 'Auto Claim Denials', link: '/auto-insurance-claims-denied-texas' },
+          { label: 'Excluded Driver', link: null },
+        ]}
+      />
+
+      <main className="container">
+        <h1>Excluded Driver — Texas Auto Insurance Denial</h1>
+        <p className="intro">Why insurers deny when a named excluded driver is behind the wheel and what you can do</p>
 
         <section className="content-section">
           <h2>Why this denial happens</h2>
@@ -35,7 +42,9 @@ const AutoClaimDeniedTexasExcludedDriver = () => {
           <p>Check your declarations page and any endorsements that list excluded drivers. If the person driving matches an excluded name, the insurer will usually cite that endorsement.</p>
         </section>
 
-        <div className="adsense-placeholder" />
+        <div className="ad-placeholder">
+          <span className="ad-label">Advertisement</span>
+        </div>
 
         <section className="content-section">
           <h2>Texas resources</h2>
@@ -63,8 +72,10 @@ const AutoClaimDeniedTexasExcludedDriver = () => {
         </section>
 
         <StateHubLinks currentState="Texas" />
-      </article>
-    </div>
+      </main>
+
+      <Footer />
+    </>
   );
 };
 

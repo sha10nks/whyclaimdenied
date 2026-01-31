@@ -1,4 +1,7 @@
 import { Helmet } from 'react-helmet-async';
+import Breadcrumbs from '../components/Breadcrumbs';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
 
 const AutoClaimDeniedTexasPolicyLapse = () => {
@@ -14,7 +17,7 @@ const AutoClaimDeniedTexasPolicyLapse = () => {
   };
 
   return (
-    <div className="page-container">
+    <>
       <Helmet>
         <title>Policy Lapse - Texas Auto Insurance Denial Guide | What to Do</title>
         <meta name="description" content="Learn why auto insurance claims are denied for policy lapse in Texas. Understand Texas requirements and how to appeal this denial." />
@@ -22,15 +25,19 @@ const AutoClaimDeniedTexasPolicyLapse = () => {
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
 
-      <article className="insurance-guide">
-        <header className="guide-header">
-          <h1>Policy Lapse - Texas Auto Insurance Denial</h1>
-          <p className="guide-subtitle">Understanding why your claim was denied due to policy lapse and what you can do about it</p>
-        </header>
+      <Header />
 
-        <nav className="breadcrumb-nav">
-          <a href="/auto-insurance-claims-denied-texas">Texas Auto Insurance Denial Guide</a> &gt; Policy Lapse
-        </nav>
+      <Breadcrumbs
+        items={[
+          { label: 'Texas', link: '/auto-insurance-claims-denied-texas' },
+          { label: 'Auto Claim Denials', link: '/auto-insurance-claims-denied-texas' },
+          { label: 'Policy Lapse', link: null },
+        ]}
+      />
+
+      <main className="container">
+        <h1>Policy Lapse - Texas Auto Insurance Denial</h1>
+        <p className="intro">Understanding policy lapse denials and what to do if your Texas auto claim was denied due to a coverage lapse</p>
 
         <section className="content-section">
           <h2>What Policy Lapse Means</h2>
@@ -39,7 +46,8 @@ const AutoClaimDeniedTexasPolicyLapse = () => {
           <p>This is one of the most straightforward grounds for claim denial, but that doesn't mean it's always valid. Insurance companies must follow specific procedures when canceling policies, and failure to follow these procedures can invalidate the cancellation and restore your coverage.</p>
         </section>
 
-        <div className="adsense-placeholder">
+        <div className="ad-placeholder">
+          <span className="ad-label">Advertisement</span>
           {/* AdSense ad placement */}
         </div>
 
@@ -250,8 +258,10 @@ const AutoClaimDeniedTexasPolicyLapse = () => {
         </section>
 
         <StateHubLinks currentState="Texas" />
-      </article>
-    </div>
+      </main>
+
+      <Footer />
+    </>
   );
 };
 

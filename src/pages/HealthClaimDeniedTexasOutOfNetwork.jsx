@@ -1,4 +1,7 @@
 import { Helmet } from 'react-helmet-async';
+import Breadcrumbs from '../components/Breadcrumbs';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
 
 const HealthClaimDeniedTexasOutOfNetwork = () => {
@@ -14,7 +17,7 @@ const HealthClaimDeniedTexasOutOfNetwork = () => {
   };
 
   return (
-    <div className="page-container">
+    <>
       <Helmet>
         <title>Out-of-Network Provider - Texas Health Insurance Denial | How to Appeal</title>
         <meta name="description" content="Learn why health insurance claims are denied for out-of-network providers in Texas and how to appeal with proper documentation." />
@@ -22,15 +25,19 @@ const HealthClaimDeniedTexasOutOfNetwork = () => {
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
 
-      <article className="insurance-guide">
-        <header className="guide-header">
-          <h1>Out-of-Network Provider - Texas Health Insurance Denial</h1>
-          <p className="guide-subtitle">Understanding why your claim was denied and what options you have for coverage</p>
-        </header>
+      <Header />
 
-        <nav className="breadcrumb-nav">
-          <a href="/health-insurance-claims-denied-texas">Texas Health Insurance Denial Guide</a> &gt; Out-of-Network Provider
-        </nav>
+      <Breadcrumbs
+        items={[
+          { label: 'Texas', link: '/health-insurance-claims-denied-texas' },
+          { label: 'Health Claim Denials', link: '/health-insurance-claims-denied-texas' },
+          { label: 'Out-of-Network Provider', link: null },
+        ]}
+      />
+
+      <main className="container">
+        <h1>Out-of-Network Provider - Texas Health Insurance Denial</h1>
+        <p className="intro">Understanding why your claim was denied and what options you have for coverage</p>
 
         <section className="content-section">
           <h2>What "Out-of-Network" Means</h2>
@@ -39,7 +46,8 @@ const HealthClaimDeniedTexasOutOfNetwork = () => {
           <p>This is one of the most common reasons for health insurance claim denials in Texas, and it can result in significant out-of-pocket expenses for patients who unknowingly receive care from out-of-network providers.</p>
         </section>
 
-        <div className="adsense-placeholder">
+        <div className="ad-placeholder">
+          <span className="ad-label">Advertisement</span>
           {/* AdSense ad placement */}
         </div>
 
@@ -303,8 +311,10 @@ const HealthClaimDeniedTexasOutOfNetwork = () => {
         </section>
 
         <StateHubLinks currentState="Texas" />
-      </article>
-    </div>
+      </main>
+
+      <Footer />
+    </>
   );
 };
 

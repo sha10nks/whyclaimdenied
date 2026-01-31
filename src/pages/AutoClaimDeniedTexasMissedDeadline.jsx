@@ -1,4 +1,7 @@
 import { Helmet } from 'react-helmet-async';
+import Breadcrumbs from '../components/Breadcrumbs';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
 
 const AutoClaimDeniedTexasMissedDeadline = () => {
@@ -14,7 +17,7 @@ const AutoClaimDeniedTexasMissedDeadline = () => {
   };
 
   return (
-    <div className="page-container">
+    <>
       <Helmet>
         <title>Missed Reporting Deadline - Texas Auto Insurance Denial Guide | What to Do</title>
         <meta name="description" content="Learn why auto insurance claims are denied for missed reporting deadlines in Texas. Understand Texas requirements and how to appeal this denial." />
@@ -22,15 +25,19 @@ const AutoClaimDeniedTexasMissedDeadline = () => {
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
 
-      <article className="insurance-guide">
-        <header className="guide-header">
-          <h1>Missed Reporting Deadline - Texas Auto Insurance Denial</h1>
-          <p className="guide-subtitle">Understanding Texas reporting requirements and what to do if your claim was denied for late reporting</p>
-        </header>
+      <Header />
 
-        <nav className="breadcrumb-nav">
-          <a href="/auto-insurance-claims-denied-texas">Texas Auto Insurance Denial Guide</a> &gt; Missed Reporting Deadline
-        </nav>
+      <Breadcrumbs
+        items={[
+          { label: 'Texas', link: '/auto-insurance-claims-denied-texas' },
+          { label: 'Auto Claim Denials', link: '/auto-insurance-claims-denied-texas' },
+          { label: 'Missed Reporting Deadline', link: null },
+        ]}
+      />
+
+      <main className="container">
+        <h1>Missed Reporting Deadline - Texas Auto Insurance Denial</h1>
+        <p className="intro">Understanding Texas reporting requirements and what to do if your claim was denied for late reporting</p>
 
         <section className="content-section">
           <h2>Why Reporting Deadlines Matter in Texas</h2>
@@ -39,7 +46,8 @@ const AutoClaimDeniedTexasMissedDeadline = () => {
           <p>Insurance companies argue that delayed reporting prevents them from properly investigating the accident, assessing damages, and determining liability. While this reasoning has merit, insurers sometimes use reporting deadlines as an excuse to deny legitimate claims.</p>
         </section>
 
-        <div className="adsense-placeholder">
+        <div className="ad-placeholder">
+          <span className="ad-label">Advertisement</span>
           {/* AdSense ad placement */}
         </div>
 
@@ -267,8 +275,10 @@ const AutoClaimDeniedTexasMissedDeadline = () => {
         </section>
 
         <StateHubLinks currentState="Texas" />
-      </article>
-    </div>
+      </main>
+
+      <Footer />
+    </>
   );
 };
 

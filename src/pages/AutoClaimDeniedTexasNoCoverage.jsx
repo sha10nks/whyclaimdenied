@@ -1,4 +1,7 @@
 import { Helmet } from 'react-helmet-async';
+import Breadcrumbs from '../components/Breadcrumbs';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
 
 const AutoClaimDeniedTexasNoCoverage = () => {
@@ -14,7 +17,7 @@ const AutoClaimDeniedTexasNoCoverage = () => {
   };
 
   return (
-    <div className="page-container">
+    <>
       <Helmet>
         <title>No Coverage at Time of Loss - Texas Auto Insurance Denial Guide | What to Do</title>
         <meta name="description" content="Learn why auto insurance claims are denied for no coverage at time of loss in Texas. Understand your rights and how to appeal this denial." />
@@ -22,15 +25,19 @@ const AutoClaimDeniedTexasNoCoverage = () => {
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
 
-      <article className="insurance-guide">
-        <header className="guide-header">
-          <h1>No Coverage at Time of Loss - Texas Auto Insurance Denial</h1>
-          <p className="guide-subtitle">Understanding why your claim was denied and what you can do about it</p>
-        </header>
+      <Header />
 
-        <nav className="breadcrumb-nav">
-          <a href="/auto-insurance-claims-denied-texas">Texas Auto Insurance Denial Guide</a> &gt; No Coverage at Time of Loss
-        </nav>
+      <Breadcrumbs
+        items={[
+          { label: 'Texas', link: '/auto-insurance-claims-denied-texas' },
+          { label: 'Auto Claim Denials', link: '/auto-insurance-claims-denied-texas' },
+          { label: 'No Coverage at Time of Loss', link: null },
+        ]}
+      />
+
+      <main className="container">
+        <h1>No Coverage at Time of Loss - Texas Auto Insurance Denial</h1>
+        <p className="intro">Understanding why your claim was denied and what you can do about it</p>
 
         <section className="content-section">
           <h2>What "No Coverage at Time of Loss" Means</h2>
@@ -39,7 +46,8 @@ const AutoClaimDeniedTexasNoCoverage = () => {
           <p>This denial typically occurs when there's a gap in coverage, your policy has lapsed due to non-payment, or the specific circumstances of your accident fall outside your policy's coverage terms. Understanding the exact reason for this denial is crucial for determining your next steps.</p>
         </section>
 
-        <div className="adsense-placeholder">
+        <div className="ad-placeholder">
+          <span className="ad-label">Advertisement</span>
           {/* AdSense ad placement */}
         </div>
 
@@ -207,8 +215,10 @@ const AutoClaimDeniedTexasNoCoverage = () => {
         </section>
 
         <StateHubLinks currentState="Texas" />
-      </article>
-    </div>
+      </main>
+
+      <Footer />
+    </>
   );
 };
 

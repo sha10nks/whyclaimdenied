@@ -1,4 +1,7 @@
 import { Helmet } from 'react-helmet-async';
+import Breadcrumbs from '../components/Breadcrumbs';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
 
 const HealthClaimDeniedTexas = () => {
@@ -45,7 +48,7 @@ const HealthClaimDeniedTexas = () => {
   };
 
   return (
-    <div className="page-container">
+    <>
       <Helmet>
         <title>Health Insurance Claims Denied in Texas | Appeal Rights</title>
         <meta name="description" content="Learn why health insurance claims get denied in Texas and how to appeal. Understand your rights under Texas law and federal protections." />
@@ -54,112 +57,96 @@ const HealthClaimDeniedTexas = () => {
         <script type="application/ld+json">{JSON.stringify(faqData)}</script>
       </Helmet>
 
-      <article className="insurance-guide">
-        <header className="guide-header">
-          <h1>Health Insurance Claims Denied in Texas</h1>
-          <p className="guide-subtitle">Understanding your rights and options when your health insurance claim is denied in the Lone Star State</p>
-        </header>
+      <Header />
 
-        <section className="content-section">
+      <Breadcrumbs items={[{ label: 'Texas', link: '/health-insurance-claims-denied-texas' }, { label: 'Health Claim Denials', link: null }]} />
+
+      <main className="container">
+        <h1>Health Insurance Claims Denied in Texas</h1>
+        <p className="intro">Understanding your rights and options when your health insurance claim is denied in the Lone Star State</p>
+
+        <section>
           <h2>Why Health Insurance Claims Get Denied in Texas</h2>
           <p>Health insurance claim denials can be devastating, especially when you're dealing with medical issues and mounting bills. In Texas, health insurance companies must follow both state and federal laws when processing claims, but denials still occur for various reasons.</p>
-          
           <p>Texas residents have strong protections under both Texas law and federal regulations, including the Affordable Care Act (ACA). Understanding why denials happen and what you can do about them is crucial for getting the coverage you need and deserve.</p>
-
           <p>The Texas Department of Insurance (TDI) regulates health insurance companies and provides consumer protections. When insurers violate these rules, you have recourse through the appeals process, external review, and potentially through legal action.</p>
         </section>
 
-        <div className="adsense-placeholder">
+        <div className="ad-placeholder">
+          <span className="ad-label">Advertisement</span>
           {/* AdSense ad placement - after first section */}
         </div>
 
-        <section className="content-section">
+        <section>
           <h2>Common Health Claim Denial Reasons in Texas</h2>
-          
-          <div className="denial-reasons-grid">
-            <div className="reason-card">
-              <h3><a href="/health-insurance-claims-denied-texas/lack-of-medical-necessity">Lack of Medical Necessity</a></h3>
+          <ul>
+            <li>
+              <a href="/health-insurance-claims-denied-texas/lack-of-medical-necessity">Lack of Medical Necessity</a>
               <p>Your insurance company determined the treatment wasn't medically necessary according to their criteria.</p>
-            </div>
-            
-            <div className="reason-card">
-              <h3><a href="/health-insurance-claims-denied-texas/out-of-network-provider">Out-of-Network Provider</a></h3>
+            </li>
+            <li>
+              <a href="/health-insurance-claims-denied-texas/out-of-network-provider">Out-of-Network Provider</a>
               <p>You received care from a provider who isn't in your insurance plan's network.</p>
-            </div>
-            
-            <div className="reason-card">
-              <h3><a href="/health-insurance-claims-denied-texas/prior-authorization-missing">Prior Authorization Missing</a></h3>
+            </li>
+            <li>
+              <a href="/health-insurance-claims-denied-texas/prior-authorization-missing">Prior Authorization Missing</a>
               <p>Required pre-approval wasn't obtained before receiving the medical service.</p>
-            </div>
-            
-            <div className="reason-card">
-              <h3><a href="/health-insurance-claims-denied-texas/experimental-treatment">Experimental Treatment</a></h3>
+            </li>
+            <li>
+              <a href="/health-insurance-claims-denied-texas/experimental-treatment">Experimental Treatment</a>
               <p>The treatment is considered experimental or investigational by your insurance company.</p>
-            </div>
-            
-            <div className="reason-card">
-              <h3><a href="/health-insurance-claims-denied-texas/coverage-exclusions">Coverage Exclusions</a></h3>
+            </li>
+            <li>
+              <a href="/health-insurance-claims-denied-texas/coverage-exclusions">Coverage Exclusions</a>
               <p>The service or treatment is specifically excluded from your policy coverage.</p>
-            </div>
-            
-            <div className="reason-card">
-              <h3><a href="/health-insurance-claims-denied-texas/filing-errors">Filing Errors</a></h3>
+            </li>
+            <li>
+              <a href="/health-insurance-claims-denied-texas/filing-errors">Filing Errors</a>
               <p>Administrative errors, incorrect codes, or missing information on the claim form.</p>
-            </div>
-            
-            <div className="reason-card">
-              <h3><a href="/health-insurance-claims-denied-texas/timely-filing-violations">Timely Filing Violations</a></h3>
+            </li>
+            <li>
+              <a href="/health-insurance-claims-denied-texas/timely-filing-violations">Timely Filing Violations</a>
               <p>The claim wasn't submitted within the required timeframe after services were provided.</p>
-            </div>
-            
-            <div className="reason-card">
-              <h3><a href="/health-insurance-claims-denied-texas/pre-existing-conditions">Pre-Existing Conditions</a></h3>
+            </li>
+            <li>
+              <a href="/health-insurance-claims-denied-texas/pre-existing-conditions">Pre-Existing Conditions</a>
               <p>Your condition existed before your coverage began and isn't covered under your plan.</p>
-            </div>
-            
-            <div className="reason-card">
-              <h3><a href="/health-insurance-claims-denied-texas/benefits-exhausted">Benefits Exhausted</a></h3>
+            </li>
+            <li>
+              <a href="/health-insurance-claims-denied-texas/benefits-exhausted">Benefits Exhausted</a>
               <p>You've reached your plan's maximum benefit limits for the year or for your lifetime.</p>
-            </div>
-            
-            <div className="reason-card">
-              <h3><a href="/health-insurance-claims-denied-texas/provider-credential-issues">Provider Credential Issues</a></h3>
+            </li>
+            <li>
+              <a href="/health-insurance-claims-denied-texas/provider-credential-issues">Provider Credential Issues</a>
               <p>Your healthcare provider has licensing, credentialing, or billing issues that affect coverage.</p>
-            </div>
-          </div>
+            </li>
+          </ul>
         </section>
 
-        <div className="adsense-placeholder">
+        <div className="ad-placeholder">
+          <span className="ad-label">Advertisement</span>
           {/* AdSense ad placement - mid-content */}
         </div>
 
-        <section className="content-section">
-          <h2>Key Texas Health Insurance Laws & Protections</h2>
-          
+        <section>
+          <h2>Key Texas Health Insurance Laws &amp; Protections</h2>
+
           <h3>Texas Insurance Code Requirements</h3>
           <p>Texas Insurance Code Chapter 1201 and related provisions establish requirements for health insurance companies operating in Texas. These laws work alongside federal protections to ensure fair treatment of consumers.</p>
-          
-          <div className="law-requirements">
-            <div className="requirement-item">
-              <h4>Prompt Claim Processing</h4>
-              <p>Texas requires health insurance companies to process claims promptly and make payment decisions within reasonable timeframes established by federal law.</p>
-            </div>
-            
-            <div className="requirement-item">
-              <h4>Clear Explanation of Benefits</h4>
-              <p>Insurers must provide clear, understandable explanations when claims are denied, including specific reasons and policy provisions supporting the denial.</p>
-            </div>
-            
-            <div className="requirement-item">
-              <h4>Appeals Process</h4>
-              <p>Texas law requires insurers to provide a fair and accessible appeals process for denied claims, including both internal appeals and external review options.</p>
-            </div>
-            
-            <div className="requirement-item">
-              <h4>Consumer Protection</h4>
-              <p>The Texas Department of Insurance has authority to investigate complaints and take enforcement action against companies that violate consumer protection laws.</p>
-            </div>
-          </div>
+          <ul>
+            <li>
+              <strong>Prompt Claim Processing:</strong> Texas requires health insurance companies to process claims promptly and make payment decisions within reasonable timeframes established by federal law.
+            </li>
+            <li>
+              <strong>Clear Explanation of Benefits:</strong> Insurers must provide clear, understandable explanations when claims are denied, including specific reasons and policy provisions supporting the denial.
+            </li>
+            <li>
+              <strong>Appeals Process:</strong> Texas law requires insurers to provide a fair and accessible appeals process for denied claims, including both internal appeals and external review options.
+            </li>
+            <li>
+              <strong>Consumer Protection:</strong> The Texas Department of Insurance has authority to investigate complaints and take enforcement action against companies that violate consumer protection laws.
+            </li>
+          </ul>
 
           <h3>Federal Protections Under ACA</h3>
           <p>Texas residents benefit from federal protections under the Affordable Care Act, including:</p>
@@ -182,44 +169,35 @@ const HealthClaimDeniedTexas = () => {
           </ul>
         </section>
 
-        <section className="content-section">
+        <section>
           <h2>What to Do Immediately After a Denial</h2>
-          
-          <div className="action-steps">
-            <div className="step">
-              <h3>1. Request Written Explanation</h3>
-              <p>Ask your insurance company for a detailed written explanation of why your claim was denied. They must provide specific reasons under both Texas and federal law.</p>
-            </div>
-            
-            <div className="step">
-              <h3>2. Review Your Policy</h3>
-              <p>Carefully read your health insurance policy to understand your coverage, exclusions, and the insurer's obligations. Look for any clauses that might support your claim.</p>
-            </div>
-            
-            <div className="step">
-              <h3>3. Gather Medical Documentation</h3>
-              <p>Collect all relevant medical records, doctor's notes, test results, and treatment plans that support the medical necessity of the denied service.</p>
-            </div>
-            
-            <div className="step">
-              <h3>4. Contact Your Healthcare Provider</h3>
-              <p>Your doctor or hospital can provide additional documentation, correct billing errors, or help explain why the treatment was medically necessary.</p>
-            </div>
-            
-            <div className="step">
-              <h3>5. Understand Your Appeal Rights</h3>
-              <p>Texas law and federal law guarantee your right to appeal. You typically have 180 days to file an internal appeal and additional options for external review.</p>
-            </div>
-          </div>
+          <ol>
+            <li>
+              <strong>Request Written Explanation.</strong> Ask your insurance company for a detailed written explanation of why your claim was denied. They must provide specific reasons under both Texas and federal law.
+            </li>
+            <li>
+              <strong>Review Your Policy.</strong> Carefully read your health insurance policy to understand your coverage, exclusions, and the insurer's obligations. Look for any clauses that might support your claim.
+            </li>
+            <li>
+              <strong>Gather Medical Documentation.</strong> Collect all relevant medical records, doctor's notes, test results, and treatment plans that support the medical necessity of the denied service.
+            </li>
+            <li>
+              <strong>Contact Your Healthcare Provider.</strong> Your doctor or hospital can provide additional documentation, correct billing errors, or help explain why the treatment was medically necessary.
+            </li>
+            <li>
+              <strong>Understand Your Appeal Rights.</strong> Texas law and federal law guarantee your right to appeal. You typically have 180 days to file an internal appeal and additional options for external review.
+            </li>
+          </ol>
         </section>
 
-        <div className="adsense-placeholder">
+        <div className="ad-placeholder">
+          <span className="ad-label">Advertisement</span>
           {/* AdSense ad placement - before FAQs */}
         </div>
 
-        <section className="content-section">
-          <h2>Appeals & External Review in Texas</h2>
-          
+        <section>
+          <h2>Appeals &amp; External Review in Texas</h2>
+
           <h3>Internal Appeals Process</h3>
           <p>Start with your insurance company's internal appeals process. Texas law requires insurers to provide this option. Submit your appeal in writing, including:</p>
           <ul>
@@ -258,26 +236,39 @@ const HealthClaimDeniedTexas = () => {
           </ul>
         </section>
 
-        <section className="content-section faq-section">
-          <h2>Frequently Asked Questions</h2>
-          
-          <div className="faq-item">
-            <h3>How long does a health insurance company have to respond to a claim in Texas?</h3>
-            <p>Texas follows federal guidelines under the Affordable Care Act. Insurance companies must acknowledge claims within 15 days, make a decision within 30 days for clean claims, and pay approved claims within 30 days of the decision.</p>
-          </div>
-          
-          <div className="faq-item">
-            <h3>What should I do if my health insurance claim is denied in Texas?</h3>
-            <p>Request a written explanation of the denial, review your policy and the specific reason for denial, file an internal appeal with your insurer within 180 days, and if necessary, request an external review or file a complaint with the Texas Department of Insurance.</p>
-          </div>
-          
-          <div className="faq-item">
-            <h3>Can I appeal a health insurance denial in Texas?</h3>
-            <p>Yes, Texas law and federal law guarantee your right to appeal health insurance denials. You have at least one internal appeal and one external review available for most denials. The process is free and must be completed within specific timeframes.</p>
+        <section>
+          <h2>FAQs</h2>
+          <div className="faq-section">
+            <div className="faq-item">
+              <div className="faq-question" role="heading" aria-level={3}>
+                How long does a health insurance company have to respond to a claim in Texas?
+              </div>
+              <div className="faq-answer">
+                <p>Texas follows federal guidelines under the Affordable Care Act. Insurance companies must acknowledge claims within 15 days, make a decision within 30 days for clean claims, and pay approved claims within 30 days of the decision.</p>
+              </div>
+            </div>
+
+            <div className="faq-item">
+              <div className="faq-question" role="heading" aria-level={3}>
+                What should I do if my health insurance claim is denied in Texas?
+              </div>
+              <div className="faq-answer">
+                <p>Request a written explanation of the denial, review your policy and the specific reason for denial, file an internal appeal with your insurer within 180 days, and if necessary, request an external review or file a complaint with the Texas Department of Insurance.</p>
+              </div>
+            </div>
+
+            <div className="faq-item">
+              <div className="faq-question" role="heading" aria-level={3}>
+                Can I appeal a health insurance denial in Texas?
+              </div>
+              <div className="faq-answer">
+                <p>Yes, Texas law and federal law guarantee your right to appeal health insurance denials. You have at least one internal appeal and one external review available for most denials. The process is free and must be completed within specific timeframes.</p>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section className="content-section">
+        <section>
           <h2>Your Rights as a Texas Health Insurance Consumer</h2>
           <p>Texas law and federal law provide strong protections for health insurance consumers. You have the right to:</p>
           <ul>
@@ -293,8 +284,10 @@ const HealthClaimDeniedTexas = () => {
         </section>
 
         <StateHubLinks currentState="Texas" />
-      </article>
-    </div>
+      </main>
+
+      <Footer />
+    </>
   );
 };
 

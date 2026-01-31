@@ -1,4 +1,7 @@
 import { Helmet } from 'react-helmet-async';
+import Breadcrumbs from '../components/Breadcrumbs';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
 
 const HealthClaimDeniedTexasMedicalNecessity = () => {
@@ -14,7 +17,7 @@ const HealthClaimDeniedTexasMedicalNecessity = () => {
   };
 
   return (
-    <div className="page-container">
+    <>
       <Helmet>
         <title>Lack of Medical Necessity - Texas Health Insurance Denial | How to Appeal</title>
         <meta name="description" content="Learn why health insurance claims are denied for lack of medical necessity in Texas and how to appeal with proper documentation." />
@@ -22,15 +25,19 @@ const HealthClaimDeniedTexasMedicalNecessity = () => {
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
 
-      <article className="insurance-guide">
-        <header className="guide-header">
-          <h1>Lack of Medical Necessity - Texas Health Insurance Denial</h1>
-          <p className="guide-subtitle">Understanding why your claim was denied and how to build a strong appeal with medical evidence</p>
-        </header>
+      <Header />
 
-        <nav className="breadcrumb-nav">
-          <a href="/health-insurance-claims-denied-texas">Texas Health Insurance Denial Guide</a> &gt; Lack of Medical Necessity
-        </nav>
+      <Breadcrumbs
+        items={[
+          { label: 'Texas', link: '/health-insurance-claims-denied-texas' },
+          { label: 'Health Claim Denials', link: '/health-insurance-claims-denied-texas' },
+          { label: 'Lack of Medical Necessity', link: null },
+        ]}
+      />
+
+      <main className="container">
+        <h1>Lack of Medical Necessity - Texas Health Insurance Denial</h1>
+        <p className="intro">Understanding why your claim was denied and how to build a strong appeal with medical evidence</p>
 
         <section className="content-section">
           <h2>What "Lack of Medical Necessity" Means</h2>
@@ -39,7 +46,8 @@ const HealthClaimDeniedTexasMedicalNecessity = () => {
           <p>Insurance companies have specific criteria for what they consider medically necessary, and these criteria may differ from your doctor's recommendations. Understanding these criteria and how to document medical necessity is crucial for successful appeals.</p>
         </section>
 
-        <div className="adsense-placeholder">
+        <div className="ad-placeholder">
+          <span className="ad-label">Advertisement</span>
           {/* AdSense ad placement */}
         </div>
 
@@ -230,8 +238,10 @@ const HealthClaimDeniedTexasMedicalNecessity = () => {
         </section>
 
         <StateHubLinks currentState="Texas" />
-      </article>
-    </div>
+      </main>
+
+      <Footer />
+    </>
   );
 };
 
