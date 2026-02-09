@@ -8,6 +8,7 @@ const Terms = () => {
       <Helmet>
         <title>Terms of Use - WhyClaimDenied</title>
         <meta name="description" content="Terms of use for WhyClaimDenied. Please read these simple guidelines before using our informational website." />
+        <link rel="canonical" href="https://whyclaimdenied.com/terms" />
       </Helmet>
       
       <Header />

@@ -15,6 +15,7 @@ export default function Contact() {
           name="description"
           content="Contact WhyClaimDenied with questions, corrections, or feedback about insurance claim denial information."
         />
+        <link rel="canonical" href="https://whyclaimdenied.com/contact" />
       </Helmet>
 
       <Header />

@@ -3,6 +3,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
+import { Link } from '../components/Link';
 
 const HealthClaimDeniedTexasPreExisting = () => {
   const sd = { "@context": "https://schema.org", "@type": "Article", "headline": "Pre-Existing Conditions — Texas Health Insurance Denial", "description": "How pre-existing condition rules affect Texas health claims and what to review in your plan." };
@@ -29,7 +30,7 @@ const HealthClaimDeniedTexasPreExisting = () => {
         <h1>Pre-Existing Conditions — Texas Health Insurance Denial</h1>
         <section className="content-section"><h2>Why this denial happens</h2><p>Depending on plan type, some services may be denied as pre-existing. Review the plan’s definition and exceptions.</p></section>
         <section className="content-section"><h2>What to check</h2><ul><li>Plan definition and look-back period</li><li>Any federal protections applicable to your plan type</li><li>Provider documentation showing onset and medical necessity</li></ul></section>
-        <section className="content-section"><h2>Back to the Texas health denial guide</h2><p><a href="/health-insurance-claims-denied-texas">Return to Health Insurance Claims Denied in Texas</a></p></section>
+        <section className="content-section"><h2>Back to the Texas health denial guide</h2><p><Link to="/health-insurance-claims-denied-texas">Return to Health Insurance Claims Denied in Texas</Link></p></section>
         <StateHubLinks currentState="Texas" />
       </main>
 

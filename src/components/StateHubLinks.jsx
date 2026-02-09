@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from './Link';
 
 const STATES = [
   {
@@ -40,4 +40,3 @@ export default function StateHubLinks({ currentState }) {
     </section>
   );
 }
-

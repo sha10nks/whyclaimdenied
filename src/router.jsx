@@ -1,68 +1,74 @@
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
-import ClaimDeniedCalifornia from "./pages/ClaimDeniedCalifornia";
-import AutoClaimDeniedCalifornia from "./pages/AutoClaimDeniedCalifornia";
-import HealthClaimDeniedCalifornia from "./pages/HealthClaimDeniedCalifornia";
-import AutoClaimDeniedCaliforniaNoCoverageAtTimeOfLoss from "./pages/AutoClaimDeniedCaliforniaNoCoverageAtTimeOfLoss";
-import AutoClaimDeniedCaliforniaPolicyLapseOrCancellation from "./pages/AutoClaimDeniedCaliforniaPolicyLapseOrCancellation";
-import AutoClaimDeniedCaliforniaMissedReportingDeadline from "./pages/AutoClaimDeniedCaliforniaMissedReportingDeadline";
-import AutoClaimDeniedCaliforniaExcludedDriver from "./pages/AutoClaimDeniedCaliforniaExcludedDriver";
-import AutoClaimDeniedCaliforniaMisrepresentationOrConcealment from "./pages/AutoClaimDeniedCaliforniaMisrepresentationOrConcealment";
-import AutoClaimDeniedCaliforniaNonCoveredUse from "./pages/AutoClaimDeniedCaliforniaNonCoveredUse";
-import AutoClaimDeniedCaliforniaFailureToCooperate from "./pages/AutoClaimDeniedCaliforniaFailureToCooperate";
-import AutoClaimDeniedCaliforniaDisputedLiability from "./pages/AutoClaimDeniedCaliforniaDisputedLiability";
-import HealthClaimDeniedCaliforniaPriorAuthorizationMissing from "./pages/HealthClaimDeniedCaliforniaPriorAuthorizationMissing";
-import HealthClaimDeniedCaliforniaNotMedicallyNecessary from "./pages/HealthClaimDeniedCaliforniaNotMedicallyNecessary";
-import HealthClaimDeniedCaliforniaOutOfNetworkProvider from "./pages/HealthClaimDeniedCaliforniaOutOfNetworkProvider";
-import HealthClaimDeniedCaliforniaCodingOrDocumentationError from "./pages/HealthClaimDeniedCaliforniaCodingOrDocumentationError";
-import HealthClaimDeniedCaliforniaExperimentalOrInvestigational from "./pages/HealthClaimDeniedCaliforniaExperimentalOrInvestigational";
-import HealthClaimDeniedCaliforniaBenefitOrServiceExcluded from "./pages/HealthClaimDeniedCaliforniaBenefitOrServiceExcluded";
-import HealthClaimDeniedCaliforniaTimelyFilingIssue from "./pages/HealthClaimDeniedCaliforniaTimelyFilingIssue";
-import HealthClaimDeniedCaliforniaCoordinationOfBenefits from "./pages/HealthClaimDeniedCaliforniaCoordinationOfBenefits";
-import AutoClaimDeniedFlorida from "./pages/AutoClaimDeniedFlorida";
-import HealthClaimDeniedFlorida from "./pages/HealthClaimDeniedFlorida";
-import AutoClaimDeniedFloridaNoCoverageAtTimeOfLoss from "./pages/AutoClaimDeniedFloridaNoCoverageAtTimeOfLoss";
-import AutoClaimDeniedFloridaPolicyLapseOrCancellation from "./pages/AutoClaimDeniedFloridaPolicyLapseOrCancellation";
-import AutoClaimDeniedFloridaMissedReportingDeadline from "./pages/AutoClaimDeniedFloridaMissedReportingDeadline";
-import AutoClaimDeniedFloridaExcludedDriver from "./pages/AutoClaimDeniedFloridaExcludedDriver";
-import AutoClaimDeniedFloridaMisrepresentationOrOmission from "./pages/AutoClaimDeniedFloridaMisrepresentationOrOmission";
-import AutoClaimDeniedFloridaNonCoveredUse from "./pages/AutoClaimDeniedFloridaNonCoveredUse";
-import AutoClaimDeniedFloridaFailureToCooperate from "./pages/AutoClaimDeniedFloridaFailureToCooperate";
-import AutoClaimDeniedFloridaDisputedLiability from "./pages/AutoClaimDeniedFloridaDisputedLiability";
-import HealthClaimDeniedFloridaPriorAuthorizationMissing from "./pages/HealthClaimDeniedFloridaPriorAuthorizationMissing";
-import HealthClaimDeniedFloridaNotMedicallyNecessary from "./pages/HealthClaimDeniedFloridaNotMedicallyNecessary";
-import HealthClaimDeniedFloridaOutOfNetworkProvider from "./pages/HealthClaimDeniedFloridaOutOfNetworkProvider";
-import HealthClaimDeniedFloridaCodingOrDocumentationError from "./pages/HealthClaimDeniedFloridaCodingOrDocumentationError";
-import HealthClaimDeniedFloridaExperimentalOrInvestigational from "./pages/HealthClaimDeniedFloridaExperimentalOrInvestigational";
-import HealthClaimDeniedFloridaBenefitOrServiceExcluded from "./pages/HealthClaimDeniedFloridaBenefitOrServiceExcluded";
-import HealthClaimDeniedFloridaTimelyFilingIssue from "./pages/HealthClaimDeniedFloridaTimelyFilingIssue";
-import HealthClaimDeniedFloridaCoordinationOfBenefits from "./pages/HealthClaimDeniedFloridaCoordinationOfBenefits";
-import AutoClaimDeniedTexas from "./pages/AutoClaimDeniedTexas";
-import HealthClaimDeniedTexas from "./pages/HealthClaimDeniedTexas";
-import AutoClaimDeniedTexasNoCoverage from "./pages/AutoClaimDeniedTexasNoCoverage";
-import AutoClaimDeniedTexasMissedDeadline from "./pages/AutoClaimDeniedTexasMissedDeadline";
-import AutoClaimDeniedTexasPolicyLapse from "./pages/AutoClaimDeniedTexasPolicyLapse";
-import AutoClaimDeniedTexasExcludedDriver from "./pages/AutoClaimDeniedTexasExcludedDriver";
-import AutoClaimDeniedTexasMisrepresentation from "./pages/AutoClaimDeniedTexasMisrepresentation";
-import AutoClaimDeniedTexasNonCoveredUse from "./pages/AutoClaimDeniedTexasNonCoveredUse";
-import AutoClaimDeniedTexasFailureCooperate from "./pages/AutoClaimDeniedTexasFailureCooperate";
-import AutoClaimDeniedTexasDisputedLiability from "./pages/AutoClaimDeniedTexasDisputedLiability";
-import AutoClaimDeniedTexasExcludedVehicle from "./pages/AutoClaimDeniedTexasExcludedVehicle";
-import AutoClaimDeniedTexasCoverageLimits from "./pages/AutoClaimDeniedTexasCoverageLimits";
-import HealthClaimDeniedTexasMedicalNecessity from "./pages/HealthClaimDeniedTexasMedicalNecessity";
-import HealthClaimDeniedTexasOutOfNetwork from "./pages/HealthClaimDeniedTexasOutOfNetwork";
-import HealthClaimDeniedTexasPriorAuth from "./pages/HealthClaimDeniedTexasPriorAuth";
-import HealthClaimDeniedTexasExperimental from "./pages/HealthClaimDeniedTexasExperimental";
-import HealthClaimDeniedTexasCoverageExclusion from "./pages/HealthClaimDeniedTexasCoverageExclusion";
-import HealthClaimDeniedTexasFilingError from "./pages/HealthClaimDeniedTexasFilingError";
-import HealthClaimDeniedTexasTimelyFiling from "./pages/HealthClaimDeniedTexasTimelyFiling";
-import HealthClaimDeniedTexasPreExisting from "./pages/HealthClaimDeniedTexasPreExisting";
-import HealthClaimDeniedTexasBenefitExhausted from "./pages/HealthClaimDeniedTexasBenefitExhausted";
-import HealthClaimDeniedTexasProviderCredential from "./pages/HealthClaimDeniedTexasProviderCredential";
-import About from "./pages/About";
-import Terms from "./pages/Terms";
-import Privacy from "./pages/Privacy";
-import Contact from "./pages/Contact";
+
+const Home = lazy(() => import("./pages/Home"));
+const ClaimDeniedCalifornia = lazy(() => import("./pages/ClaimDeniedCalifornia"));
+const AutoClaimDeniedCalifornia = lazy(() => import("./pages/AutoClaimDeniedCalifornia"));
+const HealthClaimDeniedCalifornia = lazy(() => import("./pages/HealthClaimDeniedCalifornia"));
+const AutoClaimDeniedCaliforniaNoCoverageAtTimeOfLoss = lazy(() => import("./pages/AutoClaimDeniedCaliforniaNoCoverageAtTimeOfLoss"));
+const AutoClaimDeniedCaliforniaPolicyLapseOrCancellation = lazy(() => import("./pages/AutoClaimDeniedCaliforniaPolicyLapseOrCancellation"));
+const AutoClaimDeniedCaliforniaMissedReportingDeadline = lazy(() => import("./pages/AutoClaimDeniedCaliforniaMissedReportingDeadline"));
+const AutoClaimDeniedCaliforniaExcludedDriver = lazy(() => import("./pages/AutoClaimDeniedCaliforniaExcludedDriver"));
+const AutoClaimDeniedCaliforniaMisrepresentationOrConcealment = lazy(() => import("./pages/AutoClaimDeniedCaliforniaMisrepresentationOrConcealment"));
+const AutoClaimDeniedCaliforniaNonCoveredUse = lazy(() => import("./pages/AutoClaimDeniedCaliforniaNonCoveredUse"));
+const AutoClaimDeniedCaliforniaFailureToCooperate = lazy(() => import("./pages/AutoClaimDeniedCaliforniaFailureToCooperate"));
+const AutoClaimDeniedCaliforniaDisputedLiability = lazy(() => import("./pages/AutoClaimDeniedCaliforniaDisputedLiability"));
+const HealthClaimDeniedCaliforniaPriorAuthorizationMissing = lazy(() => import("./pages/HealthClaimDeniedCaliforniaPriorAuthorizationMissing"));
+const HealthClaimDeniedCaliforniaNotMedicallyNecessary = lazy(() => import("./pages/HealthClaimDeniedCaliforniaNotMedicallyNecessary"));
+const HealthClaimDeniedCaliforniaOutOfNetworkProvider = lazy(() => import("./pages/HealthClaimDeniedCaliforniaOutOfNetworkProvider"));
+const HealthClaimDeniedCaliforniaCodingOrDocumentationError = lazy(() => import("./pages/HealthClaimDeniedCaliforniaCodingOrDocumentationError"));
+const HealthClaimDeniedCaliforniaExperimentalOrInvestigational = lazy(() => import("./pages/HealthClaimDeniedCaliforniaExperimentalOrInvestigational"));
+const HealthClaimDeniedCaliforniaBenefitOrServiceExcluded = lazy(() => import("./pages/HealthClaimDeniedCaliforniaBenefitOrServiceExcluded"));
+const HealthClaimDeniedCaliforniaTimelyFilingIssue = lazy(() => import("./pages/HealthClaimDeniedCaliforniaTimelyFilingIssue"));
+const HealthClaimDeniedCaliforniaCoordinationOfBenefits = lazy(() => import("./pages/HealthClaimDeniedCaliforniaCoordinationOfBenefits"));
+
+const AutoClaimDeniedFlorida = lazy(() => import("./pages/AutoClaimDeniedFlorida"));
+const HealthClaimDeniedFlorida = lazy(() => import("./pages/HealthClaimDeniedFlorida"));
+const AutoClaimDeniedFloridaNoCoverageAtTimeOfLoss = lazy(() => import("./pages/AutoClaimDeniedFloridaNoCoverageAtTimeOfLoss"));
+const AutoClaimDeniedFloridaPolicyLapseOrCancellation = lazy(() => import("./pages/AutoClaimDeniedFloridaPolicyLapseOrCancellation"));
+const AutoClaimDeniedFloridaMissedReportingDeadline = lazy(() => import("./pages/AutoClaimDeniedFloridaMissedReportingDeadline"));
+const AutoClaimDeniedFloridaExcludedDriver = lazy(() => import("./pages/AutoClaimDeniedFloridaExcludedDriver"));
+const AutoClaimDeniedFloridaMisrepresentationOrOmission = lazy(() => import("./pages/AutoClaimDeniedFloridaMisrepresentationOrOmission"));
+const AutoClaimDeniedFloridaNonCoveredUse = lazy(() => import("./pages/AutoClaimDeniedFloridaNonCoveredUse"));
+const AutoClaimDeniedFloridaFailureToCooperate = lazy(() => import("./pages/AutoClaimDeniedFloridaFailureToCooperate"));
+const AutoClaimDeniedFloridaDisputedLiability = lazy(() => import("./pages/AutoClaimDeniedFloridaDisputedLiability"));
+const HealthClaimDeniedFloridaPriorAuthorizationMissing = lazy(() => import("./pages/HealthClaimDeniedFloridaPriorAuthorizationMissing"));
+const HealthClaimDeniedFloridaNotMedicallyNecessary = lazy(() => import("./pages/HealthClaimDeniedFloridaNotMedicallyNecessary"));
+const HealthClaimDeniedFloridaOutOfNetworkProvider = lazy(() => import("./pages/HealthClaimDeniedFloridaOutOfNetworkProvider"));
+const HealthClaimDeniedFloridaCodingOrDocumentationError = lazy(() => import("./pages/HealthClaimDeniedFloridaCodingOrDocumentationError"));
+const HealthClaimDeniedFloridaExperimentalOrInvestigational = lazy(() => import("./pages/HealthClaimDeniedFloridaExperimentalOrInvestigational"));
+const HealthClaimDeniedFloridaBenefitOrServiceExcluded = lazy(() => import("./pages/HealthClaimDeniedFloridaBenefitOrServiceExcluded"));
+const HealthClaimDeniedFloridaTimelyFilingIssue = lazy(() => import("./pages/HealthClaimDeniedFloridaTimelyFilingIssue"));
+const HealthClaimDeniedFloridaCoordinationOfBenefits = lazy(() => import("./pages/HealthClaimDeniedFloridaCoordinationOfBenefits"));
+
+const AutoClaimDeniedTexas = lazy(() => import("./pages/AutoClaimDeniedTexas"));
+const HealthClaimDeniedTexas = lazy(() => import("./pages/HealthClaimDeniedTexas"));
+const AutoClaimDeniedTexasNoCoverage = lazy(() => import("./pages/AutoClaimDeniedTexasNoCoverage"));
+const AutoClaimDeniedTexasMissedDeadline = lazy(() => import("./pages/AutoClaimDeniedTexasMissedDeadline"));
+const AutoClaimDeniedTexasPolicyLapse = lazy(() => import("./pages/AutoClaimDeniedTexasPolicyLapse"));
+const AutoClaimDeniedTexasExcludedDriver = lazy(() => import("./pages/AutoClaimDeniedTexasExcludedDriver"));
+const AutoClaimDeniedTexasMisrepresentation = lazy(() => import("./pages/AutoClaimDeniedTexasMisrepresentation"));
+const AutoClaimDeniedTexasNonCoveredUse = lazy(() => import("./pages/AutoClaimDeniedTexasNonCoveredUse"));
+const AutoClaimDeniedTexasFailureCooperate = lazy(() => import("./pages/AutoClaimDeniedTexasFailureCooperate"));
+const AutoClaimDeniedTexasDisputedLiability = lazy(() => import("./pages/AutoClaimDeniedTexasDisputedLiability"));
+const AutoClaimDeniedTexasExcludedVehicle = lazy(() => import("./pages/AutoClaimDeniedTexasExcludedVehicle"));
+const AutoClaimDeniedTexasCoverageLimits = lazy(() => import("./pages/AutoClaimDeniedTexasCoverageLimits"));
+const HealthClaimDeniedTexasMedicalNecessity = lazy(() => import("./pages/HealthClaimDeniedTexasMedicalNecessity"));
+const HealthClaimDeniedTexasOutOfNetwork = lazy(() => import("./pages/HealthClaimDeniedTexasOutOfNetwork"));
+const HealthClaimDeniedTexasPriorAuth = lazy(() => import("./pages/HealthClaimDeniedTexasPriorAuth"));
+const HealthClaimDeniedTexasExperimental = lazy(() => import("./pages/HealthClaimDeniedTexasExperimental"));
+const HealthClaimDeniedTexasCoverageExclusion = lazy(() => import("./pages/HealthClaimDeniedTexasCoverageExclusion"));
+const HealthClaimDeniedTexasFilingError = lazy(() => import("./pages/HealthClaimDeniedTexasFilingError"));
+const HealthClaimDeniedTexasTimelyFiling = lazy(() => import("./pages/HealthClaimDeniedTexasTimelyFiling"));
+const HealthClaimDeniedTexasPreExisting = lazy(() => import("./pages/HealthClaimDeniedTexasPreExisting"));
+const HealthClaimDeniedTexasBenefitExhausted = lazy(() => import("./pages/HealthClaimDeniedTexasBenefitExhausted"));
+const HealthClaimDeniedTexasProviderCredential = lazy(() => import("./pages/HealthClaimDeniedTexasProviderCredential"));
+
+const About = lazy(() => import("./pages/About"));
+const Terms = lazy(() => import("./pages/Terms"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+const Contact = lazy(() => import("./pages/Contact"));
 
 const router = createBrowserRouter([
   {
@@ -71,7 +77,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <AutoClaimDeniedCalifornia />,
+        element: <Home />,
       },
       {
         path: "auto-insurance-claims-denied-california",

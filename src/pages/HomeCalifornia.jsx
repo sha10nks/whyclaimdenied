@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import { Link } from '../components/Link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FAQ from '../components/FAQ';
@@ -17,6 +17,7 @@ const HomeCalifornia = () => {
       <Helmet>
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
+        <link rel="canonical" href={meta.canonical} />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
       

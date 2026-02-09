@@ -8,6 +8,7 @@ const Privacy = () => {
       <Helmet>
         <title>Privacy Policy - WhyClaimDenied</title>
         <meta name="description" content="We don’t run user accounts or ask for personal info. This page explains cookies, Google Analytics, and Google AdSense on WhyClaimDenied." />
+        <link rel="canonical" href="https://whyclaimdenied.com/privacy" />
       </Helmet>
       
       <Header />

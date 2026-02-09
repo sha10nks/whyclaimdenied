@@ -3,6 +3,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
+import { Link } from '../components/Link';
 
 const AutoClaimDeniedTexas = () => {
   const structuredData = {
@@ -81,43 +82,43 @@ const AutoClaimDeniedTexas = () => {
           <h2>Common Auto Claim Denial Reasons in Texas</h2>
           <ul>
             <li>
-              <a href="/auto-insurance-claims-denied-texas/no-coverage-at-time-of-loss">No Coverage at Time of Loss</a>
+              <Link to="/auto-insurance-claims-denied-texas/no-coverage-at-time-of-loss">No Coverage at Time of Loss</Link>
               <p>Your policy wasn't active when the accident occurred. This often happens with lapsed policies or coverage gaps.</p>
             </li>
             <li>
-              <a href="/auto-insurance-claims-denied-texas/missed-reporting-deadline">Missed Reporting Deadline</a>
+              <Link to="/auto-insurance-claims-denied-texas/missed-reporting-deadline">Missed Reporting Deadline</Link>
               <p>Texas requires prompt accident reporting. Delays can give insurers grounds for denial.</p>
             </li>
             <li>
-              <a href="/auto-insurance-claims-denied-texas/policy-lapse">Policy Lapse</a>
+              <Link to="/auto-insurance-claims-denied-texas/policy-lapse">Policy Lapse</Link>
               <p>Missed premium payments can void coverage, even if you're only a few days late.</p>
             </li>
             <li>
-              <a href="/auto-insurance-claims-denied-texas/excluded-driver">Excluded Driver</a>
+              <Link to="/auto-insurance-claims-denied-texas/excluded-driver">Excluded Driver</Link>
               <p>Someone specifically excluded from your policy was driving at the time of the accident.</p>
             </li>
             <li>
-              <a href="/auto-insurance-claims-denied-texas/misrepresentation">Misrepresentation</a>
+              <Link to="/auto-insurance-claims-denied-texas/misrepresentation">Misrepresentation</Link>
               <p>Inaccurate information on your application, even unintentional, can void your policy.</p>
             </li>
             <li>
-              <a href="/auto-insurance-claims-denied-texas/non-covered-use">Non-Covered Use</a>
+              <Link to="/auto-insurance-claims-denied-texas/non-covered-use">Non-Covered Use</Link>
               <p>Using your vehicle for commercial purposes, racing, or other excluded activities.</p>
             </li>
             <li>
-              <a href="/auto-insurance-claims-denied-texas/failure-to-cooperate">Failure to Cooperate</a>
+              <Link to="/auto-insurance-claims-denied-texas/failure-to-cooperate">Failure to Cooperate</Link>
               <p>Not providing requested documentation or failing to attend required examinations.</p>
             </li>
             <li>
-              <a href="/auto-insurance-claims-denied-texas/disputed-liability">Disputed Liability</a>
+              <Link to="/auto-insurance-claims-denied-texas/disputed-liability">Disputed Liability</Link>
               <p>Disagreement about who was at fault or the extent of damages.</p>
             </li>
             <li>
-              <a href="/auto-insurance-claims-denied-texas/excluded-vehicle">Excluded Vehicle</a>
+              <Link to="/auto-insurance-claims-denied-texas/excluded-vehicle">Excluded Vehicle</Link>
               <p>Damage to vehicles specifically excluded from your policy coverage.</p>
             </li>
             <li>
-              <a href="/auto-insurance-claims-denied-texas/coverage-limits-exceeded">Coverage Limits Exceeded</a>
+              <Link to="/auto-insurance-claims-denied-texas/coverage-limits-exceeded">Coverage Limits Exceeded</Link>
               <p>Your claim amount exceeds the maximum coverage limits in your policy.</p>
             </li>
           </ul>

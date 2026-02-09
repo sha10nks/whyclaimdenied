@@ -8,6 +8,7 @@ const About = () => {
       <Helmet>
         <title>About Us - WhyClaimDenied</title>
         <meta name="description" content="Learn about the mission behind WhyClaimDenied. Independent, clear information to help you understand insurance claim denials." />
+        <link rel="canonical" href="https://whyclaimdenied.com/about" />
       </Helmet>
       
       <Header />

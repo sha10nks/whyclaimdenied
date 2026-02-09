@@ -3,6 +3,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
+import { Link } from '../components/Link';
 
 const AutoClaimDeniedTexasExcludedVehicle = () => {
   const sd = { "@context": "https://schema.org", "@type": "Article", "headline": "Excluded Vehicle — Texas Auto Insurance Denial", "description": "How excluded-vehicle denials arise in Texas and what documents to request." };
@@ -39,7 +40,7 @@ const AutoClaimDeniedTexasExcludedVehicle = () => {
             <li>Underwriting notes indicating why the vehicle is excluded</li>
           </ul>
         </section>
-        <section className="content-section"><h2>Back to the Texas auto denial guide</h2><p><a href="/auto-insurance-claims-denied-texas">Return to Auto Insurance Claims Denied in Texas</a></p></section>
+        <section className="content-section"><h2>Back to the Texas auto denial guide</h2><p><Link to="/auto-insurance-claims-denied-texas">Return to Auto Insurance Claims Denied in Texas</Link></p></section>
         <StateHubLinks currentState="Texas" />
       </main>
 

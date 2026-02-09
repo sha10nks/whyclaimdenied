@@ -3,6 +3,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
+import { Link } from '../components/Link';
 
 const AutoClaimDeniedTexasCoverageLimits = () => {
   const sd = { "@context": "https://schema.org", "@type": "Article", "headline": "Coverage Limits Exceeded — Texas Auto Insurance Denial", "description": "What to know when claim amounts exceed Texas auto policy limits and possible options." };
@@ -39,7 +40,7 @@ const AutoClaimDeniedTexasCoverageLimits = () => {
             <li>Seek written explanations for any reductions or offsets</li>
           </ul>
         </section>
-        <section className="content-section"><h2>Back to the Texas auto denial guide</h2><p><a href="/auto-insurance-claims-denied-texas">Return to Auto Insurance Claims Denied in Texas</a></p></section>
+        <section className="content-section"><h2>Back to the Texas auto denial guide</h2><p><Link to="/auto-insurance-claims-denied-texas">Return to Auto Insurance Claims Denied in Texas</Link></p></section>
         <StateHubLinks currentState="Texas" />
       </main>
 

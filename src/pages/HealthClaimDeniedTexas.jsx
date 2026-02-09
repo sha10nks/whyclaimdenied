@@ -3,6 +3,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
+import { Link } from '../components/Link';
 
 const HealthClaimDeniedTexas = () => {
   const structuredData = {
@@ -81,43 +82,43 @@ const HealthClaimDeniedTexas = () => {
           <h2>Common Health Claim Denial Reasons in Texas</h2>
           <ul>
             <li>
-              <a href="/health-insurance-claims-denied-texas/lack-of-medical-necessity">Lack of Medical Necessity</a>
+              <Link to="/health-insurance-claims-denied-texas/lack-of-medical-necessity">Lack of Medical Necessity</Link>
               <p>Your insurance company determined the treatment wasn't medically necessary according to their criteria.</p>
             </li>
             <li>
-              <a href="/health-insurance-claims-denied-texas/out-of-network-provider">Out-of-Network Provider</a>
+              <Link to="/health-insurance-claims-denied-texas/out-of-network-provider">Out-of-Network Provider</Link>
               <p>You received care from a provider who isn't in your insurance plan's network.</p>
             </li>
             <li>
-              <a href="/health-insurance-claims-denied-texas/prior-authorization-missing">Prior Authorization Missing</a>
+              <Link to="/health-insurance-claims-denied-texas/prior-authorization-missing">Prior Authorization Missing</Link>
               <p>Required pre-approval wasn't obtained before receiving the medical service.</p>
             </li>
             <li>
-              <a href="/health-insurance-claims-denied-texas/experimental-treatment">Experimental Treatment</a>
+              <Link to="/health-insurance-claims-denied-texas/experimental-treatment">Experimental Treatment</Link>
               <p>The treatment is considered experimental or investigational by your insurance company.</p>
             </li>
             <li>
-              <a href="/health-insurance-claims-denied-texas/coverage-exclusions">Coverage Exclusions</a>
+              <Link to="/health-insurance-claims-denied-texas/coverage-exclusions">Coverage Exclusions</Link>
               <p>The service or treatment is specifically excluded from your policy coverage.</p>
             </li>
             <li>
-              <a href="/health-insurance-claims-denied-texas/filing-errors">Filing Errors</a>
+              <Link to="/health-insurance-claims-denied-texas/filing-errors">Filing Errors</Link>
               <p>Administrative errors, incorrect codes, or missing information on the claim form.</p>
             </li>
             <li>
-              <a href="/health-insurance-claims-denied-texas/timely-filing-violations">Timely Filing Violations</a>
+              <Link to="/health-insurance-claims-denied-texas/timely-filing-violations">Timely Filing Violations</Link>
               <p>The claim wasn't submitted within the required timeframe after services were provided.</p>
             </li>
             <li>
-              <a href="/health-insurance-claims-denied-texas/pre-existing-conditions">Pre-Existing Conditions</a>
+              <Link to="/health-insurance-claims-denied-texas/pre-existing-conditions">Pre-Existing Conditions</Link>
               <p>Your condition existed before your coverage began and isn't covered under your plan.</p>
             </li>
             <li>
-              <a href="/health-insurance-claims-denied-texas/benefits-exhausted">Benefits Exhausted</a>
+              <Link to="/health-insurance-claims-denied-texas/benefits-exhausted">Benefits Exhausted</Link>
               <p>You've reached your plan's maximum benefit limits for the year or for your lifetime.</p>
             </li>
             <li>
-              <a href="/health-insurance-claims-denied-texas/provider-credential-issues">Provider Credential Issues</a>
+              <Link to="/health-insurance-claims-denied-texas/provider-credential-issues">Provider Credential Issues</Link>
               <p>Your healthcare provider has licensing, credentialing, or billing issues that affect coverage.</p>
             </li>
           </ul>

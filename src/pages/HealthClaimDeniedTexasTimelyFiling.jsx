@@ -3,6 +3,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
+import { Link } from '../components/Link';
 
 const HealthClaimDeniedTexasTimelyFiling = () => {
   const sd = { "@context": "https://schema.org", "@type": "Article", "headline": "Timely Filing Violations — Texas Health Insurance Denial", "description": "What timely filing means in Texas health claims and practical steps when a deadline causes denial." };
@@ -29,7 +30,7 @@ const HealthClaimDeniedTexasTimelyFiling = () => {
         <h1>Timely Filing Violations — Texas Health Insurance Denial</h1>
         <section className="content-section"><h2>Why this denial happens</h2><p>Plans set submission deadlines for claims. If the provider submits late, the plan may deny.</p></section>
         <section className="content-section"><h2>What to do</h2><ol><li>Ask for the plan deadline and proof of when the claim was received</li><li>Provide evidence of timely submission if available</li><li>Request reconsideration or appeal with documentation</li></ol></section>
-        <section className="content-section"><h2>Back to the Texas health denial guide</h2><p><a href="/health-insurance-claims-denied-texas">Return to Health Insurance Claims Denied in Texas</a></p></section>
+        <section className="content-section"><h2>Back to the Texas health denial guide</h2><p><Link to="/health-insurance-claims-denied-texas">Return to Health Insurance Claims Denied in Texas</Link></p></section>
         <StateHubLinks currentState="Texas" />
       </main>
 

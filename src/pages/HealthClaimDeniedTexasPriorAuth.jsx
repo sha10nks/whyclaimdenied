@@ -3,6 +3,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
+import { Link } from '../components/Link';
 
 const HealthClaimDeniedTexasPriorAuth = () => {
   const sd = { "@context": "https://schema.org", "@type": "Article", "headline": "Prior Authorization Missing — Texas Health Insurance Denial", "description": "Why prior authorization denials happen in Texas and how to respond, including plan documents and appeal routes." };
@@ -39,7 +40,7 @@ const HealthClaimDeniedTexasPriorAuth = () => {
             <li>Use the plan appeal process; consider TDI complaint if timelines or notices are unclear.</li>
           </ol>
         </section>
-        <section className="content-section"><h2>Back to the Texas health denial guide</h2><p><a href="/health-insurance-claims-denied-texas">Return to Health Insurance Claims Denied in Texas</a></p></section>
+        <section className="content-section"><h2>Back to the Texas health denial guide</h2><p><Link to="/health-insurance-claims-denied-texas">Return to Health Insurance Claims Denied in Texas</Link></p></section>
         <StateHubLinks currentState="Texas" />
       </main>
 

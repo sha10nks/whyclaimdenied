@@ -3,6 +3,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
+import { Link } from '../components/Link';
 
 const AutoClaimDeniedTexasMisrepresentation = () => {
   const structuredData = {
@@ -53,7 +54,7 @@ const AutoClaimDeniedTexasMisrepresentation = () => {
         </section>
         <section className="content-section">
           <h2>Back to the Texas auto denial guide</h2>
-          <p><a href="/auto-insurance-claims-denied-texas">Return to Auto Insurance Claims Denied in Texas</a></p>
+          <p><Link to="/auto-insurance-claims-denied-texas">Return to Auto Insurance Claims Denied in Texas</Link></p>
         </section>
         <StateHubLinks currentState="Texas" />
       </main>

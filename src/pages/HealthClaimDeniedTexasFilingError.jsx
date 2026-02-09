@@ -3,6 +3,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
+import { Link } from '../components/Link';
 
 const HealthClaimDeniedTexasFilingError = () => {
   const sd = { "@context": "https://schema.org", "@type": "Article", "headline": "Filing Errors — Texas Health Insurance Denial", "description": "Common filing/documentation errors leading to Texas health claim denials and how to correct them." };
@@ -29,7 +30,7 @@ const HealthClaimDeniedTexasFilingError = () => {
         <h1>Filing Errors — Texas Health Insurance Denial</h1>
         <section className="content-section"><h2>Why this denial happens</h2><p>Incorrect codes, missing modifiers, or incomplete documentation can cause denials.</p></section>
         <section className="content-section"><h2>How to fix</h2><ul><li>Ask for the EOB denial code and narrative</li><li>Request provider resubmission with corrected coding</li><li>Attach clinical notes supporting the billed service</li></ul></section>
-        <section className="content-section"><h2>Back to the Texas health denial guide</h2><p><a href="/health-insurance-claims-denied-texas">Return to Health Insurance Claims Denied in Texas</a></p></section>
+        <section className="content-section"><h2>Back to the Texas health denial guide</h2><p><Link to="/health-insurance-claims-denied-texas">Return to Health Insurance Claims Denied in Texas</Link></p></section>
         <StateHubLinks currentState="Texas" />
       </main>
 

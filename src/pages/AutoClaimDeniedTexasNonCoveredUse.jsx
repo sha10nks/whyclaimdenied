@@ -3,6 +3,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
+import { Link } from '../components/Link';
 
 const AutoClaimDeniedTexasNonCoveredUse = () => {
   const sd = { "@context": "https://schema.org", "@type": "Article", "headline": "Non-Covered Use — Texas Auto Insurance Denial", "description": "Understand non-covered use denials in Texas (business use, racing, other exclusions) and next steps." };
@@ -39,7 +40,7 @@ const AutoClaimDeniedTexasNonCoveredUse = () => {
             <li>Ask whether any endorsements or optional coverages apply.</li>
           </ol>
         </section>
-        <section className="content-section"><h2>Back to the Texas auto denial guide</h2><p><a href="/auto-insurance-claims-denied-texas">Return to Auto Insurance Claims Denied in Texas</a></p></section>
+        <section className="content-section"><h2>Back to the Texas auto denial guide</h2><p><Link to="/auto-insurance-claims-denied-texas">Return to Auto Insurance Claims Denied in Texas</Link></p></section>
         <StateHubLinks currentState="Texas" />
       </main>
 
