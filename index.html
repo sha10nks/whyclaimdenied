@@ -1,13 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
     <script>
       (() => {
-        const isLocalhost =
-          location.hostname === 'localhost' ||
-          location.hostname === '127.0.0.1' ||
-          location.hostname === '[::1]';
+        const allowedHosts = new Set(['whyclaimdenied.com', 'www.whyclaimdenied.com']);
+        const isNonProductionHost = !allowedHosts.has(location.hostname);
 
         const doNotTrackEnabled =
           navigator.doNotTrack === '1' ||
@@ -15,7 +12,7 @@
           navigator.msDoNotTrack === '1' ||
           navigator.globalPrivacyControl === true;
 
-        if (isLocalhost || doNotTrackEnabled) return;
+        if (isNonProductionHost || doNotTrackEnabled) return;
 
         const measurementId = 'G-KPSWKNCJ7M';
 
@@ -35,7 +32,10 @@
       })();
     </script>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg?v=2026-01-31" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WhyClaimDenied</title>
   </head>

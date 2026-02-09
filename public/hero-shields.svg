@@ -1,0 +1,45 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1920" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7FBFF" />
+      <stop offset="0.55" stop-color="#EEF6FF" />
+      <stop offset="1" stop-color="#F7FBFA" />
+    </linearGradient>
+    <linearGradient id="strokeNavy" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#003366" stop-opacity="0.55" />
+      <stop offset="1" stop-color="#005670" stop-opacity="0.4" />
+    </linearGradient>
+    <linearGradient id="strokeTeal" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0B4F6C" stop-opacity="0.55" />
+      <stop offset="1" stop-color="#2B6CB0" stop-opacity="0.35" />
+    </linearGradient>
+    <filter id="softBlur" x="-180" y="-180" width="2280" height="1440" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="22" />
+    </filter>
+    <filter id="lineBlur" x="-40" y="-40" width="2000" height="1160" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="1.4" />
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)" />
+
+  <g filter="url(#softBlur)" opacity="0.72">
+    <path d="M168 102C344 34 546 44 690 114C846 190 960 326 954 494C948 670 786 798 604 852C422 906 254 866 152 744C44 616 -10 184 168 102Z" fill="#005670" fill-opacity="0.13" />
+    <path d="M1760 144C1564 48 1300 70 1140 194C986 314 988 534 1086 698C1214 916 1550 970 1744 824C1940 678 1962 246 1760 144Z" fill="#003366" fill-opacity="0.11" />
+  </g>
+
+  <g opacity="0.26" filter="url(#lineBlur)">
+    <path d="M312 278C324 236 368 210 412 214C462 218 500 260 502 310C504 372 458 422 398 420C350 418 300 354 312 278Z" stroke="url(#strokeTeal)" stroke-width="10" />
+    <path d="M360 242C422 210 492 226 534 272C574 316 574 388 534 434C496 478 430 494 370 468C310 442 274 382 286 322C294 282 320 260 360 242Z" stroke="url(#strokeTeal)" stroke-width="6" />
+  </g>
+
+  <g opacity="0.24" filter="url(#lineBlur)">
+    <path d="M1486 572C1504 520 1560 496 1616 506C1682 518 1724 582 1712 654C1698 732 1622 786 1546 766C1486 750 1450 662 1486 572Z" stroke="url(#strokeNavy)" stroke-width="10" />
+    <path d="M1506 538C1596 494 1704 538 1744 632C1782 720 1734 824 1636 852C1542 878 1440 814 1428 714C1418 632 1450 568 1506 538Z" stroke="url(#strokeNavy)" stroke-width="6" />
+  </g>
+
+  <g opacity="0.16">
+    <path d="M0 736C256 602 590 536 962 548C1304 560 1622 628 1920 770" stroke="#003366" stroke-opacity="0.35" stroke-width="12" stroke-linecap="round" />
+    <path d="M0 420C262 264 598 198 972 214C1320 230 1630 304 1920 444" stroke="#005670" stroke-opacity="0.3" stroke-width="10" stroke-linecap="round" />
+  </g>
+</svg>

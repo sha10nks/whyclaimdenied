@@ -3,6 +3,8 @@ import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
 
 const Home = lazy(() => import("./pages/Home"));
+const RouteError = lazy(() => import("./pages/RouteError"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 const ClaimDeniedCalifornia = lazy(() => import("./pages/ClaimDeniedCalifornia"));
 const AutoClaimDeniedCalifornia = lazy(() => import("./pages/AutoClaimDeniedCalifornia"));
 const HealthClaimDeniedCalifornia = lazy(() => import("./pages/HealthClaimDeniedCalifornia"));
@@ -74,6 +76,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
+    errorElement: <RouteError />,
     children: [
       {
         index: true,
@@ -330,6 +333,10 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },

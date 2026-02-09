@@ -156,6 +156,205 @@
   margin-top: var(--spacing-md);
 }
 
+.home-hero {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-top: 0;
+  margin-bottom: var(--spacing-lg);
+  padding: clamp(28px, 4vw, 44px) 0;
+  background: url('/hero-shields.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home-hero-inner {
+  max-width: min(1120px, calc(100vw - 48px));
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.home-hero-copy h1 {
+  margin-top: 0;
+}
+
+.home-hero-lede {
+  margin-top: 10px;
+  max-width: 70ch;
+  color: var(--color-text-muted);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.trust-cues {
+  margin: var(--spacing-md) 0 0;
+  padding-left: 0;
+  list-style: none;
+  color: var(--color-text-muted);
+  display: inline-grid;
+  gap: 6px;
+}
+
+.trust-cues li {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.trust-cues li::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(0, 51, 102, 0.25);
+  flex: 0 0 auto;
+}
+
+.home-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: var(--spacing-md);
+  justify-content: center;
+}
+
+.home-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.home-cta-primary {
+  background: var(--color-link);
+  color: #ffffff;
+}
+
+.home-cta-primary:hover {
+  background: var(--color-link-hover);
+  color: #ffffff;
+}
+
+
+.home-guides {
+  margin-top: var(--spacing-xl);
+}
+
+.home-guides-list {
+  display: grid;
+  gap: 12px;
+  margin-top: var(--spacing-md);
+}
+
+.state-accordion {
+  border: 1px solid color-mix(in srgb, var(--state-accent, #003366) 32%, var(--color-border-subtle));
+  border-radius: 14px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.state-accordion-summary {
+  cursor: pointer;
+  padding: 14px 16px;
+  list-style: none;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--state-accent, #003366) 18%, #ffffff),
+    #ffffff
+  );
+}
+
+.state-accordion-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #111;
+}
+
+.state-accordion-summary::-webkit-details-marker {
+  display: none;
+}
+
+.state-accordion[open] .state-accordion-summary {
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.state-accordion-body {
+  padding: 14px 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.state-category {
+  border: 1px solid color-mix(in srgb, var(--state-accent, #003366) 18%, var(--color-border-subtle));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--state-accent, #003366) 5%, #ffffff);
+  overflow: hidden;
+}
+
+.state-category-summary {
+  cursor: pointer;
+  padding: 12px 14px;
+  font-weight: 800;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.state-category-summary::-webkit-details-marker {
+  display: none;
+}
+
+.state-category-summary::after {
+  content: '▾';
+  font-weight: 900;
+  color: color-mix(in srgb, var(--state-accent, #003366) 70%, #111);
+}
+
+.state-category[open] .state-category-summary {
+  border-bottom: 1px solid color-mix(in srgb, var(--state-accent, #003366) 18%, var(--color-border-subtle));
+}
+
+.state-category-body {
+  padding: 12px 14px;
+}
+
+.state-category-link {
+  margin: 0 0 10px;
+}
+
+.state-reasons-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--color-text-muted);
+  display: grid;
+  gap: 6px;
+}
+
+.state-reasons-list a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.state-reasons-list a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+.reasons {
+  display: grid;
+  gap: 8px;
+  padding-left: 18px;
+}
+
 /* Footer */
 .site-footer {
   background: #003366; /* Navy Blue matching header */
@@ -330,6 +529,14 @@
 }
 
 @media (max-width: 720px) {
+  .home-hero {
+    padding: 22px 0;
+  }
+
+  .home-cta {
+    width: 100%;
+  }
+
   .header-inner {
     flex-wrap: wrap;
   }
