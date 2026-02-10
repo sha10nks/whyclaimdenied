@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/generate-favicons.mjs && node scripts/generate-netlify-redirects.mjs",
+    "prebuild": "node scripts/generate-netlify-redirects.mjs",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
