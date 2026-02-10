@@ -67,6 +67,25 @@ const HealthClaimDeniedTexasPreExisting = lazy(() => import("./pages/HealthClaim
 const HealthClaimDeniedTexasBenefitExhausted = lazy(() => import("./pages/HealthClaimDeniedTexasBenefitExhausted"));
 const HealthClaimDeniedTexasProviderCredential = lazy(() => import("./pages/HealthClaimDeniedTexasProviderCredential"));
 
+const AutoClaimDeniedNewYork = lazy(() => import("./pages/AutoClaimDeniedNewYork"));
+const HealthClaimDeniedNewYork = lazy(() => import("./pages/HealthClaimDeniedNewYork"));
+const AutoClaimDeniedNewYorkNoCoverageAtTimeOfLoss = lazy(() => import("./pages/AutoClaimDeniedNewYorkNoCoverageAtTimeOfLoss"));
+const AutoClaimDeniedNewYorkMissedReportingDeadline = lazy(() => import("./pages/AutoClaimDeniedNewYorkMissedReportingDeadline"));
+const AutoClaimDeniedNewYorkPolicyLapseOrCancellation = lazy(() => import("./pages/AutoClaimDeniedNewYorkPolicyLapseOrCancellation"));
+const AutoClaimDeniedNewYorkExcludedDriver = lazy(() => import("./pages/AutoClaimDeniedNewYorkExcludedDriver"));
+const AutoClaimDeniedNewYorkMisrepresentationOrConcealment = lazy(() => import("./pages/AutoClaimDeniedNewYorkMisrepresentationOrConcealment"));
+const AutoClaimDeniedNewYorkNonCoveredUse = lazy(() => import("./pages/AutoClaimDeniedNewYorkNonCoveredUse"));
+const AutoClaimDeniedNewYorkFailureToCooperate = lazy(() => import("./pages/AutoClaimDeniedNewYorkFailureToCooperate"));
+const AutoClaimDeniedNewYorkDisputedLiability = lazy(() => import("./pages/AutoClaimDeniedNewYorkDisputedLiability"));
+const HealthClaimDeniedNewYorkPriorAuthorizationMissing = lazy(() => import("./pages/HealthClaimDeniedNewYorkPriorAuthorizationMissing"));
+const HealthClaimDeniedNewYorkNotMedicallyNecessary = lazy(() => import("./pages/HealthClaimDeniedNewYorkNotMedicallyNecessary"));
+const HealthClaimDeniedNewYorkOutOfNetworkProvider = lazy(() => import("./pages/HealthClaimDeniedNewYorkOutOfNetworkProvider"));
+const HealthClaimDeniedNewYorkCodingOrDocumentationError = lazy(() => import("./pages/HealthClaimDeniedNewYorkCodingOrDocumentationError"));
+const HealthClaimDeniedNewYorkExperimentalOrInvestigational = lazy(() => import("./pages/HealthClaimDeniedNewYorkExperimentalOrInvestigational"));
+const HealthClaimDeniedNewYorkBenefitOrServiceExcluded = lazy(() => import("./pages/HealthClaimDeniedNewYorkBenefitOrServiceExcluded"));
+const HealthClaimDeniedNewYorkTimelyFilingIssue = lazy(() => import("./pages/HealthClaimDeniedNewYorkTimelyFilingIssue"));
+const HealthClaimDeniedNewYorkCoordinationOfBenefits = lazy(() => import("./pages/HealthClaimDeniedNewYorkCoordinationOfBenefits"));
+
 const About = lazy(() => import("./pages/About"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Privacy = lazy(() => import("./pages/Privacy"));
@@ -225,6 +244,78 @@ const router = createBrowserRouter([
       {
         path: "health-insurance-claims-denied-florida/coordination-of-benefits",
         element: <HealthClaimDeniedFloridaCoordinationOfBenefits />,
+      },
+      {
+        path: "auto-insurance-claims-denied-new-york",
+        element: <AutoClaimDeniedNewYork />,
+      },
+      {
+        path: "auto-insurance-claims-denied-new-york/no-coverage-at-time-of-loss",
+        element: <AutoClaimDeniedNewYorkNoCoverageAtTimeOfLoss />,
+      },
+      {
+        path: "auto-insurance-claims-denied-new-york/missed-reporting-deadline",
+        element: <AutoClaimDeniedNewYorkMissedReportingDeadline />,
+      },
+      {
+        path: "auto-insurance-claims-denied-new-york/policy-lapse-or-cancellation",
+        element: <AutoClaimDeniedNewYorkPolicyLapseOrCancellation />,
+      },
+      {
+        path: "auto-insurance-claims-denied-new-york/excluded-driver",
+        element: <AutoClaimDeniedNewYorkExcludedDriver />,
+      },
+      {
+        path: "auto-insurance-claims-denied-new-york/misrepresentation-or-concealment",
+        element: <AutoClaimDeniedNewYorkMisrepresentationOrConcealment />,
+      },
+      {
+        path: "auto-insurance-claims-denied-new-york/non-covered-use",
+        element: <AutoClaimDeniedNewYorkNonCoveredUse />,
+      },
+      {
+        path: "auto-insurance-claims-denied-new-york/failure-to-cooperate",
+        element: <AutoClaimDeniedNewYorkFailureToCooperate />,
+      },
+      {
+        path: "auto-insurance-claims-denied-new-york/disputed-liability",
+        element: <AutoClaimDeniedNewYorkDisputedLiability />,
+      },
+      {
+        path: "health-insurance-claims-denied-new-york",
+        element: <HealthClaimDeniedNewYork />,
+      },
+      {
+        path: "health-insurance-claims-denied-new-york/prior-authorization-missing",
+        element: <HealthClaimDeniedNewYorkPriorAuthorizationMissing />,
+      },
+      {
+        path: "health-insurance-claims-denied-new-york/not-medically-necessary",
+        element: <HealthClaimDeniedNewYorkNotMedicallyNecessary />,
+      },
+      {
+        path: "health-insurance-claims-denied-new-york/out-of-network-provider",
+        element: <HealthClaimDeniedNewYorkOutOfNetworkProvider />,
+      },
+      {
+        path: "health-insurance-claims-denied-new-york/coding-or-documentation-error",
+        element: <HealthClaimDeniedNewYorkCodingOrDocumentationError />,
+      },
+      {
+        path: "health-insurance-claims-denied-new-york/experimental-or-investigational",
+        element: <HealthClaimDeniedNewYorkExperimentalOrInvestigational />,
+      },
+      {
+        path: "health-insurance-claims-denied-new-york/benefit-or-service-excluded",
+        element: <HealthClaimDeniedNewYorkBenefitOrServiceExcluded />,
+      },
+      {
+        path: "health-insurance-claims-denied-new-york/timely-filing-issue",
+        element: <HealthClaimDeniedNewYorkTimelyFilingIssue />,
+      },
+      {
+        path: "health-insurance-claims-denied-new-york/coordination-of-benefits",
+        element: <HealthClaimDeniedNewYorkCoordinationOfBenefits />,
       },
       {
         path: "why-claims-get-denied-california",

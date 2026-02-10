@@ -301,6 +301,96 @@ export const META = {
       description: 'How provider credential denials work in Texas health claims and what to verify with your insurer.',
       canonical: `${BASE_URL}/health-insurance-claims-denied-texas/provider-credential-issues`,
     },
+    autoNY: {
+      title: 'Auto Insurance Claims Denied in New York',
+      description: 'Common denial reasons, key New York considerations, and practical steps to challenge a denied auto claim.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-new-york`,
+    },
+    healthNY: {
+      title: 'Health Insurance Claims Denied in New York',
+      description: 'Why health claims get denied in New York and how to use plan appeals, DFS external appeal, and consumer complaints.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-new-york`,
+    },
+    autoNY_noCoverage: {
+      title: 'No Coverage at Time of Loss (New York Auto Claims)',
+      description: 'Why insurers deny for no coverage at time of loss in New York auto claims and what to check next.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-new-york/no-coverage-at-time-of-loss`,
+    },
+    autoNY_missedReporting: {
+      title: 'Missed Reporting Deadline (New York Auto Claims)',
+      description: 'What “late notice” means in New York auto claims and how to respond when reporting was delayed.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-new-york/missed-reporting-deadline`,
+    },
+    autoNY_lapse: {
+      title: 'Policy Lapse or Cancellation (New York Auto Claims)',
+      description: 'How lapse and cancellation denials work in New York auto claims and the key documents to request.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-new-york/policy-lapse-or-cancellation`,
+    },
+    autoNY_excludedDriver: {
+      title: 'Excluded Driver (New York Auto Claims)',
+      description: 'How excluded-driver denials happen in New York auto claims and what to request from the insurer.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-new-york/excluded-driver`,
+    },
+    autoNY_misrep: {
+      title: 'Misrepresentation or Concealment (New York Auto Claims)',
+      description: 'What misrepresentation denials mean in New York auto insurance claims and how to challenge the facts.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-new-york/misrepresentation-or-concealment`,
+    },
+    autoNY_nonCoveredUse: {
+      title: 'Non-Covered Use (New York Auto Claims)',
+      description: 'Why insurers deny claims for non-covered use in New York and how to document what really happened.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-new-york/non-covered-use`,
+    },
+    autoNY_failureToCooperate: {
+      title: 'Failure to Cooperate (New York Auto Claims)',
+      description: 'What insurers mean by “failure to cooperate” in New York auto claims and how to cure the issue.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-new-york/failure-to-cooperate`,
+    },
+    autoNY_disputedLiability: {
+      title: 'Disputed Liability or Fault (New York Auto Claims)',
+      description: 'How liability disputes lead to claim denials and what evidence helps in New York auto claims.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-new-york/disputed-liability`,
+    },
+    healthNY_priorAuth: {
+      title: 'Prior Authorization Missing (New York Health Claims)',
+      description: 'Why health claims get denied for missing prior authorization in New York and what to do next.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-new-york/prior-authorization-missing`,
+    },
+    healthNY_medNec: {
+      title: 'Not Medically Necessary (New York Health Claims)',
+      description: 'How medical necessity denials work in New York and what to request for a stronger appeal.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-new-york/not-medically-necessary`,
+    },
+    healthNY_oON: {
+      title: 'Out-of-Network Provider (New York Health Claims)',
+      description: 'Common out-of-network denial patterns in New York and the questions to ask your plan.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-new-york/out-of-network-provider`,
+    },
+    healthNY_coding: {
+      title: 'Coding or Documentation Error (New York Health Claims)',
+      description: 'How billing and documentation problems cause denials in New York health claims and how to fix them.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-new-york/coding-or-documentation-error`,
+    },
+    healthNY_experimental: {
+      title: 'Experimental or Investigational (New York Health Claims)',
+      description: 'What “experimental” denials mean in New York health coverage and how to appeal with evidence.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-new-york/experimental-or-investigational`,
+    },
+    healthNY_excludedBenefit: {
+      title: 'Benefit or Service Excluded (New York Health Claims)',
+      description: 'How excluded-benefit denials work in New York health plans and what to check in your contract.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-new-york/benefit-or-service-excluded`,
+    },
+    healthNY_timelyFiling: {
+      title: 'Timely Filing Issue (New York Health Claims)',
+      description: 'What timely filing denials mean in New York health claims and how to request reconsideration.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-new-york/timely-filing-issue`,
+    },
+    healthNY_cob: {
+      title: 'Coordination of Benefits (New York Health Claims)',
+      description: 'How coordination of benefits causes denials in New York health claims and how to resolve COB holds.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-new-york/coordination-of-benefits`,
+    },
 };
 
 export const getMetaData = (page) => {
