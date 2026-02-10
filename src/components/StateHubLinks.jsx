@@ -1,25 +1,38 @@
 import { Link } from './Link';
+import { META } from '../seo/meta';
 
-const STATES = [
-  {
-    name: 'California',
-    autoPath: '/auto-insurance-claims-denied-california',
-    healthPath: '/health-insurance-claims-denied-california',
-  },
-  {
-    name: 'Florida',
-    autoPath: '/auto-insurance-claims-denied-florida',
-    healthPath: '/health-insurance-claims-denied-florida',
-  },
-  {
-    name: 'Texas',
-    autoPath: '/auto-insurance-claims-denied-texas',
-    healthPath: '/health-insurance-claims-denied-texas',
-  },
-];
+const slugToLabel = (slug) =>
+  slug
+    .split('-')
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(' ');
+
+const buildStates = () => {
+  const states = new Map();
+  Object.values(META).forEach((m) => {
+    if (!m?.canonical) return;
+    const p = new URL(m.canonical).pathname;
+    const autoMatch = p.match(/^\/auto-insurance-claims-denied-([a-z-]+)$/);
+    const healthMatch = p.match(/^\/health-insurance-claims-denied-([a-z-]+)$/);
+    if (autoMatch) {
+      const slug = autoMatch[1];
+      const entry = states.get(slug) || { name: slugToLabel(slug) };
+      entry.autoPath = p;
+      states.set(slug, entry);
+    }
+    if (healthMatch) {
+      const slug = healthMatch[1];
+      const entry = states.get(slug) || { name: slugToLabel(slug) };
+      entry.healthPath = p;
+      states.set(slug, entry);
+    }
+  });
+  return Array.from(states.values()).filter((s) => s.autoPath && s.healthPath).sort((a, b) => a.name.localeCompare(b.name));
+};
 
 export default function StateHubLinks({ currentState }) {
-  const otherStates = STATES.filter((s) => s.name !== currentState);
+  const allStates = buildStates();
+  const otherStates = allStates.filter((s) => s.name.toLowerCase() !== String(currentState || '').toLowerCase());
 
   return (
     <section>

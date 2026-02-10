@@ -1,9 +1,13 @@
 import { Helmet } from 'react-helmet-async'
 import { Link } from '../components/Link'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import StateHubLinks from '../components/StateHubLinks'
 
 export default function AutoClaimDeniedNewYorkMisrepresentationOrConcealment() {
   return (
+    <>
+    <Header />
     <main className="container">
       <Helmet>
         <title>Misrepresentation or Concealment (New York Auto Claims)</title>
@@ -12,6 +16,7 @@ export default function AutoClaimDeniedNewYorkMisrepresentationOrConcealment() {
       </Helmet>
       <h1>Misrepresentation or Concealment</h1>
       <p>Insurers may deny when they believe facts were misstated or material information omitted. Ask for the records and statements relied on and the clause permitting denial.</p>
+      <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[AdSense Block]</div>
       <section aria-labelledby="ny-auto-misrep-steps"><h2 id="ny-auto-misrep-steps">Next steps</h2>
         <ul>
           <li>Request the investigation notes and policy provisions.</li>
@@ -21,7 +26,9 @@ export default function AutoClaimDeniedNewYorkMisrepresentationOrConcealment() {
         <p><a href="https://www.dfs.ny.gov/complaint">New York DFS Insurance Complaint Portal</a></p>
       </section>
       <p><Link to="/auto-insurance-claims-denied-new-york">Back to New York auto guide</Link></p>
-      <StateHubLinks currentState="new-york" />
+      <StateHubLinks currentState="New York" />
     </main>
+    <Footer />
+    </>
   )
 }

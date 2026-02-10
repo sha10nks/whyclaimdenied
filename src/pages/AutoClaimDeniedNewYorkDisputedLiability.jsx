@@ -1,9 +1,13 @@
 import { Helmet } from 'react-helmet-async'
 import { Link } from '../components/Link'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import StateHubLinks from '../components/StateHubLinks'
 
 export default function AutoClaimDeniedNewYorkDisputedLiability() {
   return (
+    <>
+    <Header />
     <main className="container">
       <Helmet>
         <title>Disputed Liability (New York Auto Claims)</title>
@@ -12,6 +16,7 @@ export default function AutoClaimDeniedNewYorkDisputedLiability() {
       </Helmet>
       <h1>Disputed Liability</h1>
       <p>Insurers may deny or limit payment when fault is unclear. Gather documentation and request the insurer’s liability analysis.</p>
+      <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[AdSense Block]</div>
       <section aria-labelledby="ny-auto-liab-steps"><h2 id="ny-auto-liab-steps">Next steps</h2>
         <ul>
           <li>Provide photos, repair estimates, police reports, and witness statements.</li>
@@ -21,7 +26,9 @@ export default function AutoClaimDeniedNewYorkDisputedLiability() {
         <p><a href="https://www.dfs.ny.gov/complaint">New York DFS Insurance Complaint Portal</a></p>
       </section>
       <p><Link to="/auto-insurance-claims-denied-new-york">Back to New York auto guide</Link></p>
-      <StateHubLinks currentState="new-york" />
+      <StateHubLinks currentState="New York" />
     </main>
+    <Footer />
+    </>
   )
 }

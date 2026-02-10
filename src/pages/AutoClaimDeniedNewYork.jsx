@@ -1,10 +1,14 @@
 import { Helmet } from 'react-helmet-async'
 import { Link } from '../components/Link'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import StateHubLinks from '../components/StateHubLinks'
 
 export default function AutoClaimDeniedNewYork() {
   return (
-    <main className="container">
+    <>
+      <Header />
+      <main className="container">
       <Helmet>
         <title>Auto Insurance Claims Denied in New York</title>
         <meta name="description" content="New York-specific explainer on why auto claims get denied and practical next steps with DFS resources." />
@@ -19,6 +23,7 @@ export default function AutoClaimDeniedNewYork() {
         <p>Start by reviewing your declarations page, endorsements, and the insurer’s written explanation. Ask for the exact policy provisions relied upon and any investigative notes used to reach the decision.</p>
       </section>
 
+      <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[AdSense Block 1]</div>
       <section aria-labelledby="ny-auto-common"><h2 id="ny-auto-common">Common auto claim denial reasons in New York</h2>
         <ul>
           <li><Link to="/auto-insurance-claims-denied-new-york/no-coverage-at-time-of-loss">No coverage at time of loss</Link></li>
@@ -45,6 +50,7 @@ export default function AutoClaimDeniedNewYork() {
         </ul>
       </section>
 
+      <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[AdSense Block 2]</div>
       <section aria-labelledby="ny-auto-appeals"><h2 id="ny-auto-appeals">Appeals and complaints in New York</h2>
         <p>Consumers can file complaints with the New York Department of Financial Services (DFS). DFS provides guidance on insurance issues and accepts complaints online.</p>
         <p><a href="https://www.dfs.ny.gov/complaint">New York DFS Insurance Complaint Portal</a></p>
@@ -75,7 +81,9 @@ export default function AutoClaimDeniedNewYork() {
         </ul>
       </section>
 
-      <StateHubLinks currentState="new-york" />
+      <StateHubLinks currentState="New York" />
     </main>
+    <Footer />
+    </>
   )
 }

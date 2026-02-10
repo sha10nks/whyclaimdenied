@@ -121,7 +121,7 @@ At the bottom of every page, include a section titled:
 “Insurance Claim Denial Guides by State”
 Rules:
 Text-based links only
-Link to all existing state pages
+Link to all existing state pages (component `StateHubLinks` — dynamic from `META`; pass human-readable current state name)
 Do NOT link to the current state
 Identical placement and layout across all pages
 When a new state is added:
@@ -143,6 +143,12 @@ AutoClaimDenied[State].jsx
 AutoClaimDenied[State][Reason].jsx
 HealthClaimDenied[State].jsx
 HealthClaimDenied[State][Reason].jsx
+Global Layout Requirements (REQUIRED)
+Include on EVERY page:
+- Global navbar/header: import and render `Header` at the top
+- Global footer: import and render `Footer` at the bottom
+- Standard AdSense placeholders: include two `<div className="ad-placeholder">` blocks on pillar pages and at least one on denial reason pages, placed following the pattern used on California pages
+
 SEO Files (REQUIRED)
 Update:
 /src/seo/meta.js

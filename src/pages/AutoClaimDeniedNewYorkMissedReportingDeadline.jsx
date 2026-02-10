@@ -1,9 +1,13 @@
 import { Helmet } from 'react-helmet-async'
 import { Link } from '../components/Link'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import StateHubLinks from '../components/StateHubLinks'
 
 export default function AutoClaimDeniedNewYorkMissedReportingDeadline() {
   return (
+    <>
+    <Header />
     <main className="container">
       <Helmet>
         <title>Missed Reporting Deadline (New York Auto Claims)</title>
@@ -12,6 +16,7 @@ export default function AutoClaimDeniedNewYorkMissedReportingDeadline() {
       </Helmet>
       <h1>Missed Reporting Deadline</h1>
       <p>Policies require prompt notice. If the insurer cites late reporting, ask for the provision, the date they consider notice received, and whether prejudice is claimed.</p>
+      <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[AdSense Block]</div>
       <section aria-labelledby="ny-auto-late-steps"><h2 id="ny-auto-late-steps">Next steps</h2>
         <ul>
           <li>Explain the reason for delay and provide supporting documentation.</li>
@@ -21,7 +26,9 @@ export default function AutoClaimDeniedNewYorkMissedReportingDeadline() {
         <p><a href="https://www.dfs.ny.gov/complaint">New York DFS Insurance Complaint Portal</a></p>
       </section>
       <p><Link to="/auto-insurance-claims-denied-new-york">Back to New York auto guide</Link></p>
-      <StateHubLinks currentState="new-york" />
+      <StateHubLinks currentState="New York" />
     </main>
+    <Footer />
+    </>
   )
 }

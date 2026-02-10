@@ -1,9 +1,13 @@
 import { Helmet } from 'react-helmet-async'
 import { Link } from '../components/Link'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import StateHubLinks from '../components/StateHubLinks'
 
 export default function AutoClaimDeniedNewYorkPolicyLapseOrCancellation() {
   return (
+    <>
+    <Header />
     <main className="container">
       <Helmet>
         <title>Policy Lapse or Cancellation (New York Auto Claims)</title>
@@ -12,6 +16,7 @@ export default function AutoClaimDeniedNewYorkPolicyLapseOrCancellation() {
       </Helmet>
       <h1>Policy Lapse or Cancellation</h1>
       <p>Denials cite lapse or cancellation when coverage ended before the event. Verify notices, effective dates, reinstatement, and payment history.</p>
+      <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[AdSense Block]</div>
       <section aria-labelledby="ny-auto-lapse-steps"><h2 id="ny-auto-lapse-steps">Next steps</h2>
         <ul>
           <li>Ask for all cancellation notices and proof of mailing.</li>
@@ -21,7 +26,9 @@ export default function AutoClaimDeniedNewYorkPolicyLapseOrCancellation() {
         <p><a href="https://www.dfs.ny.gov/complaint">New York DFS Insurance Complaint Portal</a></p>
       </section>
       <p><Link to="/auto-insurance-claims-denied-new-york">Back to New York auto guide</Link></p>
-      <StateHubLinks currentState="new-york" />
+      <StateHubLinks currentState="New York" />
     </main>
+    <Footer />
+    </>
   )
 }
