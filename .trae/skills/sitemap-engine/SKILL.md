@@ -12,6 +12,17 @@ OBJECTIVE
 Refactor and standardize XML sitemap generation for https://whyclaimdenied.com with canonical-only, auto-updating, non-destructive behavior, perfect GSC formatting, and scalable splitting.
 
 CORE CANONICAL RULES
+0) Absolute URL Requirement (MANDATORY)
+- All <loc> values MUST be fully-qualified absolute URLs
+- Format strictly: https://whyclaimdenied.com/page-path
+- NEVER output relative URLs (e.g., /page-path)
+- NEVER protocol-relative (//page-path)
+- NEVER http or www
+- NEVER omit domain
+- No spaces, line breaks, or encoded chars inside <loc>
+- Domain must be exactly https://whyclaimdenied.com
+- Construct as BASE_DOMAIN + normalized_path
+- Validate: path begins with single '/', no double slashes, no trailing-slash inconsistencies, no uppercase; canonical must match meta.js exactly; if not absolute → abort
 1) Canonical Enforcement
 - Include only URLs matching META canonicals
 - Domain must be https://whyclaimdenied.com (no www)
@@ -55,6 +66,11 @@ OPTIONAL TAGS (UNIFORM)
 
 FINAL VALIDATION BEFORE WRITE
 - Structure, canonical match, HTTP 200, no duplicates, no redirects, no params, timestamp format, deterministic ordering, URL count/size limits, UTF-8 encoding
+- Validate all <loc> entries are absolute URLs
+- Validate domain consistency across all entries
+- Validate no relative paths exist
+- Validate no malformed URL encoding
+- If any relative URL detected → abort and log error
 
 OUTPUT
 - Regenerated, production-ready sitemap.xml (or index/child sitemaps when needed)

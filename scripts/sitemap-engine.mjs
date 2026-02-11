@@ -71,7 +71,8 @@ const buildOrder = (canonicals) => {
   const healthHubs = byPath.filter(p => /^\/health-insurance-claims-denied-[a-z-]+$/.test(p)).sort()
   const autoReasons = byPath.filter(p => /^\/auto-insurance-claims-denied-[a-z-]+\//.test(p)).sort()
   const healthReasons = byPath.filter(p => /^\/health-insurance-claims-denied-[a-z-]+\//.test(p)).sort()
-  return [...roots, ...autoHubs, ...healthHubs, ...autoReasons, ...healthReasons]
+  const orderedPaths = [...roots, ...autoHubs, ...healthHubs, ...autoReasons, ...healthReasons]
+  return orderedPaths.map(p => `${BASE_URL}${p}`)
 }
 
 const main = async () => {
@@ -87,6 +88,14 @@ const main = async () => {
   }
   const ordered = buildOrder(validated)
   const entries = ordered.map(loc => ({ loc, lastmod: existing.lastmods.get(loc) || ISO() }))
+
+  // Absolute URL enforcement
+  for (const e of entries) {
+    if (!isCanonical(e.loc)) throw new Error(`Relative or invalid URL detected in <loc>: ${e.loc}`)
+    const u = new URL(e.loc)
+    if (!u.pathname.startsWith('/')) throw new Error(`Malformed path in <loc>: ${e.loc}`)
+    if (/\/\//.test(u.pathname.replace(/^\//,''))) throw new Error(`Double slash in path: ${e.loc}`)
+  }
 
   // split/index safeguards (unlikely needed now)
   const MAX = 50000
