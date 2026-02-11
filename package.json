@@ -7,6 +7,8 @@
     "dev": "vite",
     "prebuild": "node scripts/generate-netlify-redirects.mjs",
     "build": "vite build",
+    "postbuild": "node scripts/sitemap-engine.mjs",
+    "sitemap": "node scripts/sitemap-engine.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
