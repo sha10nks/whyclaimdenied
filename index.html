@@ -2,44 +2,14 @@
 <html lang="en">
   <head>
     <script>
-      (() => {
-        const allowedHosts = new Set(['whyclaimdenied.com', 'www.whyclaimdenied.com']);
-        const isNonProductionHost = !allowedHosts.has(location.hostname);
-
-        const doNotTrackEnabled =
-          navigator.doNotTrack === '1' ||
-          window.doNotTrack === '1' ||
-          navigator.msDoNotTrack === '1' ||
-          navigator.globalPrivacyControl === true;
-
-        if (isNonProductionHost || doNotTrackEnabled) return;
-
+      (function () {
+        var allowed = { 'whyclaimdenied.com': 1, 'www.whyclaimdenied.com': 1 };
+        if (!allowed[location.hostname]) return;
         window.ezstandalone = window.ezstandalone || {};
         window.ezstandalone.cmd = window.ezstandalone.cmd || [];
-
-        const loadScript = (src, { async = false, attributes = {} } = {}) =>
-          new Promise((resolve, reject) => {
-            const script = document.createElement('script');
-            script.src = src;
-            script.async = async;
-            for (const [key, value] of Object.entries(attributes)) {
-              script.setAttribute(key, value);
-            }
-            script.onload = resolve;
-            script.onerror = reject;
-            document.head.appendChild(script);
-          });
-
-        loadScript('https://cmp.gatekeeperconsent.com/min.js', {
-          attributes: { 'data-cfasync': 'false' },
-        })
-          .then(() =>
-            loadScript('https://the.gatekeeperconsent.com/cmp.min.js', {
-              attributes: { 'data-cfasync': 'false' },
-            }),
-          )
-          .then(() => loadScript('https://www.ezojs.com/ezoic/sa.min.js', { async: true }))
-          .catch(() => {});
+        document.write('<script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"><\/script>');
+        document.write('<script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/cmp.min.js"><\/script>');
+        document.write('<script async src="https://www.ezojs.com/ezoic/sa.min.js"><\/script>');
       })();
     </script>
     <script>
