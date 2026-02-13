@@ -1,3 +1,8 @@
+http://whyclaimdenied.com/ads.txt https://srv.adstxtmanager.com/19390/whyclaimdenied.com 301!
+http://www.whyclaimdenied.com/ads.txt https://srv.adstxtmanager.com/19390/whyclaimdenied.com 301!
+https://www.whyclaimdenied.com/ads.txt https://srv.adstxtmanager.com/19390/whyclaimdenied.com 301!
+/ads.txt https://srv.adstxtmanager.com/19390/whyclaimdenied.com 301!
+
 http://whyclaimdenied.com/* https://whyclaimdenied.com/:splat 301!
 http://www.whyclaimdenied.com/* https://whyclaimdenied.com/:splat 301!
 https://www.whyclaimdenied.com/* https://whyclaimdenied.com/:splat 301!
