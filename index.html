@@ -2,8 +2,14 @@
 <html lang="en">
   <head>
     <script>
+      window._ezaq = window._ezaq || [];
       window.ezstandalone = window.ezstandalone || {};
       window.ezstandalone.cmd = window.ezstandalone.cmd || [];
+      window.onerror = function (msg, src) {
+        var m = String(msg || '');
+        var s = String(src || '');
+        if (m.indexOf('identity') !== -1 || s.indexOf('identity') !== -1 || m.indexOf('bridging') !== -1) return true;
+      };
     </script>
     <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
     <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/cmp.min.js"></script>
