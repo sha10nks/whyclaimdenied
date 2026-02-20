@@ -2,6 +2,7 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { META, BASE_URL } from '../src/seo/meta.js'
+import { BLOG_POSTS, BLOG_STATES } from '../src/blog/registry.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -24,19 +25,6 @@ const isCanonical = (url) => {
 const kebabOk = (slug) => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)
 
 const pathSlugsOk = (p) => p.split('/').filter(Boolean).every(kebabOk)
-
-const fetchStatus = async (url) => {
-  const controller = new AbortController()
-  const t = setTimeout(() => controller.abort(), 5000)
-  try {
-    const res = await fetch(url, { method: 'HEAD', signal: controller.signal })
-    clearTimeout(t)
-    return res.status
-  } catch {
-    clearTimeout(t)
-    return 0
-  }
-}
 
 const readExisting = async (sitemapPath) => {
   try {
@@ -67,26 +55,38 @@ const buildOrder = (canonicals) => {
   const orderRoots = ['/', '/about', '/contact', '/privacy', '/terms']
   const roots = orderRoots.filter(p => set.has(p))
 
+  const blogRoot = ['/blog'].filter(p => set.has(p))
+  const blogStates = byPath.filter(p => /^\/blog\/[a-z-]+$/.test(p)).sort()
+  const blogPosts = byPath.filter(p => /^\/blog\/[a-z-]+\/[a-z0-9-]+$/.test(p)).sort()
+
   const autoHubs = byPath.filter(p => /^\/auto-insurance-claims-denied-[a-z-]+$/.test(p)).sort()
   const healthHubs = byPath.filter(p => /^\/health-insurance-claims-denied-[a-z-]+$/.test(p)).sort()
   const autoReasons = byPath.filter(p => /^\/auto-insurance-claims-denied-[a-z-]+\//.test(p)).sort()
   const healthReasons = byPath.filter(p => /^\/health-insurance-claims-denied-[a-z-]+\//.test(p)).sort()
-  const orderedPaths = [...roots, ...autoHubs, ...healthHubs, ...autoReasons, ...healthReasons]
-  return orderedPaths.map(p => `${BASE_URL}${p}`)
+  const orderedPaths = [...roots, ...blogRoot, ...blogStates, ...blogPosts, ...autoHubs, ...healthHubs, ...autoReasons, ...healthReasons]
+  const orderedSet = new Set(orderedPaths)
+  const others = byPath.filter(p => set.has(p) && !orderedSet.has(p)).sort()
+  const finalPaths = [...orderedPaths, ...others]
+  return finalPaths.map(p => `${BASE_URL}${p}`)
 }
 
 const main = async () => {
   const existing = await readExisting(path.resolve(publicDir, 'sitemap.xml'))
   const fromMeta = Object.values(META).map(m => m?.canonical).filter(Boolean)
-  const canonicals = Array.from(new Set(fromMeta)).filter(isCanonical)
-  const validated = []
-  for (const loc of canonicals) {
+  const blogCanonicals = [
+    `${BASE_URL}/blog`,
+    ...BLOG_STATES.map(s => `${BASE_URL}/blog/${s.slug}`),
+    ...BLOG_POSTS.map(p => p.canonicalUrl || `${BASE_URL}${p.path}`),
+  ]
+
+  const combined = new Set([...existing.urls, ...fromMeta, ...blogCanonicals])
+  const canonicals = Array.from(combined).filter(isCanonical)
+  const safe = canonicals.filter((loc) => {
     const p = new URL(loc).pathname
-    if (!pathSlugsOk(p)) continue
-    const status = await fetchStatus(loc)
-    if (status === 200) validated.push(loc)
-  }
-  const ordered = buildOrder(validated)
+    return pathSlugsOk(p)
+  })
+
+  const ordered = buildOrder(safe)
   const entries = ordered.map(loc => ({ loc, lastmod: existing.lastmods.get(loc) || ISO() }))
 
   // Absolute URL enforcement

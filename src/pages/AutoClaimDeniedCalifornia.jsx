@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
 import CalloutBox from '../components/CalloutBox';
 import StateHubLinks from '../components/StateHubLinks';
+import BlogTeasersByState from '../components/BlogTeasersByState';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema, generateFAQSchema } from '../seo/schema';
 
@@ -242,6 +243,7 @@ const AutoClaimDeniedCalifornia = () => {
           </p>
         </section>
 
+        <BlogTeasersByState state="california" />
         <StateHubLinks currentState="California" />
       </main>
 

@@ -91,6 +91,10 @@ const Terms = lazy(() => import("./pages/Terms"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Contact = lazy(() => import("./pages/Contact"));
 
+const BlogIndex = lazy(() => import("./pages/blog/BlogIndex"));
+const BlogStateIndex = lazy(() => import("./pages/blog/BlogStateIndex"));
+const BlogPost = lazy(() => import("./pages/blog/BlogPost"));
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -412,6 +416,18 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "blog",
+        element: <BlogIndex />,
+      },
+      {
+        path: "blog/:state",
+        element: <BlogStateIndex />,
+      },
+      {
+        path: "blog/:state/:slug",
+        element: <BlogPost />,
       },
       {
         path: "terms",

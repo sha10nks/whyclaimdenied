@@ -9,6 +9,7 @@ const Footer = () => {
         </Link>
         <div className="footer-links">
           <Link to="/about">About Us</Link> | 
+          <Link to="/blog">Blog</Link> | 
           <Link to="/contact">Contact</Link> | 
           <Link to="/privacy">Privacy Policy</Link> | 
           <Link to="/terms">Terms of Use</Link>

@@ -3,6 +3,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
+import BlogTeasersByState from '../components/BlogTeasersByState';
 import { Link } from '../components/Link';
 
 const HealthClaimDeniedTexas = () => {
@@ -284,6 +285,7 @@ const HealthClaimDeniedTexas = () => {
           <p>Don't let insurance companies deny you the healthcare coverage you've paid for. Stand up for your rights and use the appeals process and regulatory resources available to you.</p>
         </section>
 
+        <BlogTeasersByState state="texas" />
         <StateHubLinks currentState="Texas" />
       </main>
 

@@ -3,6 +3,7 @@ import { Link } from '../components/Link'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import StateHubLinks from '../components/StateHubLinks'
+import BlogTeasersByState from '../components/BlogTeasersByState'
 
 export default function HealthClaimDeniedNewYork() {
   return (
@@ -73,6 +74,7 @@ export default function HealthClaimDeniedNewYork() {
         </ul>
       </section>
 
+      <BlogTeasersByState state="newyork" />
       <StateHubLinks currentState="New York" />
     </main>
     <Footer />

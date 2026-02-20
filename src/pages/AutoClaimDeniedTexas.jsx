@@ -3,6 +3,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
+import BlogTeasersByState from '../components/BlogTeasersByState';
 import { Link } from '../components/Link';
 
 const AutoClaimDeniedTexas = () => {
@@ -267,6 +268,7 @@ const AutoClaimDeniedTexas = () => {
           <p>Don't let insurance companies intimidate you or pressure you into accepting unfair denials. Stand up for your rights and use the resources available to you through the Texas Department of Insurance and the legal system.</p>
         </section>
 
+        <BlogTeasersByState state="texas" />
         <StateHubLinks currentState="Texas" />
       </main>
 

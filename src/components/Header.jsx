@@ -45,6 +45,9 @@ const Header = () => {
             <Link to="/about" className="nav-link" onClick={closeMenu}>
               About Us
             </Link>
+            <Link to="/blog" className="nav-link" onClick={closeMenu}>
+              Blog
+            </Link>
             <Link to="/contact" className="nav-link" onClick={closeMenu}>
               Contact
             </Link>

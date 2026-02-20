@@ -1,5 +1,6 @@
 import { Link } from './Link';
 import { META } from '../seo/meta';
+import { BLOG_STATES, getBlogPostsByState, normalizeBlogState } from '../blog/registry';
 
 const slugToLabel = (slug) =>
   slug
@@ -33,23 +34,44 @@ const buildStates = () => {
 export default function StateHubLinks({ currentState }) {
   const allStates = buildStates();
   const otherStates = allStates.filter((s) => s.name.toLowerCase() !== String(currentState || '').toLowerCase());
+  const stateSlug = normalizeBlogState(String(currentState || '').toLowerCase().replace(/\s+/g, '-'));
+  const knownBlogState = BLOG_STATES.some((s) => s.slug === stateSlug);
+  const blogPosts = knownBlogState ? getBlogPostsByState(stateSlug) : [];
 
   return (
-    <section>
-      <h2>Insurance Claim Denial Guides by State</h2>
-      {otherStates.length === 0 ? (
-        <p>No other state guides are published yet.</p>
-      ) : (
-        <ul>
-          {otherStates.map((s) => (
-            <li key={s.name}>
-              <Link to={s.autoPath}>Auto Insurance Claims Denied in {s.name}</Link>
-              {' · '}
-              <Link to={s.healthPath}>Health Insurance Claims Denied in {s.name}</Link>
-            </li>
-          ))}
-        </ul>
-      )}
-    </section>
+    <>
+      <section>
+        <h2>Insurance Claim Denial Guides by State</h2>
+        {otherStates.length === 0 ? (
+          <p>No other state guides are published yet.</p>
+        ) : (
+          <ul>
+            {otherStates.map((s) => (
+              <li key={s.name}>
+                <Link to={s.autoPath}>Auto Insurance Claims Denied in {s.name}</Link>
+                {' · '}
+                <Link to={s.healthPath}>Health Insurance Claims Denied in {s.name}</Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
+      {knownBlogState ? (
+        <section>
+          <h2>From Our Blog</h2>
+          <p>
+            <Link to={`/blog/${stateSlug}`}>Browse all {currentState} blog posts</Link>
+          </p>
+          <ul>
+            {blogPosts.map((p) => (
+              <li key={`${p.state}/${p.slug}`}>
+                <Link to={p.path}>{p.title}</Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+    </>
   );
 }
