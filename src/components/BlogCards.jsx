@@ -1,15 +1,36 @@
 import { Link } from 'react-router-dom';
 import { getBlogStateLabel } from '../blog/registry';
 
+// Specific colors for states
+const STATE_COLOR_MAP = {
+  'california': 'orange', // Golden State
+  'texas': 'red',         // Lone Star / Red
+  'florida': 'cyan',      // Sunshine / Water
+  'new-york': 'indigo',   // Empire State / Deep Blue
+  'illinois': 'blue',
+  'pennsylvania': 'yellow',
+  'ohio': 'rose',
+  'georgia': 'emerald',
+};
+
+// Expanded palette for other/future states
+const FALLBACK_COLORS = [
+  'blue', 'green', 'purple', 'orange', 'teal', 'indigo', 
+  'red', 'cyan', 'rose', 'emerald', 'amber', 'fuchsia'
+];
+
 // Deterministic color assignment based on string hash
 const getStateColorClass = (slug) => {
-  const colors = ['blue', 'green', 'purple', 'orange', 'teal', 'indigo'];
+  if (STATE_COLOR_MAP[slug]) {
+    return `state-card-${STATE_COLOR_MAP[slug]}`;
+  }
+  
   let hash = 0;
   for (let i = 0; i < slug.length; i++) {
     hash = slug.charCodeAt(i) + ((hash << 5) - hash);
   }
-  const index = Math.abs(hash) % colors.length;
-  return `state-card-${colors[index]}`;
+  const index = Math.abs(hash) % FALLBACK_COLORS.length;
+  return `state-card-${FALLBACK_COLORS[index]}`;
 };
 
 export const BlogCard = ({ post }) => {
