@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
+import StateHubLinks from '../components/StateHubLinks';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema } from '../seo/schema';
 import { Link } from '../components/Link';
@@ -21,9 +22,20 @@ const HealthClaimDeniedIllinoisPriorAuthorizationMissing = () => {
       <Breadcrumbs items={[{ label: 'Illinois', link: '/health-insurance-claims-denied-illinois' }, { label: 'Prior Authorization Missing', link: null }]} />
       <main className="container">
         <h1>Prior Authorization Missing — Illinois Health Claims</h1>
-        <p className="intro">Ask for the plan provision and prior auth records. Note any urgent or emergency factors that may waive advance authorization.</p>
-        <p>Back to overview: <Link to="/health-insurance-claims-denied-illinois">Health Insurance Claims Denied in Illinois</Link></p>
+        <p className="intro">Ask for the plan provision and prior auth records. Note emergencies or lack of access that may affect requirements.</p>
+
         <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[Ad]</div>
+
+        <section>
+          <h2>Request</h2>
+          <ul>
+            <li>Plan language, call logs, and portal records.</li>
+            <li>Provider statement on urgency and medical need.</li>
+          </ul>
+        </section>
+
+        <p>Back to overview: <Link to="/health-insurance-claims-denied-illinois">Health Insurance Claims Denied in Illinois</Link></p>
+        <StateHubLinks currentState="Illinois" />
       </main>
       <Footer />
     </>
@@ -31,4 +43,3 @@ const HealthClaimDeniedIllinoisPriorAuthorizationMissing = () => {
 };
 
 export default HealthClaimDeniedIllinoisPriorAuthorizationMissing;
-

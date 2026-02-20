@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
+import StateHubLinks from '../components/StateHubLinks';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema } from '../seo/schema';
 import { Link } from '../components/Link';
@@ -21,9 +22,29 @@ const AutoClaimDeniedPennsylvaniaDisputedLiability = () => {
       <Breadcrumbs items={[{ label: 'Pennsylvania', link: '/auto-insurance-claims-denied-pennsylvania' }, { label: 'Disputed Liability or Fault', link: null }]} />
       <main className="container">
         <h1>Disputed Liability or Fault — Pennsylvania Auto Claims</h1>
-        <p className="intro">Organize photos, repair estimates, independent statements, and police or incident reports. Ask the adjuster exactly what evidence would resolve the dispute.</p>
-        <p>Back to the overview: <Link to="/auto-insurance-claims-denied-pennsylvania">Auto Insurance Claims Denied in Pennsylvania</Link></p>
+        <p className="intro">Organize photos, repair estimates, witness statements, and police or incident reports. Ask what specific evidence would resolve the dispute.</p>
+
         <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[Ad]</div>
+
+        <section>
+          <h2>Build the record</h2>
+          <ul>
+            <li>Scene photos, dashcam clips, and diagrams with directions of travel.</li>
+            <li>Neutral witness statements with contact info.</li>
+            <li>Shop estimates that align with the collision description.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Present it clearly</h2>
+          <ol>
+            <li>Send a short cover note tying evidence to the key facts in dispute.</li>
+            <li>Ask for reconsideration and a written explanation if they still disagree.</li>
+          </ol>
+        </section>
+
+        <p>Back to the overview: <Link to="/auto-insurance-claims-denied-pennsylvania">Auto Insurance Claims Denied in Pennsylvania</Link></p>
+        <StateHubLinks currentState="Pennsylvania" />
       </main>
       <Footer />
     </>
@@ -31,4 +52,3 @@ const AutoClaimDeniedPennsylvaniaDisputedLiability = () => {
 };
 
 export default AutoClaimDeniedPennsylvaniaDisputedLiability;
-

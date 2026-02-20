@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
+import StateHubLinks from '../components/StateHubLinks';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema } from '../seo/schema';
 import { Link } from '../components/Link';
@@ -21,9 +22,20 @@ const HealthClaimDeniedIllinoisExperimentalOrInvestigational = () => {
       <Breadcrumbs items={[{ label: 'Illinois', link: '/health-insurance-claims-denied-illinois' }, { label: 'Experimental or Investigational', link: null }]} />
       <main className="container">
         <h1>Experimental or Investigational — Illinois Health Claims</h1>
-        <p className="intro">Ask for the medical policy and provide peer-reviewed support and clinical notes addressing the plan’s criteria.</p>
-        <p>Back to overview: <Link to="/health-insurance-claims-denied-illinois">Health Insurance Claims Denied in Illinois</Link></p>
+        <p className="intro">Ask for the policy used and provide journal support and provider notes addressing the criteria.</p>
+
         <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[Ad]</div>
+
+        <section>
+          <h2>Target the criteria</h2>
+          <ul>
+            <li>Medical policy title/date and reviewer notes.</li>
+            <li>Guidelines or position statements relevant to your case.</li>
+          </ul>
+        </section>
+
+        <p>Back to overview: <Link to="/health-insurance-claims-denied-illinois">Health Insurance Claims Denied in Illinois</Link></p>
+        <StateHubLinks currentState="Illinois" />
       </main>
       <Footer />
     </>
@@ -31,4 +43,3 @@ const HealthClaimDeniedIllinoisExperimentalOrInvestigational = () => {
 };
 
 export default HealthClaimDeniedIllinoisExperimentalOrInvestigational;
-

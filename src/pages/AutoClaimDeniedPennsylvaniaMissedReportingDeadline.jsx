@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
+import StateHubLinks from '../components/StateHubLinks';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema } from '../seo/schema';
 import { Link } from '../components/Link';
@@ -21,13 +22,30 @@ const AutoClaimDeniedPennsylvaniaMissedReportingDeadline = () => {
       <Breadcrumbs items={[{ label: 'Pennsylvania', link: '/auto-insurance-claims-denied-pennsylvania' }, { label: 'Missed Reporting Deadline', link: null }]} />
       <main className="container">
         <h1>Missed Reporting Deadline — Pennsylvania Auto Claims</h1>
-        <p className="intro">If notice was delayed, explain the reason and show how it did not prejudice the insurer’s ability to evaluate the claim.</p>
-        <ul>
-          <li>Request the policy’s notice provision and the date the insurer says notice was received.</li>
-          <li>Provide supporting documents (e.g., medical, police, or repair records) to show the facts can still be verified.</li>
-        </ul>
-        <p>Back to the overview: <Link to="/auto-insurance-claims-denied-pennsylvania">Auto Insurance Claims Denied in Pennsylvania</Link></p>
+        <p className="intro">Explain late notice and demonstrate that the facts can still be verified with timely records and statements.</p>
+
         <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[Ad]</div>
+
+        <section>
+          <h2>What insurers look for</h2>
+          <ul>
+            <li>Notice dates compared to policy reporting language.</li>
+            <li>Whether delay harmed the insurer’s ability to investigate.</li>
+            <li>Whether you cooperated after learning of the requirement.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>What to send</h2>
+          <ol>
+            <li>Police or incident reports, medical notes, and repair invoices with clear dates.</li>
+            <li>A short explanation of why notice was delayed and how facts remain verifiable.</li>
+            <li>Contact info for witnesses or shops that can confirm details quickly.</li>
+          </ol>
+        </section>
+
+        <p>Back to the overview: <Link to="/auto-insurance-claims-denied-pennsylvania">Auto Insurance Claims Denied in Pennsylvania</Link></p>
+        <StateHubLinks currentState="Pennsylvania" />
       </main>
       <Footer />
     </>
@@ -35,4 +53,3 @@ const AutoClaimDeniedPennsylvaniaMissedReportingDeadline = () => {
 };
 
 export default AutoClaimDeniedPennsylvaniaMissedReportingDeadline;
-

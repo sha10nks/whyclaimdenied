@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
+import StateHubLinks from '../components/StateHubLinks';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema } from '../seo/schema';
 import { Link } from '../components/Link';
@@ -21,9 +22,30 @@ const AutoClaimDeniedPennsylvaniaFailureToCooperate = () => {
       <Breadcrumbs items={[{ label: 'Pennsylvania', link: '/auto-insurance-claims-denied-pennsylvania' }, { label: 'Failure to Cooperate', link: null }]} />
       <main className="container">
         <h1>Failure to Cooperate — Pennsylvania Auto Claims</h1>
-        <p className="intro">Identify the specific request that was missed (e.g., statement, EUO, records) and offer dates to complete it promptly.</p>
-        <p>Back to the overview: <Link to="/auto-insurance-claims-denied-pennsylvania">Auto Insurance Claims Denied in Pennsylvania</Link></p>
+        <p className="intro">Identify the missed request and set dates to complete statements, EUO, or records promptly.</p>
+
         <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[Ad]</div>
+
+        <section>
+          <h2>Common requests</h2>
+          <ul>
+            <li>Recorded statement or examination under oath.</li>
+            <li>Photos, repair invoices, or ownership documents.</li>
+            <li>Proof of loss and contact details for witnesses.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Fix the issue</h2>
+          <ol>
+            <li>Reply in writing with dates you can appear or submit records.</li>
+            <li>Ask for a short list of all outstanding items to close the claim.</li>
+            <li>Confirm receipt and keep a copy of everything you send.</li>
+          </ol>
+        </section>
+
+        <p>Back to the overview: <Link to="/auto-insurance-claims-denied-pennsylvania">Auto Insurance Claims Denied in Pennsylvania</Link></p>
+        <StateHubLinks currentState="Pennsylvania" />
       </main>
       <Footer />
     </>
@@ -31,4 +53,3 @@ const AutoClaimDeniedPennsylvaniaFailureToCooperate = () => {
 };
 
 export default AutoClaimDeniedPennsylvaniaFailureToCooperate;
-

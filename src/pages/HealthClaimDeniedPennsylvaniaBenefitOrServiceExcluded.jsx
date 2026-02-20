@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
+import StateHubLinks from '../components/StateHubLinks';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema } from '../seo/schema';
 import { Link } from '../components/Link';
@@ -21,9 +22,28 @@ const HealthClaimDeniedPennsylvaniaBenefitOrServiceExcluded = () => {
       <Breadcrumbs items={[{ label: 'Pennsylvania', link: '/health-insurance-claims-denied-pennsylvania' }, { label: 'Benefit or Service Excluded', link: null }]} />
       <main className="container">
         <h1>Benefit or Service Excluded — Pennsylvania Health Claims</h1>
-        <p className="intro">Confirm the exact contract exclusion and any exceptions. Some plans allow coverage when criteria are met or under specific circumstances.</p>
-        <p>Back to the overview: <Link to="/health-insurance-claims-denied-pennsylvania">Health Insurance Claims Denied in Pennsylvania</Link></p>
+        <p className="intro">Confirm the exact contract exclusion and whether exceptions apply when criteria are met.</p>
+
         <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[Ad]</div>
+
+        <section>
+          <h2>What to check</h2>
+          <ul>
+            <li>Definition of the excluded benefit and any carve‑outs.</li>
+            <li>Medical policy that might override or clarify the exclusion.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Appeal strategies</h2>
+          <ol>
+            <li>Show how your case fits an exception or meets criteria.</li>
+            <li>Provide targeted provider notes and relevant policy citations.</li>
+          </ol>
+        </section>
+
+        <p>Back to the overview: <Link to="/health-insurance-claims-denied-pennsylvania">Health Insurance Claims Denied in Pennsylvania</Link></p>
+        <StateHubLinks currentState="Pennsylvania" />
       </main>
       <Footer />
     </>
@@ -31,4 +51,3 @@ const HealthClaimDeniedPennsylvaniaBenefitOrServiceExcluded = () => {
 };
 
 export default HealthClaimDeniedPennsylvaniaBenefitOrServiceExcluded;
-

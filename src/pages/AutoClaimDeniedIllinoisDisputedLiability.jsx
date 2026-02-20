@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
+import StateHubLinks from '../components/StateHubLinks';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema } from '../seo/schema';
 import { Link } from '../components/Link';
@@ -21,9 +22,21 @@ const AutoClaimDeniedIllinoisDisputedLiability = () => {
       <Breadcrumbs items={[{ label: 'Illinois', link: '/auto-insurance-claims-denied-illinois' }, { label: 'Disputed Liability or Fault', link: null }]} />
       <main className="container">
         <h1>Disputed Liability or Fault — Illinois Auto Claims</h1>
-        <p className="intro">Organize photos, estimates, and statements. Ask the adjuster what specific evidence would resolve the dispute.</p>
-        <p>Back to overview: <Link to="/auto-insurance-claims-denied-illinois">Auto Insurance Claims Denied in Illinois</Link></p>
+        <p className="intro">Organize photos, repair estimates, and witness statements. Ask what specific evidence would resolve the dispute.</p>
+
         <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[Ad]</div>
+
+        <section>
+          <h2>Evidence that helps</h2>
+          <ul>
+            <li>Scene photos, diagrams, and dashcam if available.</li>
+            <li>Neutral witness statements with contacts.</li>
+            <li>Repair estimates consistent with the mechanics of impact.</li>
+          </ul>
+        </section>
+
+        <p>Back to overview: <Link to="/auto-insurance-claims-denied-illinois">Auto Insurance Claims Denied in Illinois</Link></p>
+        <StateHubLinks currentState="Illinois" />
       </main>
       <Footer />
     </>
@@ -31,4 +44,3 @@ const AutoClaimDeniedIllinoisDisputedLiability = () => {
 };
 
 export default AutoClaimDeniedIllinoisDisputedLiability;
-

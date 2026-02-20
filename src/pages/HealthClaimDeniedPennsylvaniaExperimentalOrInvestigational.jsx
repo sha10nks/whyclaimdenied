@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
+import StateHubLinks from '../components/StateHubLinks';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema } from '../seo/schema';
 import { Link } from '../components/Link';
@@ -21,9 +22,28 @@ const HealthClaimDeniedPennsylvaniaExperimentalOrInvestigational = () => {
       <Breadcrumbs items={[{ label: 'Pennsylvania', link: '/health-insurance-claims-denied-pennsylvania' }, { label: 'Experimental or Investigational', link: null }]} />
       <main className="container">
         <h1>Experimental or Investigational — Pennsylvania Health Claims</h1>
-        <p className="intro">Ask for the medical policy and the evidence the plan used. Provide peer-reviewed support from your provider addressing the policy’s criteria.</p>
-        <p>Back to the overview: <Link to="/health-insurance-claims-denied-pennsylvania">Health Insurance Claims Denied in Pennsylvania</Link></p>
+        <p className="intro">Ask for the policy and evidence used. Provide journal support and provider notes addressing criteria.</p>
+
         <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[Ad]</div>
+
+        <section>
+          <h2>Get the policy</h2>
+          <ul>
+            <li>Medical policy title and version/date.</li>
+            <li>Any technology assessment or evidence summary used.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Support your case</h2>
+          <ol>
+            <li>Targeted provider letter tying your case to policy criteria.</li>
+            <li>Peer‑reviewed articles or guidelines supporting effectiveness.</li>
+          </ol>
+        </section>
+
+        <p>Back to the overview: <Link to="/health-insurance-claims-denied-pennsylvania">Health Insurance Claims Denied in Pennsylvania</Link></p>
+        <StateHubLinks currentState="Pennsylvania" />
       </main>
       <Footer />
     </>
@@ -31,4 +51,3 @@ const HealthClaimDeniedPennsylvaniaExperimentalOrInvestigational = () => {
 };
 
 export default HealthClaimDeniedPennsylvaniaExperimentalOrInvestigational;
-

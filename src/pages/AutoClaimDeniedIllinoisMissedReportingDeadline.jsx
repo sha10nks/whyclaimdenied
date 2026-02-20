@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
+import StateHubLinks from '../components/StateHubLinks';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema } from '../seo/schema';
 import { Link } from '../components/Link';
@@ -21,9 +22,28 @@ const AutoClaimDeniedIllinoisMissedReportingDeadline = () => {
       <Breadcrumbs items={[{ label: 'Illinois', link: '/auto-insurance-claims-denied-illinois' }, { label: 'Missed Reporting Deadline', link: null }]} />
       <main className="container">
         <h1>Missed Reporting Deadline — Illinois Auto Claims</h1>
-        <p className="intro">Explain late notice and show that the facts can still be verified with records and statements.</p>
-        <p>Back to overview: <Link to="/auto-insurance-claims-denied-illinois">Auto Insurance Claims Denied in Illinois</Link></p>
+        <p className="intro">Explain late notice, show the facts remain verifiable, and offer cooperation dates.</p>
+
         <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[Ad]</div>
+
+        <section>
+          <h2>What insurers consider</h2>
+          <ul>
+            <li>Policy reporting language versus your notice date.</li>
+            <li>Whether delay harmed investigation capability.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Provide</h2>
+          <ol>
+            <li>Police/incident reports, medical notes, shop records with dates.</li>
+            <li>Short explanation and witness/shop contact info.</li>
+          </ol>
+        </section>
+
+        <p>Back to overview: <Link to="/auto-insurance-claims-denied-illinois">Auto Insurance Claims Denied in Illinois</Link></p>
+        <StateHubLinks currentState="Illinois" />
       </main>
       <Footer />
     </>
@@ -31,4 +51,3 @@ const AutoClaimDeniedIllinoisMissedReportingDeadline = () => {
 };
 
 export default AutoClaimDeniedIllinoisMissedReportingDeadline;
-
