@@ -101,9 +101,50 @@ a:hover {
 
 /* Layout Container */
 .container {
-  max-width: 860px; /* Slightly wider for modern screens */
+  max-width: 860px; /* Site standard */
   margin: 0 auto;
   padding: 0 var(--spacing-md);
+}
+
+/* Blog layout container and post content hardening */
+.blog-container {
+  /* nothing special; relies on .container sizing */
+}
+
+.postContent {
+  line-height: 1.7;
+  max-width: 100%;
+}
+
+.postContent img {
+  max-width: 100%;
+  height: auto;
+}
+
+.postContent pre {
+  overflow-x: auto;
+}
+
+.postContent code,
+.postContent a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.postContent table {
+  display: block;
+  overflow-x: auto;
+}
+
+.postContent > :first-child {
+  margin-top: var(--spacing-md);
+}
+
+.postContent h1,
+.postContent h2,
+.postContent h3,
+.postContent h4 {
+  line-height: 1.25;
 }
 
 /* Accessibility Helpers */

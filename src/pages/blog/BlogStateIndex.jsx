@@ -1,11 +1,10 @@
 import { Helmet } from 'react-helmet-async';
 import { useMemo } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import { Link } from '../../components/Link';
 import { BLOG_STATES, getBlogPostsByState, getBlogStateLabel, normalizeBlogState } from '../../blog/registry';
+import BlogLayout from '../../layouts/BlogLayout';
 
 export default function BlogStateIndex() {
   const params = useParams();
@@ -26,18 +25,16 @@ export default function BlogStateIndex() {
   const known = BLOG_STATES.some((s) => s.slug === canonicalStateSlug);
 
   return (
-    <>
+    <BlogLayout>
       <Helmet>
         <title>{label} Blog | WhyClaimDenied</title>
         <meta name="description" content={`Blog posts and claim-denial case examples for ${label}.`} />
         <link rel="canonical" href={`https://whyclaimdenied.com/blog/${canonicalStateSlug}`} />
       </Helmet>
 
-      <Header />
-
       <Breadcrumbs items={[{ label: 'Blog', link: '/blog' }, { label, link: null }]} />
 
-      <main className="container">
+      <div>
         <h1>{label} Blog</h1>
 
         {!known ? (
@@ -85,10 +82,7 @@ export default function BlogStateIndex() {
             </section>
           </>
         )}
-      </main>
-
-      <Footer />
-    </>
+      </div>
+    </BlogLayout>
   );
 }
-

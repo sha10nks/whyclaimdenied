@@ -1,11 +1,10 @@
 import { Helmet } from 'react-helmet-async';
 import { Suspense, useMemo } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
 import { Link } from '../../components/Link';
 import { BLOG_STATES, getBlogPost, getBlogStateLabel, normalizeBlogState } from '../../blog/registry';
 import { getBlogPostComponent } from '../../blog/postLoader';
+import BlogLayout from '../../layouts/BlogLayout';
 
 export default function BlogPost() {
   const params = useParams();
@@ -29,7 +28,7 @@ export default function BlogPost() {
   const title = post?.title || 'Blog Post Not Found';
 
   return (
-    <>
+    <BlogLayout>
       <Helmet>
         <title>{title} | WhyClaimDenied</title>
         {post?.description ? <meta name="description" content={post.description} /> : null}
@@ -38,14 +37,12 @@ export default function BlogPost() {
           href={post?.canonicalUrl || `https://whyclaimdenied.com/blog/${canonicalStateSlug}/${String(rawSlug || '').toLowerCase()}`}
         />
       </Helmet>
-
-      <Header />
       {PostComp ? (
-        <Suspense fallback={<main className="container"><p>Loading…</p></main>}>
+        <Suspense fallback={<p>Loading…</p>}>
           <PostComp />
         </Suspense>
       ) : (
-        <main className="container">
+        <div>
           <h1>Post not found</h1>
           <p className="intro">This blog page doesn’t exist or may have been moved.</p>
           <ul>
@@ -56,10 +53,8 @@ export default function BlogPost() {
               <Link to={`/blog/${canonicalStateSlug}`}>Browse {stateLabel} posts</Link>
             </li>
           </ul>
-        </main>
+        </div>
       )}
-
-      <Footer />
-    </>
+    </BlogLayout>
   );
 }
