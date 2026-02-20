@@ -3,8 +3,13 @@ import { Link } from '../components/Link'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import StateHubLinks from '../components/StateHubLinks'
+import DenialReasonTemplate from '../denials/DenialReasonTemplate'
+import { getDenialPage } from '../denials/registry'
 
 export default function AutoClaimDeniedNewYorkMissedReportingDeadline() {
+  const page = getDenialPage({ domain: 'auto', stateSlug: 'new-york', reasonKey: 'missed-reporting-deadline' })
+  return <DenialReasonTemplate page={page} />
+
   return (
     <>
     <Header />

@@ -6,8 +6,13 @@ import StateHubLinks from '../components/StateHubLinks';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema } from '../seo/schema';
 import { Link } from '../components/Link';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate';
+import { getDenialPage } from '../denials/registry';
 
 const HealthClaimDeniedPennsylvaniaBenefitOrServiceExcluded = () => {
+  const page = getDenialPage({ domain: 'health', stateSlug: 'pennsylvania', reasonKey: 'benefit-or-service-excluded' });
+  return <DenialReasonTemplate page={page} />;
+
   const meta = getMetaData('healthPA_excludedBenefit');
   const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical });
   return (

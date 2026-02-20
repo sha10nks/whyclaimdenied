@@ -42,6 +42,9 @@ const Header = () => {
           </button>
 
           <nav id={navId} className={`site-nav${menuOpen ? ' is-open' : ''}`} aria-label="Primary">
+            <Link to="/" className="nav-link" onClick={closeMenu}>
+              Home
+            </Link>
             <Link to="/about" className="nav-link" onClick={closeMenu}>
               About Us
             </Link>

@@ -6,8 +6,13 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import StateHubLinks from '../components/StateHubLinks';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema } from '../seo/schema';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate';
+import { getDenialPage } from '../denials/registry';
 
 const HealthClaimDeniedFloridaPriorAuthorizationMissing = () => {
+  const page = getDenialPage({ domain: 'health', stateSlug: 'florida', reasonKey: 'prior-authorization-missing' });
+  return <DenialReasonTemplate page={page} />;
+
   const meta = getMetaData('healthFL_priorAuth');
   const articleSchema = generateArticleSchema({
     headline: meta.title,

@@ -4,8 +4,13 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
 import { Link } from '../components/Link';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate';
+import { getDenialPage } from '../denials/registry';
 
 const AutoClaimDeniedTexasNonCoveredUse = () => {
+  const page = getDenialPage({ domain: 'auto', stateSlug: 'texas', reasonKey: 'non-covered-use' });
+  return <DenialReasonTemplate page={page} />;
+
   const sd = { "@context": "https://schema.org", "@type": "Article", "headline": "Non-Covered Use — Texas Auto Insurance Denial", "description": "Understand non-covered use denials in Texas (business use, racing, other exclusions) and next steps." };
   return (
     <>

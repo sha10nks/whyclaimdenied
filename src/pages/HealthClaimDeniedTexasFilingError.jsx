@@ -4,8 +4,13 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
 import { Link } from '../components/Link';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate';
+import { getDenialPage } from '../denials/registry';
 
 const HealthClaimDeniedTexasFilingError = () => {
+  const page = getDenialPage({ domain: 'health', stateSlug: 'texas', reasonKey: 'filing-errors' });
+  return <DenialReasonTemplate page={page} />;
+
   const sd = { "@context": "https://schema.org", "@type": "Article", "headline": "Filing Errors — Texas Health Insurance Denial", "description": "Common filing/documentation errors leading to Texas health claim denials and how to correct them." };
   return (
     <>

@@ -4,8 +4,13 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
 import { Link } from '../components/Link';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate';
+import { getDenialPage } from '../denials/registry';
 
 const AutoClaimDeniedTexasDisputedLiability = () => {
+  const page = getDenialPage({ domain: 'auto', stateSlug: 'texas', reasonKey: 'disputed-liability' });
+  return <DenialReasonTemplate page={page} />;
+
   const sd = { "@context": "https://schema.org", "@type": "Article", "headline": "Disputed Liability — Texas Auto Insurance Denial", "description": "When fault is disputed in Texas auto claims and the evidence that helps." };
   return (
     <>

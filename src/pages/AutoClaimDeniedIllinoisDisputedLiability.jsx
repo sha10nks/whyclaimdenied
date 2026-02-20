@@ -6,8 +6,13 @@ import StateHubLinks from '../components/StateHubLinks';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema } from '../seo/schema';
 import { Link } from '../components/Link';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate';
+import { getDenialPage } from '../denials/registry';
 
 const AutoClaimDeniedIllinoisDisputedLiability = () => {
+  const page = getDenialPage({ domain: 'auto', stateSlug: 'illinois', reasonKey: 'disputed-liability' });
+  return <DenialReasonTemplate page={page} />;
+
   const meta = getMetaData('autoIL_disputedLiability');
   const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical });
   return (

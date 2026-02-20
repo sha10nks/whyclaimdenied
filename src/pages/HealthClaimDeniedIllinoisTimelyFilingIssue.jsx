@@ -6,8 +6,13 @@ import StateHubLinks from '../components/StateHubLinks';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema } from '../seo/schema';
 import { Link } from '../components/Link';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate';
+import { getDenialPage } from '../denials/registry';
 
 const HealthClaimDeniedIllinoisTimelyFilingIssue = () => {
+  const page = getDenialPage({ domain: 'health', stateSlug: 'illinois', reasonKey: 'timely-filing-issue' });
+  return <DenialReasonTemplate page={page} />;
+
   const meta = getMetaData('healthIL_timelyFiling');
   const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical });
   return (

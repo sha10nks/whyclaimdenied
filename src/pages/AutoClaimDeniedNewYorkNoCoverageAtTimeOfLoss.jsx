@@ -3,8 +3,13 @@ import { Link } from '../components/Link'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import StateHubLinks from '../components/StateHubLinks'
+import DenialReasonTemplate from '../denials/DenialReasonTemplate'
+import { getDenialPage } from '../denials/registry'
 
 export default function AutoClaimDeniedNewYorkNoCoverageAtTimeOfLoss() {
+  const page = getDenialPage({ domain: 'auto', stateSlug: 'new-york', reasonKey: 'no-coverage-at-time-of-loss' })
+  return <DenialReasonTemplate page={page} />
+
   return (
     <>
     <Header />

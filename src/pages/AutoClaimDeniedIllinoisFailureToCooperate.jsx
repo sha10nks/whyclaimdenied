@@ -6,8 +6,13 @@ import StateHubLinks from '../components/StateHubLinks';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema } from '../seo/schema';
 import { Link } from '../components/Link';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate';
+import { getDenialPage } from '../denials/registry';
 
 const AutoClaimDeniedIllinoisFailureToCooperate = () => {
+  const page = getDenialPage({ domain: 'auto', stateSlug: 'illinois', reasonKey: 'failure-to-cooperate' });
+  return <DenialReasonTemplate page={page} />;
+
   const meta = getMetaData('autoIL_failureToCooperate');
   const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical });
   return (

@@ -4,8 +4,13 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
 import { Link } from '../components/Link';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate';
+import { getDenialPage } from '../denials/registry';
 
 const AutoClaimDeniedTexasExcludedVehicle = () => {
+  const page = getDenialPage({ domain: 'auto', stateSlug: 'texas', reasonKey: 'excluded-vehicle' });
+  return <DenialReasonTemplate page={page} />;
+
   const sd = { "@context": "https://schema.org", "@type": "Article", "headline": "Excluded Vehicle — Texas Auto Insurance Denial", "description": "How excluded-vehicle denials arise in Texas and what documents to request." };
   return (
     <>

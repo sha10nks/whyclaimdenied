@@ -6,8 +6,13 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import StateHubLinks from '../components/StateHubLinks';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema } from '../seo/schema';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate';
+import { getDenialPage } from '../denials/registry';
 
 const AutoClaimDeniedFloridaNoCoverageAtTimeOfLoss = () => {
+  const page = getDenialPage({ domain: 'auto', stateSlug: 'florida', reasonKey: 'no-coverage-at-time-of-loss' });
+  return <DenialReasonTemplate page={page} />;
+
   const meta = getMetaData('autoFL_noCoverage');
   const articleSchema = generateArticleSchema({
     headline: meta.title,

@@ -6,8 +6,13 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import StateHubLinks from '../components/StateHubLinks';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema } from '../seo/schema';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate';
+import { getDenialPage } from '../denials/registry';
 
 const HealthClaimDeniedFloridaNotMedicallyNecessary = () => {
+  const page = getDenialPage({ domain: 'health', stateSlug: 'florida', reasonKey: 'not-medically-necessary' });
+  return <DenialReasonTemplate page={page} />;
+
   const meta = getMetaData('healthFL_medNec');
   const articleSchema = generateArticleSchema({
     headline: meta.title,

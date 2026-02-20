@@ -6,8 +6,13 @@ import StateHubLinks from '../components/StateHubLinks';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema } from '../seo/schema';
 import { Link } from '../components/Link';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate';
+import { getDenialPage } from '../denials/registry';
 
 const HealthClaimDeniedIllinoisPriorAuthorizationMissing = () => {
+  const page = getDenialPage({ domain: 'health', stateSlug: 'illinois', reasonKey: 'prior-authorization-missing' });
+  return <DenialReasonTemplate page={page} />;
+
   const meta = getMetaData('healthIL_priorAuth');
   const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical });
   return (

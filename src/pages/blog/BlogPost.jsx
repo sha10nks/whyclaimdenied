@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import { Suspense, useMemo } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { Link } from '../../components/Link';
@@ -25,24 +24,14 @@ export default function BlogPost() {
   const stateLabel = getBlogStateLabel(canonicalStateSlug);
   const PostComp = getBlogPostComponent(canonicalStateSlug, rawSlug);
 
-  const title = post?.title || 'Blog Post Not Found';
-
   return (
     <BlogLayout>
-      <Helmet>
-        <title>{title} | WhyClaimDenied</title>
-        {post?.description ? <meta name="description" content={post.description} /> : null}
-        <link
-          rel="canonical"
-          href={post?.canonicalUrl || `https://whyclaimdenied.com/blog/${canonicalStateSlug}/${String(rawSlug || '').toLowerCase()}`}
-        />
-      </Helmet>
       {PostComp ? (
         <Suspense fallback={<p>Loading…</p>}>
           <PostComp />
         </Suspense>
       ) : (
-        <div>
+        <>
           <h1>Post not found</h1>
           <p className="intro">This blog page doesn’t exist or may have been moved.</p>
           <ul>
@@ -53,7 +42,7 @@ export default function BlogPost() {
               <Link to={`/blog/${canonicalStateSlug}`}>Browse {stateLabel} posts</Link>
             </li>
           </ul>
-        </div>
+        </>
       )}
     </BlogLayout>
   );

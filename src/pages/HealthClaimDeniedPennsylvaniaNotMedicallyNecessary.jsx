@@ -6,8 +6,13 @@ import StateHubLinks from '../components/StateHubLinks';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema } from '../seo/schema';
 import { Link } from '../components/Link';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate';
+import { getDenialPage } from '../denials/registry';
 
 const HealthClaimDeniedPennsylvaniaNotMedicallyNecessary = () => {
+  const page = getDenialPage({ domain: 'health', stateSlug: 'pennsylvania', reasonKey: 'not-medically-necessary' });
+  return <DenialReasonTemplate page={page} />;
+
   const meta = getMetaData('healthPA_medNec');
   const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical });
   return (

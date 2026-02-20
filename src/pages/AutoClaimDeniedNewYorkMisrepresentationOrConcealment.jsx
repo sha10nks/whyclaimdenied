@@ -3,8 +3,13 @@ import { Link } from '../components/Link'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import StateHubLinks from '../components/StateHubLinks'
+import DenialReasonTemplate from '../denials/DenialReasonTemplate'
+import { getDenialPage } from '../denials/registry'
 
 export default function AutoClaimDeniedNewYorkMisrepresentationOrConcealment() {
+  const page = getDenialPage({ domain: 'auto', stateSlug: 'new-york', reasonKey: 'misrepresentation-or-concealment' })
+  return <DenialReasonTemplate page={page} />
+
   return (
     <>
     <Header />

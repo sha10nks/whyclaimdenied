@@ -25,7 +25,7 @@ export const BLOG_POSTS = [
       `${BASE_URL}/auto-insurance-claims-denied-california/policy-lapse-or-cancellation`,
       `${BASE_URL}/auto-insurance-claims-denied-california/missed-reporting-deadline`,
     ],
-    module: '../pages/blog/california/BlogCaliforniaWhyAutoDenied.jsx',
+    module: './posts/california/why-auto-claims-denied.js',
   },
   {
     type: 'auto',
@@ -38,7 +38,7 @@ export const BLOG_POSTS = [
     path: '/blog/california/how-appeal-auto-claim',
     canonicalUrl: `${BASE_URL}/blog/california/how-appeal-auto-claim`,
     internalLinks: [`${BASE_URL}/auto-insurance-claims-denied-california`, `${BASE_URL}/blog/california/why-auto-claims-denied`],
-    module: '../pages/blog/california/BlogCaliforniaHowAppealAuto.jsx',
+    module: './posts/california/how-appeal-auto-claim.js',
   },
   {
     type: 'case-auto',
@@ -51,7 +51,7 @@ export const BLOG_POSTS = [
     path: '/blog/california/case-auto-success',
     canonicalUrl: `${BASE_URL}/blog/california/case-auto-success`,
     internalLinks: [`${BASE_URL}/blog/california/how-appeal-auto-claim`, `${BASE_URL}/auto-insurance-claims-denied-california`],
-    module: '../pages/blog/california/BlogCaliforniaCaseAutoSuccess.jsx',
+    module: './posts/california/case-auto-success.js',
   },
   {
     type: 'health',
@@ -64,7 +64,7 @@ export const BLOG_POSTS = [
     path: '/blog/california/why-health-claims-denied',
     canonicalUrl: `${BASE_URL}/blog/california/why-health-claims-denied`,
     internalLinks: [`${BASE_URL}/health-insurance-claims-denied-california`, `${BASE_URL}/blog/california/how-appeal-health-claim`],
-    module: '../pages/blog/california/BlogCaliforniaWhyHealthDenied.jsx',
+    module: './posts/california/why-health-claims-denied.js',
   },
   {
     type: 'health',
@@ -77,7 +77,7 @@ export const BLOG_POSTS = [
     path: '/blog/california/how-appeal-health-claim',
     canonicalUrl: `${BASE_URL}/blog/california/how-appeal-health-claim`,
     internalLinks: [`${BASE_URL}/health-insurance-claims-denied-california`, `${BASE_URL}/blog/california/why-health-claims-denied`],
-    module: '../pages/blog/california/BlogCaliforniaHowAppealHealth.jsx',
+    module: './posts/california/how-appeal-health-claim.js',
   },
   {
     type: 'case-health',
@@ -90,7 +90,7 @@ export const BLOG_POSTS = [
     path: '/blog/california/case-health-success',
     canonicalUrl: `${BASE_URL}/blog/california/case-health-success`,
     internalLinks: [`${BASE_URL}/blog/california/how-appeal-health-claim`, `${BASE_URL}/health-insurance-claims-denied-california`],
-    module: '../pages/blog/california/BlogCaliforniaCaseHealthSuccess.jsx',
+    module: './posts/california/case-health-success.js',
   },
 
   {
@@ -104,7 +104,7 @@ export const BLOG_POSTS = [
     path: '/blog/florida/why-auto-claims-denied',
     canonicalUrl: `${BASE_URL}/blog/florida/why-auto-claims-denied`,
     internalLinks: [`${BASE_URL}/auto-insurance-claims-denied-florida`],
-    module: '../pages/blog/florida/BlogFloridaWhyAutoDenied.jsx',
+    module: './posts/florida/why-auto-claims-denied.js',
   },
   {
     type: 'auto',
@@ -117,7 +117,7 @@ export const BLOG_POSTS = [
     path: '/blog/florida/how-appeal-auto-claim',
     canonicalUrl: `${BASE_URL}/blog/florida/how-appeal-auto-claim`,
     internalLinks: [`${BASE_URL}/blog/florida/why-auto-claims-denied`, `${BASE_URL}/auto-insurance-claims-denied-florida`],
-    module: '../pages/blog/florida/BlogFloridaHowAppealAuto.jsx',
+    module: './posts/florida/how-appeal-auto-claim.js',
   },
   {
     type: 'case-auto',
@@ -130,7 +130,7 @@ export const BLOG_POSTS = [
     path: '/blog/florida/case-auto-success',
     canonicalUrl: `${BASE_URL}/blog/florida/case-auto-success`,
     internalLinks: [`${BASE_URL}/blog/florida/how-appeal-auto-claim`, `${BASE_URL}/auto-insurance-claims-denied-florida`],
-    module: '../pages/blog/florida/BlogFloridaCaseAutoSuccess.jsx',
+    module: './posts/florida/case-auto-success.js',
   },
   {
     type: 'health',
@@ -143,7 +143,7 @@ export const BLOG_POSTS = [
     path: '/blog/florida/why-health-claims-denied',
     canonicalUrl: `${BASE_URL}/blog/florida/why-health-claims-denied`,
     internalLinks: [`${BASE_URL}/health-insurance-claims-denied-florida`],
-    module: '../pages/blog/florida/BlogFloridaWhyHealthDenied.jsx',
+    module: './posts/florida/why-health-claims-denied.js',
   },
   {
     type: 'health',
@@ -156,7 +156,7 @@ export const BLOG_POSTS = [
     path: '/blog/florida/how-appeal-health-claim',
     canonicalUrl: `${BASE_URL}/blog/florida/how-appeal-health-claim`,
     internalLinks: [`${BASE_URL}/blog/florida/why-health-claims-denied`, `${BASE_URL}/health-insurance-claims-denied-florida`],
-    module: '../pages/blog/florida/BlogFloridaHowAppealHealth.jsx',
+    module: './posts/florida/how-appeal-health-claim.js',
   },
   {
     type: 'case-health',
@@ -169,7 +169,7 @@ export const BLOG_POSTS = [
     path: '/blog/florida/case-health-success',
     canonicalUrl: `${BASE_URL}/blog/florida/case-health-success`,
     internalLinks: [`${BASE_URL}/blog/florida/how-appeal-health-claim`, `${BASE_URL}/health-insurance-claims-denied-florida`],
-    module: '../pages/blog/florida/BlogFloridaCaseHealthSuccess.jsx',
+    module: './posts/florida/case-health-success.js',
   },
 
   {
@@ -183,7 +183,7 @@ export const BLOG_POSTS = [
     path: '/blog/texas/why-auto-claims-denied',
     canonicalUrl: `${BASE_URL}/blog/texas/why-auto-claims-denied`,
     internalLinks: [`${BASE_URL}/auto-insurance-claims-denied-texas`],
-    module: '../pages/blog/texas/BlogTexasWhyAutoDenied.jsx',
+    module: './posts/texas/why-auto-claims-denied.js',
   },
   {
     type: 'auto',
@@ -196,7 +196,7 @@ export const BLOG_POSTS = [
     path: '/blog/texas/how-appeal-auto-claim',
     canonicalUrl: `${BASE_URL}/blog/texas/how-appeal-auto-claim`,
     internalLinks: [`${BASE_URL}/blog/texas/why-auto-claims-denied`, `${BASE_URL}/auto-insurance-claims-denied-texas`],
-    module: '../pages/blog/texas/BlogTexasHowAppealAuto.jsx',
+    module: './posts/texas/how-appeal-auto-claim.js',
   },
   {
     type: 'case-auto',
@@ -209,7 +209,7 @@ export const BLOG_POSTS = [
     path: '/blog/texas/case-auto-success',
     canonicalUrl: `${BASE_URL}/blog/texas/case-auto-success`,
     internalLinks: [`${BASE_URL}/blog/texas/how-appeal-auto-claim`, `${BASE_URL}/auto-insurance-claims-denied-texas`],
-    module: '../pages/blog/texas/BlogTexasCaseAutoSuccess.jsx',
+    module: './posts/texas/case-auto-success.js',
   },
   {
     type: 'health',
@@ -222,7 +222,7 @@ export const BLOG_POSTS = [
     path: '/blog/texas/why-health-claims-denied',
     canonicalUrl: `${BASE_URL}/blog/texas/why-health-claims-denied`,
     internalLinks: [`${BASE_URL}/health-insurance-claims-denied-texas`],
-    module: '../pages/blog/texas/BlogTexasWhyHealthDenied.jsx',
+    module: './posts/texas/why-health-claims-denied.js',
   },
   {
     type: 'health',
@@ -235,7 +235,7 @@ export const BLOG_POSTS = [
     path: '/blog/texas/how-appeal-health-claim',
     canonicalUrl: `${BASE_URL}/blog/texas/how-appeal-health-claim`,
     internalLinks: [`${BASE_URL}/blog/texas/why-health-claims-denied`, `${BASE_URL}/health-insurance-claims-denied-texas`],
-    module: '../pages/blog/texas/BlogTexasHowAppealHealth.jsx',
+    module: './posts/texas/how-appeal-health-claim.js',
   },
   {
     type: 'case-health',
@@ -248,7 +248,7 @@ export const BLOG_POSTS = [
     path: '/blog/texas/case-health-success',
     canonicalUrl: `${BASE_URL}/blog/texas/case-health-success`,
     internalLinks: [`${BASE_URL}/blog/texas/how-appeal-health-claim`, `${BASE_URL}/health-insurance-claims-denied-texas`],
-    module: '../pages/blog/texas/BlogTexasCaseHealthSuccess.jsx',
+    module: './posts/texas/case-health-success.js',
   },
 
   {
@@ -262,7 +262,7 @@ export const BLOG_POSTS = [
     path: '/blog/new-york/why-auto-claims-denied',
     canonicalUrl: `${BASE_URL}/blog/new-york/why-auto-claims-denied`,
     internalLinks: [`${BASE_URL}/auto-insurance-claims-denied-new-york`],
-    module: '../pages/blog/newyork/BlogNewYorkWhyAutoDenied.jsx',
+    module: './posts/new-york/why-auto-claims-denied.js',
   },
   {
     type: 'auto',
@@ -275,7 +275,7 @@ export const BLOG_POSTS = [
     path: '/blog/new-york/how-appeal-auto-claim',
     canonicalUrl: `${BASE_URL}/blog/new-york/how-appeal-auto-claim`,
     internalLinks: [`${BASE_URL}/blog/new-york/why-auto-claims-denied`, `${BASE_URL}/auto-insurance-claims-denied-new-york`],
-    module: '../pages/blog/newyork/BlogNewYorkHowAppealAuto.jsx',
+    module: './posts/new-york/how-appeal-auto-claim.js',
   },
   {
     type: 'case-auto',
@@ -288,7 +288,7 @@ export const BLOG_POSTS = [
     path: '/blog/new-york/case-auto-success',
     canonicalUrl: `${BASE_URL}/blog/new-york/case-auto-success`,
     internalLinks: [`${BASE_URL}/blog/new-york/how-appeal-auto-claim`, `${BASE_URL}/auto-insurance-claims-denied-new-york`],
-    module: '../pages/blog/newyork/BlogNewYorkCaseAutoSuccess.jsx',
+    module: './posts/new-york/case-auto-success.js',
   },
   {
     type: 'health',
@@ -301,7 +301,7 @@ export const BLOG_POSTS = [
     path: '/blog/new-york/why-health-claims-denied',
     canonicalUrl: `${BASE_URL}/blog/new-york/why-health-claims-denied`,
     internalLinks: [`${BASE_URL}/health-insurance-claims-denied-new-york`],
-    module: '../pages/blog/newyork/BlogNewYorkWhyHealthDenied.jsx',
+    module: './posts/new-york/why-health-claims-denied.js',
   },
   {
     type: 'health',
@@ -314,7 +314,7 @@ export const BLOG_POSTS = [
     path: '/blog/new-york/how-appeal-health-claim',
     canonicalUrl: `${BASE_URL}/blog/new-york/how-appeal-health-claim`,
     internalLinks: [`${BASE_URL}/blog/new-york/why-health-claims-denied`, `${BASE_URL}/health-insurance-claims-denied-new-york`],
-    module: '../pages/blog/newyork/BlogNewYorkHowAppealHealth.jsx',
+    module: './posts/new-york/how-appeal-health-claim.js',
   },
   {
     type: 'case-health',
@@ -327,7 +327,7 @@ export const BLOG_POSTS = [
     path: '/blog/new-york/case-health-success',
     canonicalUrl: `${BASE_URL}/blog/new-york/case-health-success`,
     internalLinks: [`${BASE_URL}/blog/new-york/how-appeal-health-claim`, `${BASE_URL}/health-insurance-claims-denied-new-york`],
-    module: '../pages/blog/newyork/BlogNewYorkCaseHealthSuccess.jsx',
+    module: './posts/new-york/case-health-success.js',
   },
 
   // Pennsylvania
@@ -342,7 +342,7 @@ export const BLOG_POSTS = [
     path: '/blog/pennsylvania/why-auto-claims-denied',
     canonicalUrl: `${BASE_URL}/blog/pennsylvania/why-auto-claims-denied`,
     internalLinks: [`${BASE_URL}/auto-insurance-claims-denied-pennsylvania`],
-    module: '../pages/blog/pennsylvania/BlogPennsylvaniaWhyAutoDenied.jsx',
+    module: './posts/pennsylvania/why-auto-claims-denied.js',
   },
   {
     type: 'auto',
@@ -355,7 +355,7 @@ export const BLOG_POSTS = [
     path: '/blog/pennsylvania/how-appeal-auto-claim',
     canonicalUrl: `${BASE_URL}/blog/pennsylvania/how-appeal-auto-claim`,
     internalLinks: [`${BASE_URL}/blog/pennsylvania/why-auto-claims-denied`, `${BASE_URL}/auto-insurance-claims-denied-pennsylvania`],
-    module: '../pages/blog/pennsylvania/BlogPennsylvaniaHowAppealAuto.jsx',
+    module: './posts/pennsylvania/how-appeal-auto-claim.js',
   },
   {
     type: 'case-auto',
@@ -368,7 +368,7 @@ export const BLOG_POSTS = [
     path: '/blog/pennsylvania/case-auto-success',
     canonicalUrl: `${BASE_URL}/blog/pennsylvania/case-auto-success`,
     internalLinks: [`${BASE_URL}/blog/pennsylvania/how-appeal-auto-claim`, `${BASE_URL}/auto-insurance-claims-denied-pennsylvania`],
-    module: '../pages/blog/pennsylvania/BlogPennsylvaniaCaseAutoSuccess.jsx',
+    module: './posts/pennsylvania/case-auto-success.js',
   },
   {
     type: 'health',
@@ -381,7 +381,7 @@ export const BLOG_POSTS = [
     path: '/blog/pennsylvania/why-health-claims-denied',
     canonicalUrl: `${BASE_URL}/blog/pennsylvania/why-health-claims-denied`,
     internalLinks: [`${BASE_URL}/health-insurance-claims-denied-pennsylvania`],
-    module: '../pages/blog/pennsylvania/BlogPennsylvaniaWhyHealthDenied.jsx',
+    module: './posts/pennsylvania/why-health-claims-denied.js',
   },
   {
     type: 'health',
@@ -394,7 +394,7 @@ export const BLOG_POSTS = [
     path: '/blog/pennsylvania/how-appeal-health-claim',
     canonicalUrl: `${BASE_URL}/blog/pennsylvania/how-appeal-health-claim`,
     internalLinks: [`${BASE_URL}/blog/pennsylvania/why-health-claims-denied`, `${BASE_URL}/health-insurance-claims-denied-pennsylvania`],
-    module: '../pages/blog/pennsylvania/BlogPennsylvaniaHowAppealHealth.jsx',
+    module: './posts/pennsylvania/how-appeal-health-claim.js',
   },
   {
     type: 'case-health',
@@ -407,7 +407,7 @@ export const BLOG_POSTS = [
     path: '/blog/pennsylvania/case-health-success',
     canonicalUrl: `${BASE_URL}/blog/pennsylvania/case-health-success`,
     internalLinks: [`${BASE_URL}/blog/pennsylvania/how-appeal-health-claim`, `${BASE_URL}/health-insurance-claims-denied-pennsylvania`],
-    module: '../pages/blog/pennsylvania/BlogPennsylvaniaCaseHealthSuccess.jsx',
+    module: './posts/pennsylvania/case-health-success.js',
   },
 
   // Illinois
@@ -422,7 +422,7 @@ export const BLOG_POSTS = [
     path: '/blog/illinois/why-auto-claims-denied',
     canonicalUrl: `${BASE_URL}/blog/illinois/why-auto-claims-denied`,
     internalLinks: [`${BASE_URL}/auto-insurance-claims-denied-illinois`],
-    module: '../pages/blog/illinois/BlogIllinoisWhyAutoDenied.jsx',
+    module: './posts/illinois/why-auto-claims-denied.js',
   },
   {
     type: 'auto',
@@ -435,7 +435,7 @@ export const BLOG_POSTS = [
     path: '/blog/illinois/how-appeal-auto-claim',
     canonicalUrl: `${BASE_URL}/blog/illinois/how-appeal-auto-claim`,
     internalLinks: [`${BASE_URL}/blog/illinois/why-auto-claims-denied`, `${BASE_URL}/auto-insurance-claims-denied-illinois`],
-    module: '../pages/blog/illinois/BlogIllinoisHowAppealAuto.jsx',
+    module: './posts/illinois/how-appeal-auto-claim.js',
   },
   {
     type: 'case-auto',
@@ -448,7 +448,7 @@ export const BLOG_POSTS = [
     path: '/blog/illinois/case-auto-success',
     canonicalUrl: `${BASE_URL}/blog/illinois/case-auto-success`,
     internalLinks: [`${BASE_URL}/blog/illinois/how-appeal-auto-claim`, `${BASE_URL}/auto-insurance-claims-denied-illinois`],
-    module: '../pages/blog/illinois/BlogIllinoisCaseAutoSuccess.jsx',
+    module: './posts/illinois/case-auto-success.js',
   },
   {
     type: 'health',
@@ -461,7 +461,7 @@ export const BLOG_POSTS = [
     path: '/blog/illinois/why-health-claims-denied',
     canonicalUrl: `${BASE_URL}/blog/illinois/why-health-claims-denied`,
     internalLinks: [`${BASE_URL}/health-insurance-claims-denied-illinois`],
-    module: '../pages/blog/illinois/BlogIllinoisWhyHealthDenied.jsx',
+    module: './posts/illinois/why-health-claims-denied.js',
   },
   {
     type: 'health',
@@ -474,7 +474,7 @@ export const BLOG_POSTS = [
     path: '/blog/illinois/how-appeal-health-claim',
     canonicalUrl: `${BASE_URL}/blog/illinois/how-appeal-health-claim`,
     internalLinks: [`${BASE_URL}/blog/illinois/why-health-claims-denied`, `${BASE_URL}/health-insurance-claims-denied-illinois`],
-    module: '../pages/blog/illinois/BlogIllinoisHowAppealHealth.jsx',
+    module: './posts/illinois/how-appeal-health-claim.js',
   },
   {
     type: 'case-health',
@@ -487,7 +487,7 @@ export const BLOG_POSTS = [
     path: '/blog/illinois/case-health-success',
     canonicalUrl: `${BASE_URL}/blog/illinois/case-health-success`,
     internalLinks: [`${BASE_URL}/blog/illinois/how-appeal-health-claim`, `${BASE_URL}/health-insurance-claims-denied-illinois`],
-    module: '../pages/blog/illinois/BlogIllinoisCaseHealthSuccess.jsx',
+    module: './posts/illinois/case-health-success.js',
   },
 ];
 

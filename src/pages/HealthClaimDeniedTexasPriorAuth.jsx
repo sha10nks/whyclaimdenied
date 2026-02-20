@@ -4,8 +4,13 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
 import { Link } from '../components/Link';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate';
+import { getDenialPage } from '../denials/registry';
 
 const HealthClaimDeniedTexasPriorAuth = () => {
+  const page = getDenialPage({ domain: 'health', stateSlug: 'texas', reasonKey: 'prior-authorization-missing' });
+  return <DenialReasonTemplate page={page} />;
+
   const sd = { "@context": "https://schema.org", "@type": "Article", "headline": "Prior Authorization Missing — Texas Health Insurance Denial", "description": "Why prior authorization denials happen in Texas and how to respond, including plan documents and appeal routes." };
   return (
     <>

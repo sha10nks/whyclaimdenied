@@ -4,8 +4,13 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
 import { Link } from '../components/Link';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate';
+import { getDenialPage } from '../denials/registry';
 
 const AutoClaimDeniedTexasFailureCooperate = () => {
+  const page = getDenialPage({ domain: 'auto', stateSlug: 'texas', reasonKey: 'failure-to-cooperate' });
+  return <DenialReasonTemplate page={page} />;
+
   const sd = { "@context": "https://schema.org", "@type": "Article", "headline": "Failure to Cooperate — Texas Auto Insurance Denial", "description": "What insurers mean by failure to cooperate in Texas auto claims and how to fix it." };
   return (
     <>

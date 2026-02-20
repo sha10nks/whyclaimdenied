@@ -3,8 +3,13 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate';
+import { getDenialPage } from '../denials/registry';
 
 const AutoClaimDeniedTexasPolicyLapse = () => {
+  const page = getDenialPage({ domain: 'auto', stateSlug: 'texas', reasonKey: 'policy-lapse' });
+  return <DenialReasonTemplate page={page} />;
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",

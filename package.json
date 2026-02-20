@@ -4,13 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "prebuild": "node scripts/generate-netlify-redirects.mjs",
+    "dev": "node scripts/validate-blog.mjs && vite",
+    "prebuild": "node scripts/validate-blog.mjs && node scripts/generate-netlify-redirects.mjs",
     "build": "vite build",
     "postbuild": "node scripts/sitemap-engine.mjs",
     "sitemap": "node scripts/sitemap-engine.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "validate:blog": "node scripts/validate-blog.mjs",
+    "validate:content": "node scripts/validate-content.mjs",
+    "blog:add-state": "node scripts/blog-add-state.mjs",
+    "blog:add-post": "node scripts/blog-add-post.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

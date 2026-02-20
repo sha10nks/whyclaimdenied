@@ -3,8 +3,13 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate';
+import { getDenialPage } from '../denials/registry';
 
 const AutoClaimDeniedTexasNoCoverage = () => {
+  const page = getDenialPage({ domain: 'auto', stateSlug: 'texas', reasonKey: 'no-coverage-at-time-of-loss' });
+  return <DenialReasonTemplate page={page} />;
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",

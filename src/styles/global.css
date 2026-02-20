@@ -178,6 +178,134 @@ a:hover {
   background: #f8fafc;
 }
 
+/* --- WCD Blog Post Standard --- */
+
+.wcd-post-hero {
+  margin-top: var(--spacing-md);
+}
+
+.wcd-post-summary {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  max-width: 75ch;
+}
+
+.wcd-card {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: var(--color-bg-section);
+  margin: var(--spacing-md) 0;
+}
+
+.wcd-card-title {
+  margin-top: 0;
+  border: none;
+  padding: 0;
+  font-size: 1.3rem;
+}
+
+.wcd-tight-list {
+  margin: 0;
+  padding-left: var(--spacing-md);
+}
+
+.wcd-checklist {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.wcd-checklist li {
+  padding-left: 26px;
+  position: relative;
+}
+
+.wcd-checklist li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #136f3b;
+  font-weight: 800;
+}
+
+.wcd-two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-sm);
+}
+
+@media (min-width: 800px) {
+  .wcd-two-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.wcd-mini-card {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: #fff;
+}
+
+.wcd-mini-card-title {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  border: none;
+  padding: 0;
+}
+
+.wcd-mini-card-body {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.wcd-callout {
+  border-left: 4px solid var(--color-border-accent);
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin: var(--spacing-md) 0;
+}
+
+.wcd-callout-title {
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.wcd-callout-body {
+  color: var(--color-text-muted);
+}
+
+.wcd-faq-item {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: #fff;
+  margin-bottom: var(--spacing-sm);
+}
+
+.wcd-faq-q {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  border: none;
+  padding: 0;
+}
+
+.wcd-faq-a {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.wcd-cta {
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
 /* Accessibility Helpers */
 .visually-hidden {
   position: absolute;
