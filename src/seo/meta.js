@@ -6,6 +6,16 @@ export const META = {
       description: 'A practical, California-specific guide to common auto claim denials and what to do next.',
       canonical: `${BASE_URL}/auto-insurance-claims-denied-california`,
     },
+    autoPA: {
+      title: 'Auto Insurance Claims Denied in Pennsylvania',
+      description: 'Common denial reasons, Pennsylvania context, and practical steps to challenge a denied auto claim.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-pennsylvania`,
+    },
+    healthPA: {
+      title: 'Health Insurance Claims Denied in Pennsylvania',
+      description: 'Why health claims get denied in Pennsylvania and how to use plan appeals and PID consumer help.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-pennsylvania`,
+    },
     claimDenied: {
       title: 'What to Do When Your Claim is Denied in California',
       description: 'Step-by-step guide on handling denied insurance claims in California. Understand your rights and the appeals process.',
@@ -390,6 +400,90 @@ export const META = {
       title: 'Coordination of Benefits (New York Health Claims)',
       description: 'How coordination of benefits causes denials in New York health claims and how to resolve COB holds.',
       canonical: `${BASE_URL}/health-insurance-claims-denied-new-york/coordination-of-benefits`,
+    },
+    
+    // Pennsylvania – Auto reasons
+    autoPA_noCoverage: {
+      title: 'No Coverage at Time of Loss (Pennsylvania Auto Claims)',
+      description: 'Why insurers deny for no coverage at time of loss in Pennsylvania auto claims and what to check next.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-pennsylvania/no-coverage-at-time-of-loss`,
+    },
+    autoPA_lapse: {
+      title: 'Policy Lapse or Cancellation (Pennsylvania Auto Claims)',
+      description: 'How lapse and cancellation denials work in Pennsylvania auto claims and the key documents to request.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-pennsylvania/policy-lapse-or-cancellation`,
+    },
+    autoPA_missedReporting: {
+      title: 'Missed Reporting Deadline (Pennsylvania Auto Claims)',
+      description: 'What “late notice” means in Pennsylvania auto claims and how to respond when reporting was delayed.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-pennsylvania/missed-reporting-deadline`,
+    },
+    autoPA_excludedDriver: {
+      title: 'Excluded Driver (Pennsylvania Auto Claims)',
+      description: 'How excluded-driver denials happen in Pennsylvania auto claims and what to request from the insurer.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-pennsylvania/excluded-driver`,
+    },
+    autoPA_misrep: {
+      title: 'Misrepresentation or Concealment (Pennsylvania Auto Claims)',
+      description: 'What misrepresentation denials mean in Pennsylvania auto insurance claims and how to challenge the facts.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-pennsylvania/misrepresentation-or-concealment`,
+    },
+    autoPA_nonCoveredUse: {
+      title: 'Non-Covered Use (Pennsylvania Auto Claims)',
+      description: 'Why insurers deny claims for non-covered use in Pennsylvania and how to document what really happened.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-pennsylvania/non-covered-use`,
+    },
+    autoPA_failureToCooperate: {
+      title: 'Failure to Cooperate (Pennsylvania Auto Claims)',
+      description: 'What insurers mean by “failure to cooperate” in Pennsylvania auto claims and how to cure the issue.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-pennsylvania/failure-to-cooperate`,
+    },
+    autoPA_disputedLiability: {
+      title: 'Disputed Liability or Fault (Pennsylvania Auto Claims)',
+      description: 'How liability disputes lead to claim denials and what evidence helps in Pennsylvania auto claims.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-pennsylvania/disputed-liability`,
+    },
+
+    // Pennsylvania – Health reasons
+    healthPA_priorAuth: {
+      title: 'Prior Authorization Missing (Pennsylvania Health Claims)',
+      description: 'Why health claims get denied for missing prior authorization in Pennsylvania and what to do next.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-pennsylvania/prior-authorization-missing`,
+    },
+    healthPA_medNec: {
+      title: 'Not Medically Necessary (Pennsylvania Health Claims)',
+      description: 'How medical necessity denials work in Pennsylvania and what to request for a stronger appeal.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-pennsylvania/not-medically-necessary`,
+    },
+    healthPA_oON: {
+      title: 'Out-of-Network Provider (Pennsylvania Health Claims)',
+      description: 'Common out-of-network denial patterns in Pennsylvania and the questions to ask your plan.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-pennsylvania/out-of-network-provider`,
+    },
+    healthPA_coding: {
+      title: 'Coding or Documentation Error (Pennsylvania Health Claims)',
+      description: 'How billing and documentation problems cause denials in Pennsylvania health claims and how to fix them.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-pennsylvania/coding-or-documentation-error`,
+    },
+    healthPA_experimental: {
+      title: 'Experimental or Investigational (Pennsylvania Health Claims)',
+      description: 'What “experimental” denials mean in Pennsylvania health coverage and how to appeal with evidence.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-pennsylvania/experimental-or-investigational`,
+    },
+    healthPA_excludedBenefit: {
+      title: 'Benefit or Service Excluded (Pennsylvania Health Claims)',
+      description: 'How excluded-benefit denials work in Pennsylvania health plans and what to check in your contract.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-pennsylvania/benefit-or-service-excluded`,
+    },
+    healthPA_timelyFiling: {
+      title: 'Timely Filing Issue (Pennsylvania Health Claims)',
+      description: 'What timely filing denials mean in Pennsylvania health claims and how to request reconsideration.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-pennsylvania/timely-filing-issue`,
+    },
+    healthPA_cob: {
+      title: 'Coordination of Benefits (Pennsylvania Health Claims)',
+      description: 'How coordination of benefits causes denials in Pennsylvania health claims and how to resolve COB holds.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-pennsylvania/coordination-of-benefits`,
     },
 };
 

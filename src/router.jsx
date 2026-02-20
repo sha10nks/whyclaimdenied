@@ -86,6 +86,26 @@ const HealthClaimDeniedNewYorkBenefitOrServiceExcluded = lazy(() => import("./pa
 const HealthClaimDeniedNewYorkTimelyFilingIssue = lazy(() => import("./pages/HealthClaimDeniedNewYorkTimelyFilingIssue"));
 const HealthClaimDeniedNewYorkCoordinationOfBenefits = lazy(() => import("./pages/HealthClaimDeniedNewYorkCoordinationOfBenefits"));
 
+// Pennsylvania
+const AutoClaimDeniedPennsylvania = lazy(() => import("./pages/AutoClaimDeniedPennsylvania"));
+const HealthClaimDeniedPennsylvania = lazy(() => import("./pages/HealthClaimDeniedPennsylvania"));
+const AutoClaimDeniedPennsylvaniaNoCoverageAtTimeOfLoss = lazy(() => import("./pages/AutoClaimDeniedPennsylvaniaNoCoverageAtTimeOfLoss"));
+const AutoClaimDeniedPennsylvaniaPolicyLapseOrCancellation = lazy(() => import("./pages/AutoClaimDeniedPennsylvaniaPolicyLapseOrCancellation"));
+const AutoClaimDeniedPennsylvaniaMissedReportingDeadline = lazy(() => import("./pages/AutoClaimDeniedPennsylvaniaMissedReportingDeadline"));
+const AutoClaimDeniedPennsylvaniaExcludedDriver = lazy(() => import("./pages/AutoClaimDeniedPennsylvaniaExcludedDriver"));
+const AutoClaimDeniedPennsylvaniaMisrepresentationOrConcealment = lazy(() => import("./pages/AutoClaimDeniedPennsylvaniaMisrepresentationOrConcealment"));
+const AutoClaimDeniedPennsylvaniaNonCoveredUse = lazy(() => import("./pages/AutoClaimDeniedPennsylvaniaNonCoveredUse"));
+const AutoClaimDeniedPennsylvaniaFailureToCooperate = lazy(() => import("./pages/AutoClaimDeniedPennsylvaniaFailureToCooperate"));
+const AutoClaimDeniedPennsylvaniaDisputedLiability = lazy(() => import("./pages/AutoClaimDeniedPennsylvaniaDisputedLiability"));
+const HealthClaimDeniedPennsylvaniaPriorAuthorizationMissing = lazy(() => import("./pages/HealthClaimDeniedPennsylvaniaPriorAuthorizationMissing"));
+const HealthClaimDeniedPennsylvaniaNotMedicallyNecessary = lazy(() => import("./pages/HealthClaimDeniedPennsylvaniaNotMedicallyNecessary"));
+const HealthClaimDeniedPennsylvaniaOutOfNetworkProvider = lazy(() => import("./pages/HealthClaimDeniedPennsylvaniaOutOfNetworkProvider"));
+const HealthClaimDeniedPennsylvaniaCodingOrDocumentationError = lazy(() => import("./pages/HealthClaimDeniedPennsylvaniaCodingOrDocumentationError"));
+const HealthClaimDeniedPennsylvaniaExperimentalOrInvestigational = lazy(() => import("./pages/HealthClaimDeniedPennsylvaniaExperimentalOrInvestigational"));
+const HealthClaimDeniedPennsylvaniaBenefitOrServiceExcluded = lazy(() => import("./pages/HealthClaimDeniedPennsylvaniaBenefitOrServiceExcluded"));
+const HealthClaimDeniedPennsylvaniaTimelyFilingIssue = lazy(() => import("./pages/HealthClaimDeniedPennsylvaniaTimelyFilingIssue"));
+const HealthClaimDeniedPennsylvaniaCoordinationOfBenefits = lazy(() => import("./pages/HealthClaimDeniedPennsylvaniaCoordinationOfBenefits"));
+
 const About = lazy(() => import("./pages/About"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Privacy = lazy(() => import("./pages/Privacy"));
@@ -320,6 +340,78 @@ const router = createBrowserRouter([
       {
         path: "health-insurance-claims-denied-new-york/coordination-of-benefits",
         element: <HealthClaimDeniedNewYorkCoordinationOfBenefits />,
+      },
+      {
+        path: "auto-insurance-claims-denied-pennsylvania",
+        element: <AutoClaimDeniedPennsylvania />,
+      },
+      {
+        path: "auto-insurance-claims-denied-pennsylvania/no-coverage-at-time-of-loss",
+        element: <AutoClaimDeniedPennsylvaniaNoCoverageAtTimeOfLoss />,
+      },
+      {
+        path: "auto-insurance-claims-denied-pennsylvania/policy-lapse-or-cancellation",
+        element: <AutoClaimDeniedPennsylvaniaPolicyLapseOrCancellation />,
+      },
+      {
+        path: "auto-insurance-claims-denied-pennsylvania/missed-reporting-deadline",
+        element: <AutoClaimDeniedPennsylvaniaMissedReportingDeadline />,
+      },
+      {
+        path: "auto-insurance-claims-denied-pennsylvania/excluded-driver",
+        element: <AutoClaimDeniedPennsylvaniaExcludedDriver />,
+      },
+      {
+        path: "auto-insurance-claims-denied-pennsylvania/misrepresentation-or-concealment",
+        element: <AutoClaimDeniedPennsylvaniaMisrepresentationOrConcealment />,
+      },
+      {
+        path: "auto-insurance-claims-denied-pennsylvania/non-covered-use",
+        element: <AutoClaimDeniedPennsylvaniaNonCoveredUse />,
+      },
+      {
+        path: "auto-insurance-claims-denied-pennsylvania/failure-to-cooperate",
+        element: <AutoClaimDeniedPennsylvaniaFailureToCooperate />,
+      },
+      {
+        path: "auto-insurance-claims-denied-pennsylvania/disputed-liability",
+        element: <AutoClaimDeniedPennsylvaniaDisputedLiability />,
+      },
+      {
+        path: "health-insurance-claims-denied-pennsylvania",
+        element: <HealthClaimDeniedPennsylvania />,
+      },
+      {
+        path: "health-insurance-claims-denied-pennsylvania/prior-authorization-missing",
+        element: <HealthClaimDeniedPennsylvaniaPriorAuthorizationMissing />,
+      },
+      {
+        path: "health-insurance-claims-denied-pennsylvania/not-medically-necessary",
+        element: <HealthClaimDeniedPennsylvaniaNotMedicallyNecessary />,
+      },
+      {
+        path: "health-insurance-claims-denied-pennsylvania/out-of-network-provider",
+        element: <HealthClaimDeniedPennsylvaniaOutOfNetworkProvider />,
+      },
+      {
+        path: "health-insurance-claims-denied-pennsylvania/coding-or-documentation-error",
+        element: <HealthClaimDeniedPennsylvaniaCodingOrDocumentationError />,
+      },
+      {
+        path: "health-insurance-claims-denied-pennsylvania/experimental-or-investigational",
+        element: <HealthClaimDeniedPennsylvaniaExperimentalOrInvestigational />,
+      },
+      {
+        path: "health-insurance-claims-denied-pennsylvania/benefit-or-service-excluded",
+        element: <HealthClaimDeniedPennsylvaniaBenefitOrServiceExcluded />,
+      },
+      {
+        path: "health-insurance-claims-denied-pennsylvania/timely-filing-issue",
+        element: <HealthClaimDeniedPennsylvaniaTimelyFilingIssue />,
+      },
+      {
+        path: "health-insurance-claims-denied-pennsylvania/coordination-of-benefits",
+        element: <HealthClaimDeniedPennsylvaniaCoordinationOfBenefits />,
       },
       {
         path: "why-claims-get-denied-california",
