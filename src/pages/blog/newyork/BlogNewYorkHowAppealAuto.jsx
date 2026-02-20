@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import LinkList from '../../../components/LinkList';
 import Breadcrumbs from '../../../components/Breadcrumbs';
 
 const BlogNewYorkHowAppealAuto = () => {
@@ -182,20 +182,14 @@ const BlogNewYorkHowAppealAuto = () => {
 
         <nav className="bg-white rounded-lg shadow-md p-6">
           <h3 className="text-lg font-semibold mb-4">Related New York Resources</h3>
-          <div className="grid md:grid-cols-2 gap-4">
-            <Link to="/blog/new-york/why-auto-claims-denied" className="text-blue-600 hover:text-blue-800 underline">
-              Why Auto Claims Get Denied in New York
-            </Link>
-            <Link to="/blog/new-york/case-auto-success" className="text-blue-600 hover:text-blue-800 underline">
-              Real New York Auto Insurance Success Cases
-            </Link>
-            <Link to="/auto-insurance-claims-denied-new-york" className="text-blue-600 hover:text-blue-800 underline">
-              New York Insurance Denial Guide
-            </Link>
-            <Link to="/reasons/auto-insurance-claim-denied" className="text-blue-600 hover:text-blue-800 underline">
-              General Auto Insurance Denial Guide
-            </Link>
-          </div>
+          <LinkList
+            items={[
+              { to: "/blog/new-york/why-auto-claims-denied", label: "Why Auto Claims Get Denied in New York" },
+              { to: "/blog/new-york/case-auto-success", label: "Real New York Auto Insurance Success Cases" },
+              { to: "/auto-insurance-claims-denied-new-york", label: "New York Insurance Denial Guide" },
+              { to: "/reasons/auto-insurance-claim-denied", label: "General Auto Insurance Denial Guide" }
+            ]}
+          />
         </nav>
       </article>
     </div>
