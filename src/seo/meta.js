@@ -6,6 +6,16 @@ export const META = {
       description: 'A practical, California-specific guide to common auto claim denials and what to do next.',
       canonical: `${BASE_URL}/auto-insurance-claims-denied-california`,
     },
+    autoIL: {
+      title: 'Auto Insurance Claims Denied in Illinois',
+      description: 'Common denial reasons, Illinois context, and practical steps to challenge a denied auto claim.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-illinois`,
+    },
+    healthIL: {
+      title: 'Health Insurance Claims Denied in Illinois',
+      description: 'Why health claims get denied in Illinois and how to use plan appeals and IDOI consumer help.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-illinois`,
+    },
     autoPA: {
       title: 'Auto Insurance Claims Denied in Pennsylvania',
       description: 'Common denial reasons, Pennsylvania context, and practical steps to challenge a denied auto claim.',
@@ -400,6 +410,90 @@ export const META = {
       title: 'Coordination of Benefits (New York Health Claims)',
       description: 'How coordination of benefits causes denials in New York health claims and how to resolve COB holds.',
       canonical: `${BASE_URL}/health-insurance-claims-denied-new-york/coordination-of-benefits`,
+    },
+    
+    // Illinois – Auto reasons
+    autoIL_noCoverage: {
+      title: 'No Coverage at Time of Loss (Illinois Auto Claims)',
+      description: 'Why insurers deny for no coverage at time of loss in Illinois auto claims and what to check next.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-illinois/no-coverage-at-time-of-loss`,
+    },
+    autoIL_lapse: {
+      title: 'Policy Lapse or Cancellation (Illinois Auto Claims)',
+      description: 'How lapse and cancellation denials work in Illinois auto claims and the key documents to request.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-illinois/policy-lapse-or-cancellation`,
+    },
+    autoIL_missedReporting: {
+      title: 'Missed Reporting Deadline (Illinois Auto Claims)',
+      description: 'What “late notice” means in Illinois auto claims and how to respond when reporting was delayed.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-illinois/missed-reporting-deadline`,
+    },
+    autoIL_excludedDriver: {
+      title: 'Excluded Driver (Illinois Auto Claims)',
+      description: 'How excluded-driver denials happen in Illinois auto claims and what to request from the insurer.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-illinois/excluded-driver`,
+    },
+    autoIL_misrep: {
+      title: 'Misrepresentation or Concealment (Illinois Auto Claims)',
+      description: 'What misrepresentation denials mean in Illinois auto insurance claims and how to challenge the facts.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-illinois/misrepresentation-or-concealment`,
+    },
+    autoIL_nonCoveredUse: {
+      title: 'Non-Covered Use (Illinois Auto Claims)',
+      description: 'Why insurers deny claims for non-covered use in Illinois and how to document what really happened.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-illinois/non-covered-use`,
+    },
+    autoIL_failureToCooperate: {
+      title: 'Failure to Cooperate (Illinois Auto Claims)',
+      description: 'What insurers mean by “failure to cooperate” in Illinois auto claims and how to cure the issue.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-illinois/failure-to-cooperate`,
+    },
+    autoIL_disputedLiability: {
+      title: 'Disputed Liability or Fault (Illinois Auto Claims)',
+      description: 'How liability disputes lead to claim denials and what evidence helps in Illinois auto claims.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-illinois/disputed-liability`,
+    },
+
+    // Illinois – Health reasons
+    healthIL_priorAuth: {
+      title: 'Prior Authorization Missing (Illinois Health Claims)',
+      description: 'Why health claims get denied for missing prior authorization in Illinois and what to do next.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-illinois/prior-authorization-missing`,
+    },
+    healthIL_medNec: {
+      title: 'Not Medically Necessary (Illinois Health Claims)',
+      description: 'How medical necessity denials work in Illinois and what to request for a stronger appeal.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-illinois/not-medically-necessary`,
+    },
+    healthIL_oON: {
+      title: 'Out-of-Network Provider (Illinois Health Claims)',
+      description: 'Common out-of-network denial patterns in Illinois and the questions to ask your plan.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-illinois/out-of-network-provider`,
+    },
+    healthIL_coding: {
+      title: 'Coding or Documentation Error (Illinois Health Claims)',
+      description: 'How billing and documentation problems cause denials in Illinois health claims and how to fix them.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-illinois/coding-or-documentation-error`,
+    },
+    healthIL_experimental: {
+      title: 'Experimental or Investigational (Illinois Health Claims)',
+      description: 'What “experimental” denials mean in Illinois health coverage and how to appeal with evidence.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-illinois/experimental-or-investigational`,
+    },
+    healthIL_excludedBenefit: {
+      title: 'Benefit or Service Excluded (Illinois Health Claims)',
+      description: 'How excluded-benefit denials work in Illinois health plans and what to check in your contract.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-illinois/benefit-or-service-excluded`,
+    },
+    healthIL_timelyFiling: {
+      title: 'Timely Filing Issue (Illinois Health Claims)',
+      description: 'What timely filing denials mean in Illinois health claims and how to request reconsideration.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-illinois/timely-filing-issue`,
+    },
+    healthIL_cob: {
+      title: 'Coordination of Benefits (Illinois Health Claims)',
+      description: 'How coordination of benefits causes denials in Illinois health claims and how to resolve COB holds.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-illinois/coordination-of-benefits`,
     },
     
     // Pennsylvania – Auto reasons

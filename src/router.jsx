@@ -106,6 +106,26 @@ const HealthClaimDeniedPennsylvaniaBenefitOrServiceExcluded = lazy(() => import(
 const HealthClaimDeniedPennsylvaniaTimelyFilingIssue = lazy(() => import("./pages/HealthClaimDeniedPennsylvaniaTimelyFilingIssue"));
 const HealthClaimDeniedPennsylvaniaCoordinationOfBenefits = lazy(() => import("./pages/HealthClaimDeniedPennsylvaniaCoordinationOfBenefits"));
 
+// Illinois
+const AutoClaimDeniedIllinois = lazy(() => import("./pages/AutoClaimDeniedIllinois"));
+const HealthClaimDeniedIllinois = lazy(() => import("./pages/HealthClaimDeniedIllinois"));
+const AutoClaimDeniedIllinoisNoCoverageAtTimeOfLoss = lazy(() => import("./pages/AutoClaimDeniedIllinoisNoCoverageAtTimeOfLoss"));
+const AutoClaimDeniedIllinoisPolicyLapseOrCancellation = lazy(() => import("./pages/AutoClaimDeniedIllinoisPolicyLapseOrCancellation"));
+const AutoClaimDeniedIllinoisMissedReportingDeadline = lazy(() => import("./pages/AutoClaimDeniedIllinoisMissedReportingDeadline"));
+const AutoClaimDeniedIllinoisExcludedDriver = lazy(() => import("./pages/AutoClaimDeniedIllinoisExcludedDriver"));
+const AutoClaimDeniedIllinoisMisrepresentationOrConcealment = lazy(() => import("./pages/AutoClaimDeniedIllinoisMisrepresentationOrConcealment"));
+const AutoClaimDeniedIllinoisNonCoveredUse = lazy(() => import("./pages/AutoClaimDeniedIllinoisNonCoveredUse"));
+const AutoClaimDeniedIllinoisFailureToCooperate = lazy(() => import("./pages/AutoClaimDeniedIllinoisFailureToCooperate"));
+const AutoClaimDeniedIllinoisDisputedLiability = lazy(() => import("./pages/AutoClaimDeniedIllinoisDisputedLiability"));
+const HealthClaimDeniedIllinoisPriorAuthorizationMissing = lazy(() => import("./pages/HealthClaimDeniedIllinoisPriorAuthorizationMissing"));
+const HealthClaimDeniedIllinoisNotMedicallyNecessary = lazy(() => import("./pages/HealthClaimDeniedIllinoisNotMedicallyNecessary"));
+const HealthClaimDeniedIllinoisOutOfNetworkProvider = lazy(() => import("./pages/HealthClaimDeniedIllinoisOutOfNetworkProvider"));
+const HealthClaimDeniedIllinoisCodingOrDocumentationError = lazy(() => import("./pages/HealthClaimDeniedIllinoisCodingOrDocumentationError"));
+const HealthClaimDeniedIllinoisExperimentalOrInvestigational = lazy(() => import("./pages/HealthClaimDeniedIllinoisExperimentalOrInvestigational"));
+const HealthClaimDeniedIllinoisBenefitOrServiceExcluded = lazy(() => import("./pages/HealthClaimDeniedIllinoisBenefitOrServiceExcluded"));
+const HealthClaimDeniedIllinoisTimelyFilingIssue = lazy(() => import("./pages/HealthClaimDeniedIllinoisTimelyFilingIssue"));
+const HealthClaimDeniedIllinoisCoordinationOfBenefits = lazy(() => import("./pages/HealthClaimDeniedIllinoisCoordinationOfBenefits"));
+
 const About = lazy(() => import("./pages/About"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Privacy = lazy(() => import("./pages/Privacy"));
@@ -340,6 +360,78 @@ const router = createBrowserRouter([
       {
         path: "health-insurance-claims-denied-new-york/coordination-of-benefits",
         element: <HealthClaimDeniedNewYorkCoordinationOfBenefits />,
+      },
+      {
+        path: "auto-insurance-claims-denied-illinois",
+        element: <AutoClaimDeniedIllinois />,
+      },
+      {
+        path: "auto-insurance-claims-denied-illinois/no-coverage-at-time-of-loss",
+        element: <AutoClaimDeniedIllinoisNoCoverageAtTimeOfLoss />,
+      },
+      {
+        path: "auto-insurance-claims-denied-illinois/policy-lapse-or-cancellation",
+        element: <AutoClaimDeniedIllinoisPolicyLapseOrCancellation />,
+      },
+      {
+        path: "auto-insurance-claims-denied-illinois/missed-reporting-deadline",
+        element: <AutoClaimDeniedIllinoisMissedReportingDeadline />,
+      },
+      {
+        path: "auto-insurance-claims-denied-illinois/excluded-driver",
+        element: <AutoClaimDeniedIllinoisExcludedDriver />,
+      },
+      {
+        path: "auto-insurance-claims-denied-illinois/misrepresentation-or-concealment",
+        element: <AutoClaimDeniedIllinoisMisrepresentationOrConcealment />,
+      },
+      {
+        path: "auto-insurance-claims-denied-illinois/non-covered-use",
+        element: <AutoClaimDeniedIllinoisNonCoveredUse />,
+      },
+      {
+        path: "auto-insurance-claims-denied-illinois/failure-to-cooperate",
+        element: <AutoClaimDeniedIllinoisFailureToCooperate />,
+      },
+      {
+        path: "auto-insurance-claims-denied-illinois/disputed-liability",
+        element: <AutoClaimDeniedIllinoisDisputedLiability />,
+      },
+      {
+        path: "health-insurance-claims-denied-illinois",
+        element: <HealthClaimDeniedIllinois />,
+      },
+      {
+        path: "health-insurance-claims-denied-illinois/prior-authorization-missing",
+        element: <HealthClaimDeniedIllinoisPriorAuthorizationMissing />,
+      },
+      {
+        path: "health-insurance-claims-denied-illinois/not-medically-necessary",
+        element: <HealthClaimDeniedIllinoisNotMedicallyNecessary />,
+      },
+      {
+        path: "health-insurance-claims-denied-illinois/out-of-network-provider",
+        element: <HealthClaimDeniedIllinoisOutOfNetworkProvider />,
+      },
+      {
+        path: "health-insurance-claims-denied-illinois/coding-or-documentation-error",
+        element: <HealthClaimDeniedIllinoisCodingOrDocumentationError />,
+      },
+      {
+        path: "health-insurance-claims-denied-illinois/experimental-or-investigational",
+        element: <HealthClaimDeniedIllinoisExperimentalOrInvestigational />,
+      },
+      {
+        path: "health-insurance-claims-denied-illinois/benefit-or-service-excluded",
+        element: <HealthClaimDeniedIllinoisBenefitOrServiceExcluded />,
+      },
+      {
+        path: "health-insurance-claims-denied-illinois/timely-filing-issue",
+        element: <HealthClaimDeniedIllinoisTimelyFilingIssue />,
+      },
+      {
+        path: "health-insurance-claims-denied-illinois/coordination-of-benefits",
+        element: <HealthClaimDeniedIllinoisCoordinationOfBenefits />,
       },
       {
         path: "auto-insurance-claims-denied-pennsylvania",
