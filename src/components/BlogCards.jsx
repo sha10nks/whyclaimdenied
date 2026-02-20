@@ -1,6 +1,17 @@
 import { Link } from 'react-router-dom';
 import { getBlogStateLabel } from '../blog/registry';
 
+// Deterministic color assignment based on string hash
+const getStateColorClass = (slug) => {
+  const colors = ['blue', 'green', 'purple', 'orange', 'teal', 'indigo'];
+  let hash = 0;
+  for (let i = 0; i < slug.length; i++) {
+    hash = slug.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const index = Math.abs(hash) % colors.length;
+  return `state-card-${colors[index]}`;
+};
+
 export const BlogCard = ({ post }) => {
   const stateLabel = getBlogStateLabel(post.state);
   const typeLabel =
@@ -36,8 +47,10 @@ export const BlogCard = ({ post }) => {
 };
 
 export const StateCard = ({ state }) => {
+  const colorClass = getStateColorClass(state.slug);
+  
   return (
-    <Link to={`/blog/${state.slug}`} className="state-card">
+    <Link to={`/blog/${state.slug}`} className={`state-card ${colorClass}`}>
       <h3 className="state-card-title">{state.label}</h3>
       <span className="state-card-arrow">View Guides →</span>
     </Link>
