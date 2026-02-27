@@ -126,6 +126,15 @@ const HealthClaimDeniedIllinoisBenefitOrServiceExcluded = lazy(() => import("./p
 const HealthClaimDeniedIllinoisTimelyFilingIssue = lazy(() => import("./pages/HealthClaimDeniedIllinoisTimelyFilingIssue"));
 const HealthClaimDeniedIllinoisCoordinationOfBenefits = lazy(() => import("./pages/HealthClaimDeniedIllinoisCoordinationOfBenefits"));
 
+// Ohio
+const AutoClaimDeniedOhio = lazy(() => import("./pages/AutoClaimDeniedOhio"));
+const HealthClaimDeniedOhio = lazy(() => import("./pages/HealthClaimDeniedOhio"));
+
+// Georgia
+const AutoClaimDeniedGeorgia = lazy(() => import("./pages/AutoClaimDeniedGeorgia"));
+const HealthClaimDeniedGeorgia = lazy(() => import("./pages/HealthClaimDeniedGeorgia"));
+
+
 const About = lazy(() => import("./pages/About"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Privacy = lazy(() => import("./pages/Privacy"));
@@ -433,6 +442,25 @@ const router = createBrowserRouter([
         path: "health-insurance-claims-denied-illinois/coordination-of-benefits",
         element: <HealthClaimDeniedIllinoisCoordinationOfBenefits />,
       },
+
+      {
+        path: "auto-insurance-claims-denied-ohio",
+        element: <AutoClaimDeniedOhio />,
+      },
+      {
+        path: "health-insurance-claims-denied-ohio",
+        element: <HealthClaimDeniedOhio />,
+      },
+
+      {
+        path: "auto-insurance-claims-denied-georgia",
+        element: <AutoClaimDeniedGeorgia />,
+      },
+      {
+        path: "health-insurance-claims-denied-georgia",
+        element: <HealthClaimDeniedGeorgia />,
+      },
+
       {
         path: "auto-insurance-claims-denied-pennsylvania",
         element: <AutoClaimDeniedPennsylvania />,

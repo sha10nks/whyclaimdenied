@@ -16,6 +16,26 @@ export const META = {
       description: 'Why health claims get denied in Illinois and how to use plan appeals and IDOI consumer help.',
       canonical: `${BASE_URL}/health-insurance-claims-denied-illinois`,
     },
+    autoOH: {
+      title: 'Auto Insurance Claims Denied in Ohio',
+      description: 'Common denial reasons, Ohio context, and practical steps to challenge a denied auto claim.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-ohio`,
+    },
+    healthOH: {
+      title: 'Health Insurance Claims Denied in Ohio',
+      description: 'Why health claims get denied in Ohio and how to use plan appeals and ODI consumer help.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-ohio`,
+    },
+    autoGA: {
+      title: 'Auto Insurance Claims Denied in Georgia',
+      description: 'Common denial reasons, Georgia context, and practical steps to challenge a denied auto claim.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-georgia`,
+    },
+    healthGA: {
+      title: 'Health Insurance Claims Denied in Georgia',
+      description: 'Why health claims get denied in Georgia and how to use plan appeals and OCI consumer help.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-georgia`,
+    },
     autoPA: {
       title: 'Auto Insurance Claims Denied in Pennsylvania',
       description: 'Common denial reasons, Pennsylvania context, and practical steps to challenge a denied auto claim.',
@@ -210,6 +230,174 @@ export const META = {
       title: 'Coordination of Benefits (Florida Health Claims)',
       description: 'How coordination of benefits causes denials in Florida health claims and how to resolve COB holds.',
       canonical: `${BASE_URL}/health-insurance-claims-denied-florida/coordination-of-benefits`,
+    },
+
+    // Ohio (auto)
+    autoOH_noCoverage: {
+      title: 'No Coverage at Time of Loss (Ohio Auto Claims)',
+      description: 'Why insurers deny for no coverage at time of loss in Ohio auto claims and what to check next.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-ohio/no-coverage-at-time-of-loss`,
+    },
+    autoOH_lapse: {
+      title: 'Policy Lapse or Cancellation (Ohio Auto Claims)',
+      description: 'How lapse and cancellation denials work in Ohio auto claims and the key documents to request.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-ohio/policy-lapse-or-cancellation`,
+    },
+    autoOH_missedReporting: {
+      title: 'Missed Reporting Deadline (Ohio Auto Claims)',
+      description: 'What “late notice” means in Ohio auto claims and how to respond when reporting was delayed.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-ohio/missed-reporting-deadline`,
+    },
+    autoOH_excludedDriver: {
+      title: 'Excluded Driver (Ohio Auto Claims)',
+      description: 'How excluded-driver denials happen in Ohio auto claims and what to request from the insurer.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-ohio/excluded-driver`,
+    },
+    autoOH_misrep: {
+      title: 'Misrepresentation or Concealment (Ohio Auto Claims)',
+      description: 'What misrepresentation denials mean in Ohio auto insurance claims and how to challenge the facts.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-ohio/misrepresentation-or-concealment`,
+    },
+    autoOH_nonCoveredUse: {
+      title: 'Non-Covered Use (Ohio Auto Claims)',
+      description: 'Why insurers deny claims for non-covered use in Ohio and how to document what really happened.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-ohio/non-covered-use`,
+    },
+    autoOH_failureToCooperate: {
+      title: 'Failure to Cooperate (Ohio Auto Claims)',
+      description: 'What insurers mean by “failure to cooperate” in Ohio auto claims and how to cure the issue.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-ohio/failure-to-cooperate`,
+    },
+    autoOH_disputedLiability: {
+      title: 'Disputed Liability or Fault (Ohio Auto Claims)',
+      description: 'How liability disputes lead to claim denials and what evidence helps in Ohio auto claims.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-ohio/disputed-liability`,
+    },
+
+    // Ohio (health)
+    healthOH_priorAuth: {
+      title: 'Prior Authorization Missing (Ohio Health Claims)',
+      description: 'Why health claims get denied for missing prior authorization in Ohio and what to do next.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-ohio/prior-authorization-missing`,
+    },
+    healthOH_medNec: {
+      title: 'Not Medically Necessary (Ohio Health Claims)',
+      description: 'How medical necessity denials work in Ohio and what to request for a stronger appeal.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-ohio/not-medically-necessary`,
+    },
+    healthOH_oON: {
+      title: 'Out-of-Network Provider (Ohio Health Claims)',
+      description: 'Common out-of-network denial patterns in Ohio and the questions to ask your plan.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-ohio/out-of-network-provider`,
+    },
+    healthOH_coding: {
+      title: 'Coding or Documentation Error (Ohio Health Claims)',
+      description: 'How billing and documentation problems cause denials in Ohio health claims and how to fix them.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-ohio/coding-or-documentation-error`,
+    },
+    healthOH_experimental: {
+      title: 'Experimental or Investigational (Ohio Health Claims)',
+      description: 'What “experimental” denials mean in Ohio health coverage and how to appeal with evidence.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-ohio/experimental-or-investigational`,
+    },
+    healthOH_excludedBenefit: {
+      title: 'Benefit or Service Excluded (Ohio Health Claims)',
+      description: 'How excluded-benefit denials work in Ohio health plans and what to check in your contract.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-ohio/benefit-or-service-excluded`,
+    },
+    healthOH_timelyFiling: {
+      title: 'Timely Filing Issue (Ohio Health Claims)',
+      description: 'What timely filing denials mean in Ohio health claims and how to request reconsideration.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-ohio/timely-filing-issue`,
+    },
+    healthOH_cob: {
+      title: 'Coordination of Benefits (Ohio Health Claims)',
+      description: 'How coordination of benefits causes denials in Ohio health claims and how to resolve COB holds.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-ohio/coordination-of-benefits`,
+    },
+
+    // Georgia (auto)
+    autoGA_noCoverage: {
+      title: 'No Coverage at Time of Loss (Georgia Auto Claims)',
+      description: 'Why insurers deny for no coverage at time of loss in Georgia auto claims and what to check next.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-georgia/no-coverage-at-time-of-loss`,
+    },
+    autoGA_lapse: {
+      title: 'Policy Lapse or Cancellation (Georgia Auto Claims)',
+      description: 'How lapse and cancellation denials work in Georgia auto claims and the key documents to request.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-georgia/policy-lapse-or-cancellation`,
+    },
+    autoGA_missedReporting: {
+      title: 'Missed Reporting Deadline (Georgia Auto Claims)',
+      description: 'What “late notice” means in Georgia auto claims and how to respond when reporting was delayed.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-georgia/missed-reporting-deadline`,
+    },
+    autoGA_excludedDriver: {
+      title: 'Excluded Driver (Georgia Auto Claims)',
+      description: 'How excluded-driver denials happen in Georgia auto claims and what to request from the insurer.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-georgia/excluded-driver`,
+    },
+    autoGA_misrep: {
+      title: 'Misrepresentation or Concealment (Georgia Auto Claims)',
+      description: 'What misrepresentation denials mean in Georgia auto insurance claims and how to challenge the facts.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-georgia/misrepresentation-or-concealment`,
+    },
+    autoGA_nonCoveredUse: {
+      title: 'Non-Covered Use (Georgia Auto Claims)',
+      description: 'Why insurers deny claims for non-covered use in Georgia and how to document what really happened.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-georgia/non-covered-use`,
+    },
+    autoGA_failureToCooperate: {
+      title: 'Failure to Cooperate (Georgia Auto Claims)',
+      description: 'What insurers mean by “failure to cooperate” in Georgia auto claims and how to cure the issue.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-georgia/failure-to-cooperate`,
+    },
+    autoGA_disputedLiability: {
+      title: 'Disputed Liability or Fault (Georgia Auto Claims)',
+      description: 'How liability disputes lead to claim denials and what evidence helps in Georgia auto claims.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-georgia/disputed-liability`,
+    },
+
+    // Georgia (health)
+    healthGA_priorAuth: {
+      title: 'Prior Authorization Missing (Georgia Health Claims)',
+      description: 'Why health claims get denied for missing prior authorization in Georgia and what to do next.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-georgia/prior-authorization-missing`,
+    },
+    healthGA_medNec: {
+      title: 'Not Medically Necessary (Georgia Health Claims)',
+      description: 'How medical necessity denials work in Georgia and what to request for a stronger appeal.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-georgia/not-medically-necessary`,
+    },
+    healthGA_oON: {
+      title: 'Out-of-Network Provider (Georgia Health Claims)',
+      description: 'Common out-of-network denial patterns in Georgia and the questions to ask your plan.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-georgia/out-of-network-provider`,
+    },
+    healthGA_coding: {
+      title: 'Coding or Documentation Error (Georgia Health Claims)',
+      description: 'How billing and documentation problems cause denials in Georgia health claims and how to fix them.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-georgia/coding-or-documentation-error`,
+    },
+    healthGA_experimental: {
+      title: 'Experimental or Investigational (Georgia Health Claims)',
+      description: 'What “experimental” denials mean in Georgia health coverage and how to appeal with evidence.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-georgia/experimental-or-investigational`,
+    },
+    healthGA_excludedBenefit: {
+      title: 'Benefit or Service Excluded (Georgia Health Claims)',
+      description: 'How excluded-benefit denials work in Georgia health plans and what to check in your contract.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-georgia/benefit-or-service-excluded`,
+    },
+    healthGA_timelyFiling: {
+      title: 'Timely Filing Issue (Georgia Health Claims)',
+      description: 'What timely filing denials mean in Georgia health claims and how to request reconsideration.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-georgia/timely-filing-issue`,
+    },
+    healthGA_cob: {
+      title: 'Coordination of Benefits (Georgia Health Claims)',
+      description: 'How coordination of benefits causes denials in Georgia health claims and how to resolve COB holds.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-georgia/coordination-of-benefits`,
     },
     autoTX: {
       title: 'Auto Insurance Claims Denied in Texas',

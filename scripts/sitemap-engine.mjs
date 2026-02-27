@@ -3,6 +3,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { META, BASE_URL } from '../src/seo/meta.js'
 import { BLOG_POSTS, BLOG_STATES } from '../src/blog/registry.js'
+import { DENIAL_PAGES } from '../src/denials/registry.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -79,7 +80,9 @@ const main = async () => {
     ...BLOG_POSTS.map(p => p.canonicalUrl || `${BASE_URL}${p.path}`),
   ]
 
-  const combined = new Set([...existing.urls, ...fromMeta, ...blogCanonicals])
+  const denialCanonicals = DENIAL_PAGES.map((p) => p.canonicalUrl).filter(Boolean)
+
+  const combined = new Set([...existing.urls, ...fromMeta, ...blogCanonicals, ...denialCanonicals])
   const canonicals = Array.from(combined).filter(isCanonical)
   const safe = canonicals.filter((loc) => {
     const p = new URL(loc).pathname

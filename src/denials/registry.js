@@ -7,6 +7,8 @@ const STATES = [
   { slug: 'new-york', label: 'New York' },
   { slug: 'pennsylvania', label: 'Pennsylvania' },
   { slug: 'illinois', label: 'Illinois' },
+  { slug: 'ohio', label: 'Ohio' },
+  { slug: 'georgia', label: 'Georgia' },
 ]
 
 const AUTO_REASONS_DEFAULT = [

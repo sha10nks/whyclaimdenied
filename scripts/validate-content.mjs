@@ -1,56 +1,8 @@
-import fs from 'node:fs/promises'
-import path from 'node:path'
 import process from 'node:process'
+import path from 'node:path'
 import { pathToFileURL } from 'node:url'
 
 const root = process.cwd()
-const pagesDir = path.join(root, 'src', 'pages')
-
-const globFiles = async (dir) => {
-  const out = []
-  const walk = async (d) => {
-    const entries = await fs.readdir(d, { withFileTypes: true })
-    for (const e of entries) {
-      const p = path.join(d, e.name)
-      if (e.isDirectory()) await walk(p)
-      else out.push(p)
-    }
-  }
-  await walk(dir)
-  return out
-}
-
-const isDenialReasonPage = (file) => {
-  const base = path.basename(file)
-  if (!base.endsWith('.jsx')) return false
-  if (!base.startsWith('AutoClaimDenied') && !base.startsWith('HealthClaimDenied')) return false
-
-  const pillars = new Set([
-    'AutoClaimDeniedCalifornia.jsx',
-    'AutoClaimDeniedFlorida.jsx',
-    'AutoClaimDeniedTexas.jsx',
-    'AutoClaimDeniedNewYork.jsx',
-    'AutoClaimDeniedPennsylvania.jsx',
-    'AutoClaimDeniedIllinois.jsx',
-    'HealthClaimDeniedCalifornia.jsx',
-    'HealthClaimDeniedFlorida.jsx',
-    'HealthClaimDeniedTexas.jsx',
-    'HealthClaimDeniedNewYork.jsx',
-    'HealthClaimDeniedPennsylvania.jsx',
-    'HealthClaimDeniedIllinois.jsx',
-  ])
-
-  return !pillars.has(base)
-}
-
-const extractParams = (source) => {
-  const stateMatch = source.match(/stateSlug:\s*'([^']+)'/)
-  const reasonMatch = source.match(/reasonKey:\s*'([^']+)'/)
-  const domainMatch = source.match(/domain:\s*'([^']+)'/)
-
-  if (!stateMatch || !reasonMatch || !domainMatch) return null
-  return { stateSlug: stateMatch[1], reasonKey: reasonMatch[1], domain: domainMatch[1] }
-}
 
 const wordCount = (s) => String(s || '').trim().split(/\s+/).filter(Boolean).length
 
@@ -88,28 +40,14 @@ const validatePageData = ({ page, pathLabel }) => {
 }
 
 const registryUrl = pathToFileURL(path.join(root, 'src', 'denials', 'registry.js')).href
-const { getDenialPage } = await import(registryUrl)
-
-const files = (await globFiles(pagesDir)).filter(isDenialReasonPage)
+const { DENIAL_PAGES } = await import(registryUrl)
 
 const failures = []
-const skipped = []
 
-for (const file of files) {
-  const src = await fs.readFile(file, 'utf8')
-  const params = extractParams(src)
-  if (!params) {
-    skipped.push(path.relative(root, file))
-    continue
-  }
-
-  const page = getDenialPage(params)
-  const errs = validatePageData({ page, pathLabel: path.relative(root, file) })
+for (const page of DENIAL_PAGES) {
+  const label = `src/denials/registry.js:${page.domain}:${page.stateSlug}:${page.reasonKey}`
+  const errs = validatePageData({ page, pathLabel: label })
   if (errs.length) failures.push(errs.join('\n'))
-}
-
-if (skipped.length) {
-  console.log(`Skipped ${skipped.length} denial reason pages not yet on structured registry.`)
 }
 
 if (failures.length) {
@@ -118,5 +56,4 @@ if (failures.length) {
   process.exit(1)
 }
 
-console.log(`Content validation passed for ${files.length - skipped.length} denial reason pages.`)
-
+console.log(`Content validation passed for ${DENIAL_PAGES.length} denial reason pages.`)

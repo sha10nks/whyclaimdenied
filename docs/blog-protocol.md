@@ -5,6 +5,7 @@
 - Manual creation of blog post JSX pages is not allowed.
 - All blog posts must be created via the generator and must pass the blog validator.
 - Thin posts are invalid and must not ship.
+- A new blog state must not be added unless the matching state guide pillars exist (auto + health) and pass validation.
 
 ## Source of truth
 
@@ -21,6 +22,13 @@
 2) Run validation
 
 - Command: `npm run validate:blog`
+
+3) Confirm the state has matching guide pillars
+
+- Must exist:
+  - `/auto-insurance-claims-denied-{state}`
+  - `/health-insurance-claims-denied-{state}`
+- Must pass: `npm run validate:content`
 
 3) Start dev server and visually spot-check
 
