@@ -31,6 +31,10 @@ const DenialReasonTemplate = ({ page }) => {
       <main className="container">
         <h1>{page.h1}</h1>
 
+        <p>
+          <Link to={page.pillarPath}>Back to {page.domainLabel} Insurance Claims Denied in {page.stateLabel}</Link>
+        </p>
+
         <p className="intro">{page.intro[0]}</p>
         {page.intro.slice(1).map((p, idx) => (
           <p key={idx}>{p}</p>
@@ -108,4 +112,3 @@ const DenialReasonTemplate = ({ page }) => {
 }
 
 export default DenialReasonTemplate
-

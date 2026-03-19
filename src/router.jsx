@@ -129,10 +129,82 @@ const HealthClaimDeniedIllinoisCoordinationOfBenefits = lazy(() => import("./pag
 // Ohio
 const AutoClaimDeniedOhio = lazy(() => import("./pages/AutoClaimDeniedOhio"));
 const HealthClaimDeniedOhio = lazy(() => import("./pages/HealthClaimDeniedOhio"));
+const AutoClaimDeniedOhioNoCoverageAtTimeOfLoss = lazy(() => import("./pages/AutoClaimDeniedOhioNoCoverageAtTimeOfLoss"));
+const AutoClaimDeniedOhioPolicyLapseOrCancellation = lazy(() => import("./pages/AutoClaimDeniedOhioPolicyLapseOrCancellation"));
+const AutoClaimDeniedOhioMissedReportingDeadline = lazy(() => import("./pages/AutoClaimDeniedOhioMissedReportingDeadline"));
+const AutoClaimDeniedOhioExcludedDriver = lazy(() => import("./pages/AutoClaimDeniedOhioExcludedDriver"));
+const AutoClaimDeniedOhioMisrepresentationOrConcealment = lazy(() => import("./pages/AutoClaimDeniedOhioMisrepresentationOrConcealment"));
+const AutoClaimDeniedOhioNonCoveredUse = lazy(() => import("./pages/AutoClaimDeniedOhioNonCoveredUse"));
+const AutoClaimDeniedOhioFailureToCooperate = lazy(() => import("./pages/AutoClaimDeniedOhioFailureToCooperate"));
+const AutoClaimDeniedOhioDisputedLiability = lazy(() => import("./pages/AutoClaimDeniedOhioDisputedLiability"));
+const HealthClaimDeniedOhioPriorAuthorizationMissing = lazy(() => import("./pages/HealthClaimDeniedOhioPriorAuthorizationMissing"));
+const HealthClaimDeniedOhioNotMedicallyNecessary = lazy(() => import("./pages/HealthClaimDeniedOhioNotMedicallyNecessary"));
+const HealthClaimDeniedOhioOutOfNetworkProvider = lazy(() => import("./pages/HealthClaimDeniedOhioOutOfNetworkProvider"));
+const HealthClaimDeniedOhioCodingOrDocumentationError = lazy(() => import("./pages/HealthClaimDeniedOhioCodingOrDocumentationError"));
+const HealthClaimDeniedOhioExperimentalOrInvestigational = lazy(() => import("./pages/HealthClaimDeniedOhioExperimentalOrInvestigational"));
+const HealthClaimDeniedOhioBenefitOrServiceExcluded = lazy(() => import("./pages/HealthClaimDeniedOhioBenefitOrServiceExcluded"));
+const HealthClaimDeniedOhioTimelyFilingIssue = lazy(() => import("./pages/HealthClaimDeniedOhioTimelyFilingIssue"));
+const HealthClaimDeniedOhioCoordinationOfBenefits = lazy(() => import("./pages/HealthClaimDeniedOhioCoordinationOfBenefits"));
 
 // Georgia
 const AutoClaimDeniedGeorgia = lazy(() => import("./pages/AutoClaimDeniedGeorgia"));
 const HealthClaimDeniedGeorgia = lazy(() => import("./pages/HealthClaimDeniedGeorgia"));
+const AutoClaimDeniedGeorgiaNoCoverageAtTimeOfLoss = lazy(() => import("./pages/AutoClaimDeniedGeorgiaNoCoverageAtTimeOfLoss"));
+const AutoClaimDeniedGeorgiaPolicyLapseOrCancellation = lazy(() => import("./pages/AutoClaimDeniedGeorgiaPolicyLapseOrCancellation"));
+const AutoClaimDeniedGeorgiaMissedReportingDeadline = lazy(() => import("./pages/AutoClaimDeniedGeorgiaMissedReportingDeadline"));
+const AutoClaimDeniedGeorgiaExcludedDriver = lazy(() => import("./pages/AutoClaimDeniedGeorgiaExcludedDriver"));
+const AutoClaimDeniedGeorgiaMisrepresentationOrConcealment = lazy(() => import("./pages/AutoClaimDeniedGeorgiaMisrepresentationOrConcealment"));
+const AutoClaimDeniedGeorgiaNonCoveredUse = lazy(() => import("./pages/AutoClaimDeniedGeorgiaNonCoveredUse"));
+const AutoClaimDeniedGeorgiaFailureToCooperate = lazy(() => import("./pages/AutoClaimDeniedGeorgiaFailureToCooperate"));
+const AutoClaimDeniedGeorgiaDisputedLiability = lazy(() => import("./pages/AutoClaimDeniedGeorgiaDisputedLiability"));
+const HealthClaimDeniedGeorgiaPriorAuthorizationMissing = lazy(() => import("./pages/HealthClaimDeniedGeorgiaPriorAuthorizationMissing"));
+const HealthClaimDeniedGeorgiaNotMedicallyNecessary = lazy(() => import("./pages/HealthClaimDeniedGeorgiaNotMedicallyNecessary"));
+const HealthClaimDeniedGeorgiaOutOfNetworkProvider = lazy(() => import("./pages/HealthClaimDeniedGeorgiaOutOfNetworkProvider"));
+const HealthClaimDeniedGeorgiaCodingOrDocumentationError = lazy(() => import("./pages/HealthClaimDeniedGeorgiaCodingOrDocumentationError"));
+const HealthClaimDeniedGeorgiaExperimentalOrInvestigational = lazy(() => import("./pages/HealthClaimDeniedGeorgiaExperimentalOrInvestigational"));
+const HealthClaimDeniedGeorgiaBenefitOrServiceExcluded = lazy(() => import("./pages/HealthClaimDeniedGeorgiaBenefitOrServiceExcluded"));
+const HealthClaimDeniedGeorgiaTimelyFilingIssue = lazy(() => import("./pages/HealthClaimDeniedGeorgiaTimelyFilingIssue"));
+const HealthClaimDeniedGeorgiaCoordinationOfBenefits = lazy(() => import("./pages/HealthClaimDeniedGeorgiaCoordinationOfBenefits"));
+
+// North Carolina
+const AutoClaimDeniedNorthCarolina = lazy(() => import("./pages/AutoClaimDeniedNorthCarolina"));
+const HealthClaimDeniedNorthCarolina = lazy(() => import("./pages/HealthClaimDeniedNorthCarolina"));
+const AutoClaimDeniedNorthCarolinaNoCoverageAtTimeOfLoss = lazy(() => import("./pages/AutoClaimDeniedNorthCarolinaNoCoverageAtTimeOfLoss"));
+const AutoClaimDeniedNorthCarolinaPolicyLapseOrCancellation = lazy(() => import("./pages/AutoClaimDeniedNorthCarolinaPolicyLapseOrCancellation"));
+const AutoClaimDeniedNorthCarolinaMissedReportingDeadline = lazy(() => import("./pages/AutoClaimDeniedNorthCarolinaMissedReportingDeadline"));
+const AutoClaimDeniedNorthCarolinaExcludedDriver = lazy(() => import("./pages/AutoClaimDeniedNorthCarolinaExcludedDriver"));
+const AutoClaimDeniedNorthCarolinaMisrepresentationOrConcealment = lazy(() => import("./pages/AutoClaimDeniedNorthCarolinaMisrepresentationOrConcealment"));
+const AutoClaimDeniedNorthCarolinaNonCoveredUse = lazy(() => import("./pages/AutoClaimDeniedNorthCarolinaNonCoveredUse"));
+const AutoClaimDeniedNorthCarolinaFailureToCooperate = lazy(() => import("./pages/AutoClaimDeniedNorthCarolinaFailureToCooperate"));
+const AutoClaimDeniedNorthCarolinaDisputedLiability = lazy(() => import("./pages/AutoClaimDeniedNorthCarolinaDisputedLiability"));
+const HealthClaimDeniedNorthCarolinaPriorAuthorizationMissing = lazy(() => import("./pages/HealthClaimDeniedNorthCarolinaPriorAuthorizationMissing"));
+const HealthClaimDeniedNorthCarolinaNotMedicallyNecessary = lazy(() => import("./pages/HealthClaimDeniedNorthCarolinaNotMedicallyNecessary"));
+const HealthClaimDeniedNorthCarolinaOutOfNetworkProvider = lazy(() => import("./pages/HealthClaimDeniedNorthCarolinaOutOfNetworkProvider"));
+const HealthClaimDeniedNorthCarolinaCodingOrDocumentationError = lazy(() => import("./pages/HealthClaimDeniedNorthCarolinaCodingOrDocumentationError"));
+const HealthClaimDeniedNorthCarolinaExperimentalOrInvestigational = lazy(() => import("./pages/HealthClaimDeniedNorthCarolinaExperimentalOrInvestigational"));
+const HealthClaimDeniedNorthCarolinaBenefitOrServiceExcluded = lazy(() => import("./pages/HealthClaimDeniedNorthCarolinaBenefitOrServiceExcluded"));
+const HealthClaimDeniedNorthCarolinaTimelyFilingIssue = lazy(() => import("./pages/HealthClaimDeniedNorthCarolinaTimelyFilingIssue"));
+const HealthClaimDeniedNorthCarolinaCoordinationOfBenefits = lazy(() => import("./pages/HealthClaimDeniedNorthCarolinaCoordinationOfBenefits"));
+
+// Michigan
+const AutoClaimDeniedMichigan = lazy(() => import("./pages/AutoClaimDeniedMichigan"));
+const HealthClaimDeniedMichigan = lazy(() => import("./pages/HealthClaimDeniedMichigan"));
+const AutoClaimDeniedMichiganNoCoverageAtTimeOfLoss = lazy(() => import("./pages/AutoClaimDeniedMichiganNoCoverageAtTimeOfLoss"));
+const AutoClaimDeniedMichiganPolicyLapseOrCancellation = lazy(() => import("./pages/AutoClaimDeniedMichiganPolicyLapseOrCancellation"));
+const AutoClaimDeniedMichiganMissedReportingDeadline = lazy(() => import("./pages/AutoClaimDeniedMichiganMissedReportingDeadline"));
+const AutoClaimDeniedMichiganExcludedDriver = lazy(() => import("./pages/AutoClaimDeniedMichiganExcludedDriver"));
+const AutoClaimDeniedMichiganMisrepresentationOrConcealment = lazy(() => import("./pages/AutoClaimDeniedMichiganMisrepresentationOrConcealment"));
+const AutoClaimDeniedMichiganNonCoveredUse = lazy(() => import("./pages/AutoClaimDeniedMichiganNonCoveredUse"));
+const AutoClaimDeniedMichiganFailureToCooperate = lazy(() => import("./pages/AutoClaimDeniedMichiganFailureToCooperate"));
+const AutoClaimDeniedMichiganDisputedLiability = lazy(() => import("./pages/AutoClaimDeniedMichiganDisputedLiability"));
+const HealthClaimDeniedMichiganPriorAuthorizationMissing = lazy(() => import("./pages/HealthClaimDeniedMichiganPriorAuthorizationMissing"));
+const HealthClaimDeniedMichiganNotMedicallyNecessary = lazy(() => import("./pages/HealthClaimDeniedMichiganNotMedicallyNecessary"));
+const HealthClaimDeniedMichiganOutOfNetworkProvider = lazy(() => import("./pages/HealthClaimDeniedMichiganOutOfNetworkProvider"));
+const HealthClaimDeniedMichiganCodingOrDocumentationError = lazy(() => import("./pages/HealthClaimDeniedMichiganCodingOrDocumentationError"));
+const HealthClaimDeniedMichiganExperimentalOrInvestigational = lazy(() => import("./pages/HealthClaimDeniedMichiganExperimentalOrInvestigational"));
+const HealthClaimDeniedMichiganBenefitOrServiceExcluded = lazy(() => import("./pages/HealthClaimDeniedMichiganBenefitOrServiceExcluded"));
+const HealthClaimDeniedMichiganTimelyFilingIssue = lazy(() => import("./pages/HealthClaimDeniedMichiganTimelyFilingIssue"));
+const HealthClaimDeniedMichiganCoordinationOfBenefits = lazy(() => import("./pages/HealthClaimDeniedMichiganCoordinationOfBenefits"));
 
 
 const About = lazy(() => import("./pages/About"));
@@ -448,8 +520,72 @@ const router = createBrowserRouter([
         element: <AutoClaimDeniedOhio />,
       },
       {
+        path: "auto-insurance-claims-denied-ohio/no-coverage-at-time-of-loss",
+        element: <AutoClaimDeniedOhioNoCoverageAtTimeOfLoss />,
+      },
+      {
+        path: "auto-insurance-claims-denied-ohio/policy-lapse-or-cancellation",
+        element: <AutoClaimDeniedOhioPolicyLapseOrCancellation />,
+      },
+      {
+        path: "auto-insurance-claims-denied-ohio/missed-reporting-deadline",
+        element: <AutoClaimDeniedOhioMissedReportingDeadline />,
+      },
+      {
+        path: "auto-insurance-claims-denied-ohio/excluded-driver",
+        element: <AutoClaimDeniedOhioExcludedDriver />,
+      },
+      {
+        path: "auto-insurance-claims-denied-ohio/misrepresentation-or-concealment",
+        element: <AutoClaimDeniedOhioMisrepresentationOrConcealment />,
+      },
+      {
+        path: "auto-insurance-claims-denied-ohio/non-covered-use",
+        element: <AutoClaimDeniedOhioNonCoveredUse />,
+      },
+      {
+        path: "auto-insurance-claims-denied-ohio/failure-to-cooperate",
+        element: <AutoClaimDeniedOhioFailureToCooperate />,
+      },
+      {
+        path: "auto-insurance-claims-denied-ohio/disputed-liability",
+        element: <AutoClaimDeniedOhioDisputedLiability />,
+      },
+      {
         path: "health-insurance-claims-denied-ohio",
         element: <HealthClaimDeniedOhio />,
+      },
+      {
+        path: "health-insurance-claims-denied-ohio/prior-authorization-missing",
+        element: <HealthClaimDeniedOhioPriorAuthorizationMissing />,
+      },
+      {
+        path: "health-insurance-claims-denied-ohio/not-medically-necessary",
+        element: <HealthClaimDeniedOhioNotMedicallyNecessary />,
+      },
+      {
+        path: "health-insurance-claims-denied-ohio/out-of-network-provider",
+        element: <HealthClaimDeniedOhioOutOfNetworkProvider />,
+      },
+      {
+        path: "health-insurance-claims-denied-ohio/coding-or-documentation-error",
+        element: <HealthClaimDeniedOhioCodingOrDocumentationError />,
+      },
+      {
+        path: "health-insurance-claims-denied-ohio/experimental-or-investigational",
+        element: <HealthClaimDeniedOhioExperimentalOrInvestigational />,
+      },
+      {
+        path: "health-insurance-claims-denied-ohio/benefit-or-service-excluded",
+        element: <HealthClaimDeniedOhioBenefitOrServiceExcluded />,
+      },
+      {
+        path: "health-insurance-claims-denied-ohio/timely-filing-issue",
+        element: <HealthClaimDeniedOhioTimelyFilingIssue />,
+      },
+      {
+        path: "health-insurance-claims-denied-ohio/coordination-of-benefits",
+        element: <HealthClaimDeniedOhioCoordinationOfBenefits />,
       },
 
       {
@@ -457,8 +593,218 @@ const router = createBrowserRouter([
         element: <AutoClaimDeniedGeorgia />,
       },
       {
+        path: "auto-insurance-claims-denied-georgia/no-coverage-at-time-of-loss",
+        element: <AutoClaimDeniedGeorgiaNoCoverageAtTimeOfLoss />,
+      },
+      {
+        path: "auto-insurance-claims-denied-georgia/policy-lapse-or-cancellation",
+        element: <AutoClaimDeniedGeorgiaPolicyLapseOrCancellation />,
+      },
+      {
+        path: "auto-insurance-claims-denied-georgia/missed-reporting-deadline",
+        element: <AutoClaimDeniedGeorgiaMissedReportingDeadline />,
+      },
+      {
+        path: "auto-insurance-claims-denied-georgia/excluded-driver",
+        element: <AutoClaimDeniedGeorgiaExcludedDriver />,
+      },
+      {
+        path: "auto-insurance-claims-denied-georgia/misrepresentation-or-concealment",
+        element: <AutoClaimDeniedGeorgiaMisrepresentationOrConcealment />,
+      },
+      {
+        path: "auto-insurance-claims-denied-georgia/non-covered-use",
+        element: <AutoClaimDeniedGeorgiaNonCoveredUse />,
+      },
+      {
+        path: "auto-insurance-claims-denied-georgia/failure-to-cooperate",
+        element: <AutoClaimDeniedGeorgiaFailureToCooperate />,
+      },
+      {
+        path: "auto-insurance-claims-denied-georgia/disputed-liability",
+        element: <AutoClaimDeniedGeorgiaDisputedLiability />,
+      },
+      {
         path: "health-insurance-claims-denied-georgia",
         element: <HealthClaimDeniedGeorgia />,
+      },
+      {
+        path: "health-insurance-claims-denied-georgia/prior-authorization-missing",
+        element: <HealthClaimDeniedGeorgiaPriorAuthorizationMissing />,
+      },
+      {
+        path: "health-insurance-claims-denied-georgia/not-medically-necessary",
+        element: <HealthClaimDeniedGeorgiaNotMedicallyNecessary />,
+      },
+      {
+        path: "health-insurance-claims-denied-georgia/out-of-network-provider",
+        element: <HealthClaimDeniedGeorgiaOutOfNetworkProvider />,
+      },
+      {
+        path: "health-insurance-claims-denied-georgia/coding-or-documentation-error",
+        element: <HealthClaimDeniedGeorgiaCodingOrDocumentationError />,
+      },
+      {
+        path: "health-insurance-claims-denied-georgia/experimental-or-investigational",
+        element: <HealthClaimDeniedGeorgiaExperimentalOrInvestigational />,
+      },
+      {
+        path: "health-insurance-claims-denied-georgia/benefit-or-service-excluded",
+        element: <HealthClaimDeniedGeorgiaBenefitOrServiceExcluded />,
+      },
+      {
+        path: "health-insurance-claims-denied-georgia/timely-filing-issue",
+        element: <HealthClaimDeniedGeorgiaTimelyFilingIssue />,
+      },
+      {
+        path: "health-insurance-claims-denied-georgia/coordination-of-benefits",
+        element: <HealthClaimDeniedGeorgiaCoordinationOfBenefits />,
+      },
+
+      {
+        path: "auto-insurance-claims-denied-north-carolina",
+        element: <AutoClaimDeniedNorthCarolina />,
+      },
+      {
+        path: "auto-insurance-claims-denied-north-carolina/no-coverage-at-time-of-loss",
+        element: <AutoClaimDeniedNorthCarolinaNoCoverageAtTimeOfLoss />,
+      },
+      {
+        path: "auto-insurance-claims-denied-north-carolina/policy-lapse-or-cancellation",
+        element: <AutoClaimDeniedNorthCarolinaPolicyLapseOrCancellation />,
+      },
+      {
+        path: "auto-insurance-claims-denied-north-carolina/missed-reporting-deadline",
+        element: <AutoClaimDeniedNorthCarolinaMissedReportingDeadline />,
+      },
+      {
+        path: "auto-insurance-claims-denied-north-carolina/excluded-driver",
+        element: <AutoClaimDeniedNorthCarolinaExcludedDriver />,
+      },
+      {
+        path: "auto-insurance-claims-denied-north-carolina/misrepresentation-or-concealment",
+        element: <AutoClaimDeniedNorthCarolinaMisrepresentationOrConcealment />,
+      },
+      {
+        path: "auto-insurance-claims-denied-north-carolina/non-covered-use",
+        element: <AutoClaimDeniedNorthCarolinaNonCoveredUse />,
+      },
+      {
+        path: "auto-insurance-claims-denied-north-carolina/failure-to-cooperate",
+        element: <AutoClaimDeniedNorthCarolinaFailureToCooperate />,
+      },
+      {
+        path: "auto-insurance-claims-denied-north-carolina/disputed-liability",
+        element: <AutoClaimDeniedNorthCarolinaDisputedLiability />,
+      },
+      {
+        path: "health-insurance-claims-denied-north-carolina",
+        element: <HealthClaimDeniedNorthCarolina />,
+      },
+      {
+        path: "health-insurance-claims-denied-north-carolina/prior-authorization-missing",
+        element: <HealthClaimDeniedNorthCarolinaPriorAuthorizationMissing />,
+      },
+      {
+        path: "health-insurance-claims-denied-north-carolina/not-medically-necessary",
+        element: <HealthClaimDeniedNorthCarolinaNotMedicallyNecessary />,
+      },
+      {
+        path: "health-insurance-claims-denied-north-carolina/out-of-network-provider",
+        element: <HealthClaimDeniedNorthCarolinaOutOfNetworkProvider />,
+      },
+      {
+        path: "health-insurance-claims-denied-north-carolina/coding-or-documentation-error",
+        element: <HealthClaimDeniedNorthCarolinaCodingOrDocumentationError />,
+      },
+      {
+        path: "health-insurance-claims-denied-north-carolina/experimental-or-investigational",
+        element: <HealthClaimDeniedNorthCarolinaExperimentalOrInvestigational />,
+      },
+      {
+        path: "health-insurance-claims-denied-north-carolina/benefit-or-service-excluded",
+        element: <HealthClaimDeniedNorthCarolinaBenefitOrServiceExcluded />,
+      },
+      {
+        path: "health-insurance-claims-denied-north-carolina/timely-filing-issue",
+        element: <HealthClaimDeniedNorthCarolinaTimelyFilingIssue />,
+      },
+      {
+        path: "health-insurance-claims-denied-north-carolina/coordination-of-benefits",
+        element: <HealthClaimDeniedNorthCarolinaCoordinationOfBenefits />,
+      },
+
+      {
+        path: "auto-insurance-claims-denied-michigan",
+        element: <AutoClaimDeniedMichigan />,
+      },
+      {
+        path: "auto-insurance-claims-denied-michigan/no-coverage-at-time-of-loss",
+        element: <AutoClaimDeniedMichiganNoCoverageAtTimeOfLoss />,
+      },
+      {
+        path: "auto-insurance-claims-denied-michigan/policy-lapse-or-cancellation",
+        element: <AutoClaimDeniedMichiganPolicyLapseOrCancellation />,
+      },
+      {
+        path: "auto-insurance-claims-denied-michigan/missed-reporting-deadline",
+        element: <AutoClaimDeniedMichiganMissedReportingDeadline />,
+      },
+      {
+        path: "auto-insurance-claims-denied-michigan/excluded-driver",
+        element: <AutoClaimDeniedMichiganExcludedDriver />,
+      },
+      {
+        path: "auto-insurance-claims-denied-michigan/misrepresentation-or-concealment",
+        element: <AutoClaimDeniedMichiganMisrepresentationOrConcealment />,
+      },
+      {
+        path: "auto-insurance-claims-denied-michigan/non-covered-use",
+        element: <AutoClaimDeniedMichiganNonCoveredUse />,
+      },
+      {
+        path: "auto-insurance-claims-denied-michigan/failure-to-cooperate",
+        element: <AutoClaimDeniedMichiganFailureToCooperate />,
+      },
+      {
+        path: "auto-insurance-claims-denied-michigan/disputed-liability",
+        element: <AutoClaimDeniedMichiganDisputedLiability />,
+      },
+      {
+        path: "health-insurance-claims-denied-michigan",
+        element: <HealthClaimDeniedMichigan />,
+      },
+      {
+        path: "health-insurance-claims-denied-michigan/prior-authorization-missing",
+        element: <HealthClaimDeniedMichiganPriorAuthorizationMissing />,
+      },
+      {
+        path: "health-insurance-claims-denied-michigan/not-medically-necessary",
+        element: <HealthClaimDeniedMichiganNotMedicallyNecessary />,
+      },
+      {
+        path: "health-insurance-claims-denied-michigan/out-of-network-provider",
+        element: <HealthClaimDeniedMichiganOutOfNetworkProvider />,
+      },
+      {
+        path: "health-insurance-claims-denied-michigan/coding-or-documentation-error",
+        element: <HealthClaimDeniedMichiganCodingOrDocumentationError />,
+      },
+      {
+        path: "health-insurance-claims-denied-michigan/experimental-or-investigational",
+        element: <HealthClaimDeniedMichiganExperimentalOrInvestigational />,
+      },
+      {
+        path: "health-insurance-claims-denied-michigan/benefit-or-service-excluded",
+        element: <HealthClaimDeniedMichiganBenefitOrServiceExcluded />,
+      },
+      {
+        path: "health-insurance-claims-denied-michigan/timely-filing-issue",
+        element: <HealthClaimDeniedMichiganTimelyFilingIssue />,
+      },
+      {
+        path: "health-insurance-claims-denied-michigan/coordination-of-benefits",
+        element: <HealthClaimDeniedMichiganCoordinationOfBenefits />,
       },
 
       {

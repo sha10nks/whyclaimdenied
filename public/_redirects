@@ -49,6 +49,7 @@ https://www.whyclaimdenied.com/* https://whyclaimdenied.com/:splat 301!
 /auto-insurance-claims-denied-illinois/no-coverage-at-time-of-loss /index.html 200
 /auto-insurance-claims-denied-illinois/non-covered-use /index.html 200
 /auto-insurance-claims-denied-illinois/policy-lapse-or-cancellation /index.html 200
+/auto-insurance-claims-denied-michigan /index.html 200
 /auto-insurance-claims-denied-new-york /index.html 200
 /auto-insurance-claims-denied-new-york/disputed-liability /index.html 200
 /auto-insurance-claims-denied-new-york/excluded-driver /index.html 200
@@ -58,6 +59,7 @@ https://www.whyclaimdenied.com/* https://whyclaimdenied.com/:splat 301!
 /auto-insurance-claims-denied-new-york/no-coverage-at-time-of-loss /index.html 200
 /auto-insurance-claims-denied-new-york/non-covered-use /index.html 200
 /auto-insurance-claims-denied-new-york/policy-lapse-or-cancellation /index.html 200
+/auto-insurance-claims-denied-north-carolina /index.html 200
 /auto-insurance-claims-denied-ohio /index.html 200
 /auto-insurance-claims-denied-ohio/disputed-liability /index.html 200
 /auto-insurance-claims-denied-ohio/excluded-driver /index.html 200
@@ -116,6 +118,13 @@ https://www.whyclaimdenied.com/* https://whyclaimdenied.com/:splat 301!
 /blog/illinois/how-appeal-health-claim /index.html 200
 /blog/illinois/why-auto-claims-denied /index.html 200
 /blog/illinois/why-health-claims-denied /index.html 200
+/blog/michigan /index.html 200
+/blog/michigan/case-auto-success /index.html 200
+/blog/michigan/case-health-success /index.html 200
+/blog/michigan/how-appeal-auto-claim /index.html 200
+/blog/michigan/how-appeal-health-claim /index.html 200
+/blog/michigan/why-auto-claims-denied /index.html 200
+/blog/michigan/why-health-claims-denied /index.html 200
 /blog/new-york /index.html 200
 /blog/new-york/case-auto-success /index.html 200
 /blog/new-york/case-health-success /index.html 200
@@ -123,6 +132,13 @@ https://www.whyclaimdenied.com/* https://whyclaimdenied.com/:splat 301!
 /blog/new-york/how-appeal-health-claim /index.html 200
 /blog/new-york/why-auto-claims-denied /index.html 200
 /blog/new-york/why-health-claims-denied /index.html 200
+/blog/north-carolina /index.html 200
+/blog/north-carolina/case-auto-success /index.html 200
+/blog/north-carolina/case-health-success /index.html 200
+/blog/north-carolina/how-appeal-auto-claim /index.html 200
+/blog/north-carolina/how-appeal-health-claim /index.html 200
+/blog/north-carolina/why-auto-claims-denied /index.html 200
+/blog/north-carolina/why-health-claims-denied /index.html 200
 /blog/ohio /index.html 200
 /blog/ohio/case-auto-success /index.html 200
 /blog/ohio/case-health-success /index.html 200
@@ -181,6 +197,7 @@ https://www.whyclaimdenied.com/* https://whyclaimdenied.com/:splat 301!
 /health-insurance-claims-denied-illinois/out-of-network-provider /index.html 200
 /health-insurance-claims-denied-illinois/prior-authorization-missing /index.html 200
 /health-insurance-claims-denied-illinois/timely-filing-issue /index.html 200
+/health-insurance-claims-denied-michigan /index.html 200
 /health-insurance-claims-denied-new-york /index.html 200
 /health-insurance-claims-denied-new-york/benefit-or-service-excluded /index.html 200
 /health-insurance-claims-denied-new-york/coding-or-documentation-error /index.html 200
@@ -190,6 +207,7 @@ https://www.whyclaimdenied.com/* https://whyclaimdenied.com/:splat 301!
 /health-insurance-claims-denied-new-york/out-of-network-provider /index.html 200
 /health-insurance-claims-denied-new-york/prior-authorization-missing /index.html 200
 /health-insurance-claims-denied-new-york/timely-filing-issue /index.html 200
+/health-insurance-claims-denied-north-carolina /index.html 200
 /health-insurance-claims-denied-ohio /index.html 200
 /health-insurance-claims-denied-ohio/benefit-or-service-excluded /index.html 200
 /health-insurance-claims-denied-ohio/coding-or-documentation-error /index.html 200

@@ -1,8 +1,10 @@
 import { Helmet } from 'react-helmet-async';
+import { CheckCircle2 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Link } from '../components/Link';
 import { META } from '../seo/meta';
+import { DENIAL_PAGES } from '../denials/registry';
 
 const toTitleCase = (slug) => {
   return slug
@@ -15,11 +17,6 @@ const toTitleCase = (slug) => {
 const slugToLabel = (slug) => {
   const label = toTitleCase(slug);
   return label.replace(/\bAnd\b/g, 'and');
-};
-
-const reasonSlugToLabel = (slug) => {
-  const label = toTitleCase(slug);
-  return label.replace(/\bOf\b/g, 'of').replace(/\bTo\b/g, 'to').replace(/\bOr\b/g, 'or');
 };
 
 const STATE_ACCENTS = [
@@ -69,29 +66,26 @@ const buildGuidesIndex = () => {
       states.set(stateSlug, { ...entry, healthHubPath: path });
       return;
     }
+  });
 
-    const autoReasonMatch = path.match(/^\/auto-insurance-claims-denied-([a-z-]+)\/([a-z0-9-]+)$/);
-    if (autoReasonMatch) {
-      const stateSlug = autoReasonMatch[1];
-      const reasonSlug = autoReasonMatch[2];
-      const entry = states.get(stateSlug) || { stateSlug, stateLabel: slugToLabel(stateSlug), autoReasons: [], healthReasons: [] };
+  DENIAL_PAGES.forEach((page) => {
+    const stateSlug = page.stateSlug;
+    const entry = states.get(stateSlug) || { stateSlug, stateLabel: slugToLabel(stateSlug), autoReasons: [], healthReasons: [] };
+    const path = new URL(page.canonicalUrl).pathname;
+
+    if (page.domain === 'auto') {
       if (!entry.autoReasons.some((r) => r.path === path)) {
-        entry.autoReasons.push({ path, label: reasonSlugToLabel(reasonSlug) });
+        entry.autoReasons.push({ path, label: page.reasonTitle });
       }
-      states.set(stateSlug, entry);
-      return;
     }
 
-    const healthReasonMatch = path.match(/^\/health-insurance-claims-denied-([a-z-]+)\/([a-z0-9-]+)$/);
-    if (healthReasonMatch) {
-      const stateSlug = healthReasonMatch[1];
-      const reasonSlug = healthReasonMatch[2];
-      const entry = states.get(stateSlug) || { stateSlug, stateLabel: slugToLabel(stateSlug), autoReasons: [], healthReasons: [] };
+    if (page.domain === 'health') {
       if (!entry.healthReasons.some((r) => r.path === path)) {
-        entry.healthReasons.push({ path, label: reasonSlugToLabel(reasonSlug) });
+        entry.healthReasons.push({ path, label: page.reasonTitle });
       }
-      states.set(stateSlug, entry);
     }
+
+    states.set(stateSlug, entry);
   });
 
   return Array.from(states.values())
@@ -140,21 +134,25 @@ export default function Home() {
       <main className="container">
         <section className="home-hero" aria-labelledby="hero-title">
           <div className="home-hero-inner">
-            <div className="home-hero-copy">
+            <div className="home-hero-content home-hero-copy">
+              <span className="hero-micro-badge">For educational purposes only</span>
               <h1 id="hero-title">Why Insurance Claims Get Denied</h1>
               <p className="home-hero-lede">
-                Clear, state-specific explainers to help you understand denial letters and common next steps.
+                Clear, state-specific explainers to help you understand denial letters and discover common next steps.
               </p>
 
               <ul className="trust-cues">
-                <li>Independent informational resource</li>
-                <li>Not a law firm</li>
-                <li>No legal or financial advice</li>
+                <li><CheckCircle2 size={20} /> State-specific explanations</li>
+                <li><CheckCircle2 size={20} /> Based on real denial reasons</li>
+                <li><CheckCircle2 size={20} /> Independent informational resource</li>
               </ul>
 
               <div className="home-hero-actions">
                 <a className="home-cta home-cta-primary" href="#guides-by-state">
-                  Browse Guides by State
+                  Explore Claim Denial Guides by State
+                </a>
+                <a className="home-cta home-cta-secondary" href="#guides-by-state">
+                  Understand Your Denial Letter
                 </a>
               </div>
             </div>

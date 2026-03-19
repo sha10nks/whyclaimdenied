@@ -36,6 +36,26 @@ export const META = {
       description: 'Why health claims get denied in Georgia and how to use plan appeals and OCI consumer help.',
       canonical: `${BASE_URL}/health-insurance-claims-denied-georgia`,
     },
+    autoNC: {
+      title: 'Auto Insurance Claims Denied in North Carolina',
+      description: 'Common denial reasons, North Carolina context, and practical steps to challenge a denied auto claim.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-north-carolina`,
+    },
+    healthNC: {
+      title: 'Health Insurance Claims Denied in North Carolina',
+      description: 'Why health claims get denied in North Carolina and how to use plan appeals and consumer help options.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-north-carolina`,
+    },
+    autoMI: {
+      title: 'Auto Insurance Claims Denied in Michigan',
+      description: 'Common denial reasons, Michigan context, and practical steps to challenge a denied auto claim.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-michigan`,
+    },
+    healthMI: {
+      title: 'Health Insurance Claims Denied in Michigan',
+      description: 'Why health claims get denied in Michigan and how to use plan appeals and consumer help options.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-michigan`,
+    },
     autoPA: {
       title: 'Auto Insurance Claims Denied in Pennsylvania',
       description: 'Common denial reasons, Pennsylvania context, and practical steps to challenge a denied auto claim.',

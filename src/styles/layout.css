@@ -162,84 +162,171 @@
   margin-right: calc(50% - 50vw);
   margin-top: 0;
   margin-bottom: var(--spacing-lg);
-  padding: clamp(28px, 4vw, 44px) 0;
-  background: url('/hero-shields.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  padding: clamp(60px, 8vw, 100px) 0;
+  background: linear-gradient(180deg, #f0f4f8 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+/* Subtle grid background pattern */
+.home-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(0, 86, 112, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 86, 112, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(180deg, black 0%, transparent 80%);
+  -webkit-mask-image: linear-gradient(180deg, black 0%, transparent 80%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Soft radial glow in the center */
+.home-hero::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(0, 86, 112, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .home-hero-inner {
-  max-width: min(1120px, calc(100vw - 48px));
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 900px; /* Narrowed for better center-aligned reading */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.home-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-micro-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #ffffff;
+  color: var(--color-link);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  border: 1px solid rgba(0, 86, 112, 0.15);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 .home-hero-copy h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  color: #001a33;
   margin-top: 0;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+  max-width: 800px;
 }
 
 .home-hero-lede {
-  margin-top: 10px;
-  max-width: 70ch;
-  color: var(--color-text-muted);
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  line-height: 1.6;
+  color: #4a5568;
+  max-width: 650px;
+  margin-bottom: 32px;
+  margin-top: 0;
   margin-left: auto;
   margin-right: auto;
 }
 
 .trust-cues {
-  margin: var(--spacing-md) 0 0;
+  margin: 0 0 40px;
   padding-left: 0;
   list-style: none;
-  color: var(--color-text-muted);
-  display: inline-grid;
-  gap: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 24px;
 }
 
 .trust-cues li {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  justify-content: center;
+  gap: 8px;
+  color: #2d3748;
+  font-weight: 500;
+  font-size: 1.05rem;
 }
 
-.trust-cues li::before {
-  content: '';
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: rgba(0, 51, 102, 0.25);
-  flex: 0 0 auto;
+.trust-cues li svg {
+  color: #005670;
+  flex-shrink: 0;
 }
 
 .home-hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: var(--spacing-md);
   justify-content: center;
+  gap: 16px;
+  width: 100%;
 }
 
 .home-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
-  padding: 12px 16px;
-  font-weight: 700;
+  border-radius: 8px;
+  padding: 16px 28px;
+  font-size: 1.05rem;
+  font-weight: 600;
   text-decoration: none;
-  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .home-cta-primary {
-  background: var(--color-link);
+  background: #005670;
   color: #ffffff;
+  border: 1px solid #004d66;
 }
 
 .home-cta-primary:hover {
-  background: var(--color-link-hover);
+  background: #003344;
   color: #ffffff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.home-cta-secondary {
+  background: #ffffff;
+  color: #005670;
+  border: 1px solid #cbd5e0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.home-cta-secondary:hover {
+  background: #f8fafc;
+  color: #003344;
+  text-decoration: none;
+  border-color: #a0aec0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 

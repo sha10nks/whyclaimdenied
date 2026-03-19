@@ -9,6 +9,8 @@ const STATES = [
   { slug: 'illinois', label: 'Illinois' },
   { slug: 'ohio', label: 'Ohio' },
   { slug: 'georgia', label: 'Georgia' },
+  { slug: 'north-carolina', label: 'North Carolina' },
+  { slug: 'michigan', label: 'Michigan' },
 ]
 
 const AUTO_REASONS_DEFAULT = [
@@ -104,7 +106,7 @@ const buildFaq = ({ stateLabel, domainLabel, reasonTitle }) => ([
   },
 ])
 
-const buildDenialReasonContent = ({ domain, stateSlug, stateLabel, reasonKey, reasonTitle, pathSegment, pillarPath }) => {
+const buildDenialReasonContent = ({ domain, stateSlug, stateLabel, reasonKey, reasonTitle, pathSegment, pillarPath, relatedReasons = [] }) => {
   const domainLabel = domain === 'health' ? 'Health' : 'Auto'
   const canonicalPath = `/${pillarPath.replace(/^\//, '')}/${pathSegment}`
   const canonicalUrl = `https://whyclaimdenied.com${canonicalPath}`
@@ -151,10 +153,21 @@ const buildDenialReasonContent = ({ domain, stateSlug, stateLabel, reasonKey, re
   ]
 
   const stateBlogLabel = getStateLabel(stateSlug)
-  const stateBlogPosts = BLOG_POSTS.filter((p) => p.state === stateSlug).slice(0, 2)
-  const blogLinks = stateBlogPosts.map((p) => ({ to: p.path, label: p.title }))
+  const stateBlogPosts = BLOG_POSTS.filter((p) => p.state === stateSlug)
+  const relevantBlog = stateBlogPosts.find((p) => {
+    if (domain === 'auto') return p.type === 'auto' || p.type === 'case-auto'
+    return p.type === 'health' || p.type === 'case-health'
+  })
+
+  const blogLinks = relevantBlog ? [{ to: relevantBlog.path, label: relevantBlog.title }] : []
+
+  const relatedLinks = relatedReasons
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((r) => ({ to: `${pillarPath}/${r.key}`, label: `Related: ${r.title}` }))
 
   const internalLinks = [
+    ...relatedLinks,
     { to: `/blog/${stateSlug}`, label: `Browse ${stateBlogLabel} blog posts` },
     ...blogLinks,
     { to: '/blog', label: 'Browse all states (blog)' },
@@ -199,8 +212,10 @@ export const DENIAL_PAGES = (() => {
     const autoPillar = `/auto-insurance-claims-denied-${s.slug}`
     const healthPillar = `/health-insurance-claims-denied-${s.slug}`
 
-    for (const r of autoReasons) {
+    for (let idx = 0; idx < autoReasons.length; idx += 1) {
+      const r = autoReasons[idx]
       const pathSegment = r.key
+      const relatedReasons = [autoReasons[idx - 1], autoReasons[idx + 1]].filter(Boolean)
       pages.push(buildDenialReasonContent({
         domain: 'auto',
         stateSlug: s.slug,
@@ -209,11 +224,14 @@ export const DENIAL_PAGES = (() => {
         reasonTitle: r.title,
         pathSegment,
         pillarPath: autoPillar,
+        relatedReasons,
       }))
     }
 
-    for (const r of healthReasons) {
+    for (let idx = 0; idx < healthReasons.length; idx += 1) {
+      const r = healthReasons[idx]
       const pathSegment = r.key
+      const relatedReasons = [healthReasons[idx - 1], healthReasons[idx + 1]].filter(Boolean)
       pages.push(buildDenialReasonContent({
         domain: 'health',
         stateSlug: s.slug,
@@ -222,6 +240,7 @@ export const DENIAL_PAGES = (() => {
         reasonTitle: r.title,
         pathSegment,
         pillarPath: healthPillar,
+        relatedReasons,
       }))
     }
   }
