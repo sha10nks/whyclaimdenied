@@ -450,6 +450,7 @@
 
 .home-guides {
   margin-top: var(--spacing-xl);
+}
 
 .home-guides-list {
   display: grid;
