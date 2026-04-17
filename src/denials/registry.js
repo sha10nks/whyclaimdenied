@@ -11,6 +11,8 @@ const STATES = [
   { slug: 'georgia', label: 'Georgia' },
   { slug: 'north-carolina', label: 'North Carolina' },
   { slug: 'michigan', label: 'Michigan' },
+  { slug: 'new-jersey', label: 'New Jersey' },
+  { slug: 'virginia', label: 'Virginia' },
 ]
 
 const AUTO_REASONS_DEFAULT = [

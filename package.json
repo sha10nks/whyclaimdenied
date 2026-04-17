@@ -4,14 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node scripts/validate-blog.mjs && vite",
-    "prebuild": "node scripts/validate-blog.mjs && node scripts/generate-netlify-redirects.mjs",
+    "dev": "node scripts/validate-blog.mjs && node scripts/validate-guides.mjs && vite",
+    "prebuild": "node scripts/validate-blog.mjs && node scripts/validate-guides.mjs && node scripts/generate-netlify-redirects.mjs",
     "build": "vite build",
     "postbuild": "node scripts/sitemap-engine.mjs",
     "sitemap": "node scripts/sitemap-engine.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "validate:blog": "node scripts/validate-blog.mjs",
+    "validate:guides": "node scripts/validate-guides.mjs",
     "validate:content": "node scripts/validate-content.mjs",
     "blog:add-state": "node scripts/blog-add-state.mjs",
     "blog:add-post": "node scripts/blog-add-post.mjs"
@@ -28,11 +29,15 @@
   "devDependencies": {
     "@eslint/js": "^9.17.0",
     "@vitejs/plugin-react": "^4.3.4",
+    "d3-geo": "^3.1.1",
     "eslint": "^9.17.0",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
+    "sharp": "^0.34.5",
+    "topojson-client": "^3.1.0",
+    "us-atlas": "^3.0.1",
     "vite": "^6.0.5"
   }
 }

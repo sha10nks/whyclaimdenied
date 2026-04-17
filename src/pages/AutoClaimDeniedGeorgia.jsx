@@ -9,6 +9,7 @@ import BlogTeasersByState from '../components/BlogTeasersByState';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema, generateFAQSchema } from '../seo/schema';
 
+import StateHeroImage from '../components/StateHeroImage'
 const AutoClaimDeniedGeorgia = () => {
   const meta = getMetaData('autoGA');
   const faqs = [
@@ -29,7 +30,9 @@ const AutoClaimDeniedGeorgia = () => {
     },
   ];
 
-  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical });
+  const heroImageCanonical = new URL('/images/states/georgia/auto-1600.webp', meta.canonical).toString();
+
+  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical, imageUrl: heroImageCanonical});
   const faqSchema = generateFAQSchema(faqs);
 
   return (
@@ -48,6 +51,7 @@ const AutoClaimDeniedGeorgia = () => {
 
       <main className="container">
         <h1>Auto Insurance Claims Denied in Georgia</h1>
+        <StateHeroImage stateSlug="georgia" domain="auto" alt="Auto Insurance Claims Denied in Georgia" />
         <p className="intro">
           A denial often sounds final, but many are driven by missing information or a mismatch between the insurer’s assumptions and what you can
           document. Your job is to respond to the denial reasons in the same order, with targeted evidence.

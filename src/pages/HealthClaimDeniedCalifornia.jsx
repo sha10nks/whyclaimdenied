@@ -9,6 +9,7 @@ import BlogTeasersByState from '../components/BlogTeasersByState';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema, generateFAQSchema } from '../seo/schema';
 
+import StateHeroImage from '../components/StateHeroImage'
 const HealthClaimDeniedCalifornia = () => {
   const meta = getMetaData('healthCA');
   const faqs = [
@@ -34,10 +35,12 @@ const HealthClaimDeniedCalifornia = () => {
     },
   ];
 
+  const heroImageCanonical = new URL('/images/states/california/health-1600.webp', meta.canonical).toString();
+
   const articleSchema = generateArticleSchema({
     headline: meta.title,
     description: meta.description,
-    canonicalUrl: meta.canonical,
+    canonicalUrl: meta.canonical, imageUrl: heroImageCanonical
   });
   const faqSchema = generateFAQSchema(faqs);
 
@@ -62,7 +65,7 @@ const HealthClaimDeniedCalifornia = () => {
 
       <main className="container">
         <h1>Health Insurance Claims Denied in California</h1>
-
+        <StateHeroImage stateSlug="california" domain="health" alt="Health Insurance Claims Denied in California" />
         <p className="intro">
           Health insurance denials are frustrating because they hit when you’re already dealing with treatment, pain, scheduling, and paperwork. The denial letter can feel like a dead end. It usually isn’t.
         </p>

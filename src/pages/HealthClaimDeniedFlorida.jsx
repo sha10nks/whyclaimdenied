@@ -9,6 +9,7 @@ import BlogTeasersByState from '../components/BlogTeasersByState';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema, generateFAQSchema } from '../seo/schema';
 
+import StateHeroImage from '../components/StateHeroImage'
 const HealthClaimDeniedFlorida = () => {
   const meta = getMetaData('healthFL');
 
@@ -35,10 +36,12 @@ const HealthClaimDeniedFlorida = () => {
     },
   ];
 
+  const heroImageCanonical = new URL('/images/states/florida/health-1600.webp', meta.canonical).toString();
+
   const articleSchema = generateArticleSchema({
     headline: meta.title,
     description: meta.description,
-    canonicalUrl: meta.canonical,
+    canonicalUrl: meta.canonical, imageUrl: heroImageCanonical
   });
   const faqSchema = generateFAQSchema(faqs);
 
@@ -58,7 +61,7 @@ const HealthClaimDeniedFlorida = () => {
 
       <main className="container">
         <h1>Health Insurance Claims Denied in Florida</h1>
-
+        <StateHeroImage stateSlug="florida" domain="health" alt="Health Insurance Claims Denied in Florida" />
         <p className="intro">
           Health denials are different from auto denials. The paperwork is heavier, the reasons are more clinical, and the stakes feel immediate. It’s not just a reimbursement issue. It can be access to care.
         </p>

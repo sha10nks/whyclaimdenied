@@ -9,6 +9,7 @@ import BlogTeasersByState from '../components/BlogTeasersByState';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema, generateFAQSchema } from '../seo/schema';
 
+import StateHeroImage from '../components/StateHeroImage'
 const AutoClaimDeniedFlorida = () => {
   const meta = getMetaData('autoFL');
 
@@ -35,10 +36,12 @@ const AutoClaimDeniedFlorida = () => {
     },
   ];
 
+  const heroImageCanonical = new URL('/images/states/florida/auto-1600.webp', meta.canonical).toString();
+
   const articleSchema = generateArticleSchema({
     headline: meta.title,
     description: meta.description,
-    canonicalUrl: meta.canonical,
+    canonicalUrl: meta.canonical, imageUrl: heroImageCanonical
   });
 
   const faqSchema = generateFAQSchema(faqs);
@@ -59,7 +62,7 @@ const AutoClaimDeniedFlorida = () => {
 
       <main className="container">
         <h1>Auto Insurance Claims Denied in Florida</h1>
-
+        <StateHeroImage stateSlug="florida" domain="auto" alt="Auto Insurance Claims Denied in Florida" />
         <p className="intro">
           A denial letter is a gut punch. You paid your premium, you reported the crash, and you did what you were supposed to do. Then the insurer tells you the claim is denied or only partially covered.
         </p>

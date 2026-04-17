@@ -9,6 +9,7 @@ import BlogTeasersByState from '../components/BlogTeasersByState';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema, generateFAQSchema } from '../seo/schema';
 
+import StateHeroImage from '../components/StateHeroImage'
 const AutoClaimDeniedPennsylvania = () => {
   const meta = getMetaData('autoPA');
   const faqs = [
@@ -29,10 +30,12 @@ const AutoClaimDeniedPennsylvania = () => {
     },
   ];
 
+  const heroImageCanonical = new URL('/images/states/pennsylvania/auto-1600.webp', meta.canonical).toString();
+
   const articleSchema = generateArticleSchema({
     headline: meta.title,
     description: meta.description,
-    canonicalUrl: meta.canonical,
+    canonicalUrl: meta.canonical, imageUrl: heroImageCanonical
   });
 
   const faqSchema = generateFAQSchema(faqs);
@@ -53,7 +56,7 @@ const AutoClaimDeniedPennsylvania = () => {
 
       <main className="container">
         <h1>Auto Insurance Claims Denied in Pennsylvania</h1>
-
+        <StateHeroImage stateSlug="pennsylvania" domain="auto" alt="Auto Insurance Claims Denied in Pennsylvania" />
         <p className="intro">
           If your auto claim was denied in Pennsylvania, focus on what the decision relied on—policy language, missing documents, or disputed facts—and respond in writing with evidence.
         </p>

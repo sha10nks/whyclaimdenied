@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import { Link } from '../components/Link';
 import { META } from '../seo/meta';
 import { DENIAL_PAGES } from '../denials/registry';
+import { FEATURED_GUIDE_SLUGS, getGuideBySlug } from '../guides/registry.js';
 
 const toTitleCase = (slug) => {
   return slug
@@ -100,6 +101,9 @@ const buildGuidesIndex = () => {
 
 export default function Home() {
   const guides = buildGuidesIndex();
+  const featuredGuides = FEATURED_GUIDE_SLUGS
+    .map((slug) => getGuideBySlug(slug))
+    .filter(Boolean);
 
   return (
     <>
@@ -123,16 +127,43 @@ export default function Home() {
         <meta property="og:description" content="Clear, educational, state-specific guides explaining insurance claim denials." />
         <meta property="og:url" content="https://whyclaimdenied.com/" />
         <meta property="og:site_name" content="WhyClaimDenied" />
+        <meta property="og:image" content="https://whyclaimdenied.com/images/hero/hero-bg-1920.webp" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Why Insurance Claims Get Denied" />
         <meta name="twitter:description" content="Independent educational guides explaining insurance claim denials by state." />
+        <meta name="twitter:image" content="https://whyclaimdenied.com/images/hero/hero-bg-1920.webp" />
         <link rel="canonical" href="https://whyclaimdenied.com/" />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero/hero-bg-1920.webp"
+          imagesrcset="/images/hero/hero-bg-1280.webp 1280w, /images/hero/hero-bg-1920.webp 1920w, /images/hero/hero-bg-3840.webp 3840w"
+          imagesizes="100vw"
+        />
       </Helmet>
 
       <Header />
 
       <main className="container">
         <section className="home-hero" aria-labelledby="hero-title">
+          <div className="home-hero-bg" aria-hidden="true">
+            <picture>
+              <source
+                type="image/webp"
+                srcSet="/images/hero/hero-bg-1280.webp 1280w, /images/hero/hero-bg-1920.webp 1920w, /images/hero/hero-bg-3840.webp 3840w"
+                sizes="100vw"
+              />
+              <img
+                src="/images/hero/hero-bg-1920.webp"
+                alt=""
+                width="1920"
+                height="1080"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
+          </div>
           <div className="home-hero-inner">
             <div className="home-hero-content home-hero-copy">
               <span className="hero-micro-badge">For educational purposes only</span>
@@ -157,6 +188,30 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </section>
+
+        <section className="home-start" aria-labelledby="start-here-title">
+          <div className="home-start-header">
+            <h2 id="start-here-title">Start here: high-intent guides</h2>
+            <p>
+              If you just got a denial letter, these guides walk you through the fastest next steps—what to request, what to write, and how to keep deadlines safe.
+            </p>
+          </div>
+
+          <div className="home-start-grid" aria-label="Featured guides">
+            {featuredGuides.map((g) => (
+              <article key={g.slug} className="home-start-card">
+                <h3 className="home-start-card-title">
+                  <Link to={g.canonicalPath}>{g.title}</Link>
+                </h3>
+                <p className="home-start-card-desc">{g.description}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="home-start-more">
+            <Link to="/guides">Browse all guides</Link>
+          </p>
         </section>
 
         <section className="home-guides" aria-labelledby="guides-title" id="guides-by-state">

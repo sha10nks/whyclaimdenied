@@ -13,8 +13,8 @@ export const generateFAQSchema = (faqs) => {
   };
 };
 
-export const generateArticleSchema = ({ headline, description, canonicalUrl }) => {
-  return {
+export const generateArticleSchema = ({ headline, description, canonicalUrl, imageUrl }) => {
+  const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": headline,
@@ -32,6 +32,12 @@ export const generateArticleSchema = ({ headline, description, canonicalUrl }) =
       "name": "WhyClaimDenied",
     },
   };
+
+  if (imageUrl) {
+    schema.image = imageUrl;
+  }
+
+  return schema;
 };
 
 export const generateBreadcrumbSchema = ({ baseUrl, items }) => {

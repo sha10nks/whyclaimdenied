@@ -9,6 +9,7 @@ import BlogTeasersByState from '../components/BlogTeasersByState';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema, generateFAQSchema } from '../seo/schema';
 
+import StateHeroImage from '../components/StateHeroImage'
 const HealthClaimDeniedIllinois = () => {
   const meta = getMetaData('healthIL');
   const faqs = [
@@ -22,7 +23,9 @@ const HealthClaimDeniedIllinois = () => {
     }
   ];
 
-  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical });
+  const heroImageCanonical = new URL('/images/states/illinois/health-1600.webp', meta.canonical).toString();
+
+  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical, imageUrl: heroImageCanonical});
   const faqSchema = generateFAQSchema(faqs);
 
   return (
@@ -41,6 +44,7 @@ const HealthClaimDeniedIllinois = () => {
 
       <main className="container">
         <h1>Health Insurance Claims Denied in Illinois</h1>
+        <StateHeroImage stateSlug="illinois" domain="health" alt="Health Insurance Claims Denied in Illinois" />
         <p className="intro">Match your appeal to the denial reason. Use plan criteria, medical records, and a short provider letter that addresses those criteria directly.</p>
         <p>Looking for auto claims? See <Link to="/auto-insurance-claims-denied-illinois">Auto Insurance Claims Denied in Illinois</Link>.</p>
 

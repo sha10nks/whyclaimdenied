@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import StateHubLinks from '../components/StateHubLinks';
 import BlogTeasersByState from '../components/BlogTeasersByState';
 import { Link } from '../components/Link';
+import StateHeroImage from '../components/StateHeroImage'
 
 const HealthClaimDeniedTexas = () => {
   const structuredData = {
@@ -65,6 +66,7 @@ const HealthClaimDeniedTexas = () => {
 
       <main className="container">
         <h1>Health Insurance Claims Denied in Texas</h1>
+        <StateHeroImage stateSlug="texas" domain="health" alt="Health Insurance Claims Denied in Texas" />
         <p className="intro">Understanding your rights and options when your health insurance claim is denied in the Lone Star State</p>
 
         <section>

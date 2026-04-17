@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import StateHubLinks from '../components/StateHubLinks'
 import BlogTeasersByState from '../components/BlogTeasersByState'
+import StateHeroImage from '../components/StateHeroImage'
 
 export default function HealthClaimDeniedNewYork() {
   return (
@@ -17,6 +18,7 @@ export default function HealthClaimDeniedNewYork() {
       </Helmet>
 
       <h1>Health Insurance Claims Denied in New York</h1>
+        <StateHeroImage stateSlug="new-york" domain="health" alt="Health Insurance Claims Denied in New York" />
       <p className="intro">A concise, state-focused guide to common health claim denials, plan rules, and consumer escalation options in New York.</p>
 
       <section aria-labelledby="ny-health-why"><h2 id="ny-health-why">Why health claims get denied</h2>

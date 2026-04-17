@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import StateHubLinks from '../components/StateHubLinks'
 import BlogTeasersByState from '../components/BlogTeasersByState'
+import StateHeroImage from '../components/StateHeroImage'
 
 export default function AutoClaimDeniedNewYork() {
   return (
@@ -17,6 +18,7 @@ export default function AutoClaimDeniedNewYork() {
       </Helmet>
 
       <h1>Auto Insurance Claims Denied in New York</h1>
+        <StateHeroImage stateSlug="new-york" domain="auto" alt="Auto Insurance Claims Denied in New York" />
       <p className="intro">A plain-English overview of common auto claim denials in New York and the steps consumers typically take to understand and respond.</p>
 
       <section aria-labelledby="ny-auto-why"><h2 id="ny-auto-why">Why auto insurance claims get denied</h2>

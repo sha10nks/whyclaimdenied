@@ -9,6 +9,7 @@ import BlogTeasersByState from '../components/BlogTeasersByState';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema, generateFAQSchema } from '../seo/schema';
 
+import StateHeroImage from '../components/StateHeroImage'
 const HealthClaimDeniedMichigan = () => {
   const meta = getMetaData('healthMI');
   const faqs = [
@@ -29,7 +30,9 @@ const HealthClaimDeniedMichigan = () => {
     },
   ];
 
-  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical });
+  const heroImageCanonical = new URL('/images/states/michigan/health-1600.webp', meta.canonical).toString();
+
+  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical, imageUrl: heroImageCanonical});
   const faqSchema = generateFAQSchema(faqs);
 
   return (
@@ -48,7 +51,7 @@ const HealthClaimDeniedMichigan = () => {
 
       <main className="container">
         <h1>Health Insurance Claims Denied in Michigan</h1>
-
+        <StateHeroImage stateSlug="michigan" domain="health" alt="Health Insurance Claims Denied in Michigan" />
         <p className="intro">
           Most health denials can be understood—and often improved—when you treat the denial letter like a checklist. Ask for the criteria the plan used and respond point-by-point with
           provider support and the right records.

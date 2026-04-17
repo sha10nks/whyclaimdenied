@@ -9,6 +9,7 @@ import BlogTeasersByState from '../components/BlogTeasersByState';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema, generateFAQSchema } from '../seo/schema';
 
+import StateHeroImage from '../components/StateHeroImage'
 const AutoClaimDeniedOhio = () => {
   const meta = getMetaData('autoOH');
   const faqs = [
@@ -29,7 +30,9 @@ const AutoClaimDeniedOhio = () => {
     },
   ];
 
-  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical });
+  const heroImageCanonical = new URL('/images/states/ohio/auto-1600.webp', meta.canonical).toString();
+
+  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical, imageUrl: heroImageCanonical});
   const faqSchema = generateFAQSchema(faqs);
 
   return (
@@ -48,6 +51,7 @@ const AutoClaimDeniedOhio = () => {
 
       <main className="container">
         <h1>Auto Insurance Claims Denied in Ohio</h1>
+        <StateHeroImage stateSlug="ohio" domain="auto" alt="Auto Insurance Claims Denied in Ohio" />
         <p className="intro">
           Start with the denial letter and the policy language it cites. Most disputes become solvable when you narrow the issue to one
           coverage requirement or one fact the insurer says is missing.

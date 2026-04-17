@@ -9,6 +9,7 @@ import BlogTeasersByState from '../components/BlogTeasersByState';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema, generateFAQSchema } from '../seo/schema';
 
+import StateHeroImage from '../components/StateHeroImage'
 const HealthClaimDeniedNorthCarolina = () => {
   const meta = getMetaData('healthNC');
   const faqs = [
@@ -29,7 +30,9 @@ const HealthClaimDeniedNorthCarolina = () => {
     },
   ];
 
-  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical });
+  const heroImageCanonical = new URL('/images/states/north-carolina/health-1600.webp', meta.canonical).toString();
+
+  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical, imageUrl: heroImageCanonical});
   const faqSchema = generateFAQSchema(faqs);
 
   return (
@@ -48,7 +51,7 @@ const HealthClaimDeniedNorthCarolina = () => {
 
       <main className="container">
         <h1>Health Insurance Claims Denied in North Carolina</h1>
-
+        <StateHeroImage stateSlug="north-carolina" domain="health" alt="Health Insurance Claims Denied in North Carolina" />
         <p className="intro">
           Health claim denials are often fixable when you respond to the exact criterion the plan applied. A strong appeal is organized, document-driven, and written so a reviewer can
           verify each disputed point quickly.

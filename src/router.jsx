@@ -3,6 +3,8 @@ import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
 
 const Home = lazy(() => import("./pages/Home"));
+const GuidesIndex = lazy(() => import("./pages/guides/GuidesIndex"));
+const GuideDetail = lazy(() => import("./pages/guides/GuideDetail"));
 const RouteError = lazy(() => import("./pages/RouteError"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const ClaimDeniedCalifornia = lazy(() => import("./pages/ClaimDeniedCalifornia"));
@@ -216,6 +218,46 @@ const BlogIndex = lazy(() => import("./pages/blog/BlogIndex"));
 const BlogStateIndex = lazy(() => import("./pages/blog/BlogStateIndex"));
 const BlogPost = lazy(() => import("./pages/blog/BlogPost"));
 
+// New Jersey
+const AutoClaimDeniedNewJersey = lazy(() => import("./pages/AutoClaimDeniedNewJersey"));
+const HealthClaimDeniedNewJersey = lazy(() => import("./pages/HealthClaimDeniedNewJersey"));
+const AutoClaimDeniedNewJerseyNoCoverageAtTimeOfLoss = lazy(() => import("./pages/AutoClaimDeniedNewJerseyNoCoverageAtTimeOfLoss"));
+const AutoClaimDeniedNewJerseyPolicyLapseOrCancellation = lazy(() => import("./pages/AutoClaimDeniedNewJerseyPolicyLapseOrCancellation"));
+const AutoClaimDeniedNewJerseyMissedReportingDeadline = lazy(() => import("./pages/AutoClaimDeniedNewJerseyMissedReportingDeadline"));
+const AutoClaimDeniedNewJerseyExcludedDriver = lazy(() => import("./pages/AutoClaimDeniedNewJerseyExcludedDriver"));
+const AutoClaimDeniedNewJerseyMisrepresentationOrConcealment = lazy(() => import("./pages/AutoClaimDeniedNewJerseyMisrepresentationOrConcealment"));
+const AutoClaimDeniedNewJerseyNonCoveredUse = lazy(() => import("./pages/AutoClaimDeniedNewJerseyNonCoveredUse"));
+const AutoClaimDeniedNewJerseyFailureToCooperate = lazy(() => import("./pages/AutoClaimDeniedNewJerseyFailureToCooperate"));
+const AutoClaimDeniedNewJerseyDisputedLiability = lazy(() => import("./pages/AutoClaimDeniedNewJerseyDisputedLiability"));
+const HealthClaimDeniedNewJerseyPriorAuthorizationMissing = lazy(() => import("./pages/HealthClaimDeniedNewJerseyPriorAuthorizationMissing"));
+const HealthClaimDeniedNewJerseyNotMedicallyNecessary = lazy(() => import("./pages/HealthClaimDeniedNewJerseyNotMedicallyNecessary"));
+const HealthClaimDeniedNewJerseyOutOfNetworkProvider = lazy(() => import("./pages/HealthClaimDeniedNewJerseyOutOfNetworkProvider"));
+const HealthClaimDeniedNewJerseyCodingOrDocumentationError = lazy(() => import("./pages/HealthClaimDeniedNewJerseyCodingOrDocumentationError"));
+const HealthClaimDeniedNewJerseyExperimentalOrInvestigational = lazy(() => import("./pages/HealthClaimDeniedNewJerseyExperimentalOrInvestigational"));
+const HealthClaimDeniedNewJerseyBenefitOrServiceExcluded = lazy(() => import("./pages/HealthClaimDeniedNewJerseyBenefitOrServiceExcluded"));
+const HealthClaimDeniedNewJerseyTimelyFilingIssue = lazy(() => import("./pages/HealthClaimDeniedNewJerseyTimelyFilingIssue"));
+const HealthClaimDeniedNewJerseyCoordinationOfBenefits = lazy(() => import("./pages/HealthClaimDeniedNewJerseyCoordinationOfBenefits"));
+
+// Virginia
+const AutoClaimDeniedVirginia = lazy(() => import("./pages/AutoClaimDeniedVirginia"));
+const HealthClaimDeniedVirginia = lazy(() => import("./pages/HealthClaimDeniedVirginia"));
+const AutoClaimDeniedVirginiaNoCoverageAtTimeOfLoss = lazy(() => import("./pages/AutoClaimDeniedVirginiaNoCoverageAtTimeOfLoss"));
+const AutoClaimDeniedVirginiaPolicyLapseOrCancellation = lazy(() => import("./pages/AutoClaimDeniedVirginiaPolicyLapseOrCancellation"));
+const AutoClaimDeniedVirginiaMissedReportingDeadline = lazy(() => import("./pages/AutoClaimDeniedVirginiaMissedReportingDeadline"));
+const AutoClaimDeniedVirginiaExcludedDriver = lazy(() => import("./pages/AutoClaimDeniedVirginiaExcludedDriver"));
+const AutoClaimDeniedVirginiaMisrepresentationOrConcealment = lazy(() => import("./pages/AutoClaimDeniedVirginiaMisrepresentationOrConcealment"));
+const AutoClaimDeniedVirginiaNonCoveredUse = lazy(() => import("./pages/AutoClaimDeniedVirginiaNonCoveredUse"));
+const AutoClaimDeniedVirginiaFailureToCooperate = lazy(() => import("./pages/AutoClaimDeniedVirginiaFailureToCooperate"));
+const AutoClaimDeniedVirginiaDisputedLiability = lazy(() => import("./pages/AutoClaimDeniedVirginiaDisputedLiability"));
+const HealthClaimDeniedVirginiaPriorAuthorizationMissing = lazy(() => import("./pages/HealthClaimDeniedVirginiaPriorAuthorizationMissing"));
+const HealthClaimDeniedVirginiaNotMedicallyNecessary = lazy(() => import("./pages/HealthClaimDeniedVirginiaNotMedicallyNecessary"));
+const HealthClaimDeniedVirginiaOutOfNetworkProvider = lazy(() => import("./pages/HealthClaimDeniedVirginiaOutOfNetworkProvider"));
+const HealthClaimDeniedVirginiaCodingOrDocumentationError = lazy(() => import("./pages/HealthClaimDeniedVirginiaCodingOrDocumentationError"));
+const HealthClaimDeniedVirginiaExperimentalOrInvestigational = lazy(() => import("./pages/HealthClaimDeniedVirginiaExperimentalOrInvestigational"));
+const HealthClaimDeniedVirginiaBenefitOrServiceExcluded = lazy(() => import("./pages/HealthClaimDeniedVirginiaBenefitOrServiceExcluded"));
+const HealthClaimDeniedVirginiaTimelyFilingIssue = lazy(() => import("./pages/HealthClaimDeniedVirginiaTimelyFilingIssue"));
+const HealthClaimDeniedVirginiaCoordinationOfBenefits = lazy(() => import("./pages/HealthClaimDeniedVirginiaCoordinationOfBenefits"));
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -225,6 +267,14 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "guides",
+        element: <GuidesIndex />,
+      },
+      {
+        path: "guides/:slug",
+        element: <GuideDetail />,
       },
       {
         path: "auto-insurance-claims-denied-california",
@@ -806,6 +856,56 @@ const router = createBrowserRouter([
         path: "health-insurance-claims-denied-michigan/coordination-of-benefits",
         element: <HealthClaimDeniedMichiganCoordinationOfBenefits />,
       },
+
+      {
+        path: "auto-insurance-claims-denied-new-jersey",
+        element: <AutoClaimDeniedNewJersey />,
+      },
+      { path: "auto-insurance-claims-denied-new-jersey/no-coverage-at-time-of-loss", element: <AutoClaimDeniedNewJerseyNoCoverageAtTimeOfLoss /> },
+      { path: "auto-insurance-claims-denied-new-jersey/policy-lapse-or-cancellation", element: <AutoClaimDeniedNewJerseyPolicyLapseOrCancellation /> },
+      { path: "auto-insurance-claims-denied-new-jersey/missed-reporting-deadline", element: <AutoClaimDeniedNewJerseyMissedReportingDeadline /> },
+      { path: "auto-insurance-claims-denied-new-jersey/excluded-driver", element: <AutoClaimDeniedNewJerseyExcludedDriver /> },
+      { path: "auto-insurance-claims-denied-new-jersey/misrepresentation-or-concealment", element: <AutoClaimDeniedNewJerseyMisrepresentationOrConcealment /> },
+      { path: "auto-insurance-claims-denied-new-jersey/non-covered-use", element: <AutoClaimDeniedNewJerseyNonCoveredUse /> },
+      { path: "auto-insurance-claims-denied-new-jersey/failure-to-cooperate", element: <AutoClaimDeniedNewJerseyFailureToCooperate /> },
+      { path: "auto-insurance-claims-denied-new-jersey/disputed-liability", element: <AutoClaimDeniedNewJerseyDisputedLiability /> },
+      {
+        path: "health-insurance-claims-denied-new-jersey",
+        element: <HealthClaimDeniedNewJersey />,
+      },
+      { path: "health-insurance-claims-denied-new-jersey/prior-authorization-missing", element: <HealthClaimDeniedNewJerseyPriorAuthorizationMissing /> },
+      { path: "health-insurance-claims-denied-new-jersey/not-medically-necessary", element: <HealthClaimDeniedNewJerseyNotMedicallyNecessary /> },
+      { path: "health-insurance-claims-denied-new-jersey/out-of-network-provider", element: <HealthClaimDeniedNewJerseyOutOfNetworkProvider /> },
+      { path: "health-insurance-claims-denied-new-jersey/coding-or-documentation-error", element: <HealthClaimDeniedNewJerseyCodingOrDocumentationError /> },
+      { path: "health-insurance-claims-denied-new-jersey/experimental-or-investigational", element: <HealthClaimDeniedNewJerseyExperimentalOrInvestigational /> },
+      { path: "health-insurance-claims-denied-new-jersey/benefit-or-service-excluded", element: <HealthClaimDeniedNewJerseyBenefitOrServiceExcluded /> },
+      { path: "health-insurance-claims-denied-new-jersey/timely-filing-issue", element: <HealthClaimDeniedNewJerseyTimelyFilingIssue /> },
+      { path: "health-insurance-claims-denied-new-jersey/coordination-of-benefits", element: <HealthClaimDeniedNewJerseyCoordinationOfBenefits /> },
+
+      {
+        path: "auto-insurance-claims-denied-virginia",
+        element: <AutoClaimDeniedVirginia />,
+      },
+      { path: "auto-insurance-claims-denied-virginia/no-coverage-at-time-of-loss", element: <AutoClaimDeniedVirginiaNoCoverageAtTimeOfLoss /> },
+      { path: "auto-insurance-claims-denied-virginia/policy-lapse-or-cancellation", element: <AutoClaimDeniedVirginiaPolicyLapseOrCancellation /> },
+      { path: "auto-insurance-claims-denied-virginia/missed-reporting-deadline", element: <AutoClaimDeniedVirginiaMissedReportingDeadline /> },
+      { path: "auto-insurance-claims-denied-virginia/excluded-driver", element: <AutoClaimDeniedVirginiaExcludedDriver /> },
+      { path: "auto-insurance-claims-denied-virginia/misrepresentation-or-concealment", element: <AutoClaimDeniedVirginiaMisrepresentationOrConcealment /> },
+      { path: "auto-insurance-claims-denied-virginia/non-covered-use", element: <AutoClaimDeniedVirginiaNonCoveredUse /> },
+      { path: "auto-insurance-claims-denied-virginia/failure-to-cooperate", element: <AutoClaimDeniedVirginiaFailureToCooperate /> },
+      { path: "auto-insurance-claims-denied-virginia/disputed-liability", element: <AutoClaimDeniedVirginiaDisputedLiability /> },
+      {
+        path: "health-insurance-claims-denied-virginia",
+        element: <HealthClaimDeniedVirginia />,
+      },
+      { path: "health-insurance-claims-denied-virginia/prior-authorization-missing", element: <HealthClaimDeniedVirginiaPriorAuthorizationMissing /> },
+      { path: "health-insurance-claims-denied-virginia/not-medically-necessary", element: <HealthClaimDeniedVirginiaNotMedicallyNecessary /> },
+      { path: "health-insurance-claims-denied-virginia/out-of-network-provider", element: <HealthClaimDeniedVirginiaOutOfNetworkProvider /> },
+      { path: "health-insurance-claims-denied-virginia/coding-or-documentation-error", element: <HealthClaimDeniedVirginiaCodingOrDocumentationError /> },
+      { path: "health-insurance-claims-denied-virginia/experimental-or-investigational", element: <HealthClaimDeniedVirginiaExperimentalOrInvestigational /> },
+      { path: "health-insurance-claims-denied-virginia/benefit-or-service-excluded", element: <HealthClaimDeniedVirginiaBenefitOrServiceExcluded /> },
+      { path: "health-insurance-claims-denied-virginia/timely-filing-issue", element: <HealthClaimDeniedVirginiaTimelyFilingIssue /> },
+      { path: "health-insurance-claims-denied-virginia/coordination-of-benefits", element: <HealthClaimDeniedVirginiaCoordinationOfBenefits /> },
 
       {
         path: "auto-insurance-claims-denied-pennsylvania",

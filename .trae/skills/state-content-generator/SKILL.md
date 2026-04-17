@@ -148,6 +148,34 @@ Include on EVERY page:
 - Global navbar/header: import and render `Header` at the top
 - Global footer: import and render `Footer` at the bottom
 - Standard AdSense placeholders: include two `<div className="ad-placeholder">` blocks on pillar pages and at least one on denial reason pages, placed following the pattern used on California pages
+- Hero Image: For Pillar pages ONLY, include the local, optimized hero image block right after the `<h1>` using the shared component `StateHeroImage`.
+  ```jsx
+  <StateHeroImage
+    stateSlug="[state-slug]"
+    domain="auto" // or "health"
+    alt="[Domain] Insurance Claims Denied in [State]"
+  />
+  ```
+  Also pass the canonical image URL into `generateArticleSchema`:
+  ```jsx
+  const heroImageCanonical = new URL('/images/states/[state-slug]/[domain]-1600.webp', meta.canonical).toString();
+  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical, imageUrl: heroImageCanonical });
+  ```
+
+Image Generation + Performance (REQUIRED)
+When adding a new state, you MUST generate 2 hero images (auto + health) and store them locally as WebP with responsive sizes:
+- Output paths:
+  - `public/images/states/[state-slug]/auto-1600.webp`
+  - `public/images/states/[state-slug]/auto-800.webp`
+  - `public/images/states/[state-slug]/health-1600.webp`
+  - `public/images/states/[state-slug]/health-800.webp`
+- Hard requirements:
+  - Format: WebP
+  - No text inside images
+  - Clean, minimal composition (no clutter)
+  - File size: under 500KB (prefer 200–400KB)
+  - Responsive: serve 800w + 1600w via `srcSet`
+- Use the project’s generator script pattern (same lighting/composition system) and validate: shape accuracy (from official map geometry), uniqueness (state-specific landmark icon), and file size limits.
 
 SEO Files (REQUIRED)
 Update:

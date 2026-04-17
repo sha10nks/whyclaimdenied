@@ -9,6 +9,7 @@ import BlogTeasersByState from '../components/BlogTeasersByState';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema, generateFAQSchema } from '../seo/schema';
 
+import StateHeroImage from '../components/StateHeroImage'
 const HealthClaimDeniedOhio = () => {
   const meta = getMetaData('healthOH');
   const faqs = [
@@ -29,7 +30,9 @@ const HealthClaimDeniedOhio = () => {
     },
   ];
 
-  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical });
+  const heroImageCanonical = new URL('/images/states/ohio/health-1600.webp', meta.canonical).toString();
+
+  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical, imageUrl: heroImageCanonical});
   const faqSchema = generateFAQSchema(faqs);
 
   return (
@@ -48,6 +51,7 @@ const HealthClaimDeniedOhio = () => {
 
       <main className="container">
         <h1>Health Insurance Claims Denied in Ohio</h1>
+        <StateHeroImage stateSlug="ohio" domain="health" alt="Health Insurance Claims Denied in Ohio" />
         <p className="intro">
           Treat the denial as a checklist. Get the plan’s criteria in writing, match your appeal headings to the denial letter headings, and
           submit documentation that answers each reason directly.

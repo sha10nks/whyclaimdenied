@@ -9,6 +9,7 @@ import BlogTeasersByState from '../components/BlogTeasersByState';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema, generateFAQSchema } from '../seo/schema';
 
+import StateHeroImage from '../components/StateHeroImage'
 const AutoClaimDeniedCalifornia = () => {
   const meta = getMetaData('autoCA');
   const faqs = [
@@ -34,10 +35,12 @@ const AutoClaimDeniedCalifornia = () => {
     },
   ];
 
+  const heroImageCanonical = new URL('/images/states/california/auto-1600.webp', meta.canonical).toString();
+
   const articleSchema = generateArticleSchema({
     headline: meta.title,
     description: meta.description,
-    canonicalUrl: meta.canonical,
+    canonicalUrl: meta.canonical, imageUrl: heroImageCanonical
   });
 
   const faqSchema = generateFAQSchema(faqs);
@@ -58,7 +61,7 @@ const AutoClaimDeniedCalifornia = () => {
 
       <main className="container">
         <h1>Auto Insurance Claims Denied in California</h1>
-
+        <StateHeroImage stateSlug="california" domain="auto" alt="Auto Insurance Claims Denied in California" />
         <p className="intro">
           A denied auto claim can leave you stuck with repair bills, rental costs, or a car you can’t safely drive. The hard part is that denial letters often sound final, even when they’re based on a fixable issue.
         </p>

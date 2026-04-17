@@ -9,6 +9,7 @@ import BlogTeasersByState from '../components/BlogTeasersByState';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema, generateFAQSchema } from '../seo/schema';
 
+import StateHeroImage from '../components/StateHeroImage'
 const AutoClaimDeniedNorthCarolina = () => {
   const meta = getMetaData('autoNC');
   const faqs = [
@@ -29,7 +30,9 @@ const AutoClaimDeniedNorthCarolina = () => {
     },
   ];
 
-  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical });
+  const heroImageCanonical = new URL('/images/states/north-carolina/auto-1600.webp', meta.canonical).toString();
+
+  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical, imageUrl: heroImageCanonical});
   const faqSchema = generateFAQSchema(faqs);
 
   return (
@@ -48,7 +51,7 @@ const AutoClaimDeniedNorthCarolina = () => {
 
       <main className="container">
         <h1>Auto Insurance Claims Denied in North Carolina</h1>
-
+        <StateHeroImage stateSlug="north-carolina" domain="auto" alt="Auto Insurance Claims Denied in North Carolina" />
         <p className="intro">
           A denied auto insurance claim is frustrating, but the denial letter is also useful: it tells you what the insurer thinks is missing or what contract language it is relying on.
           If you respond to that reason directly—in writing, with the right documents—you give the reviewer a clear path to reconsider the decision.

@@ -9,6 +9,7 @@ import BlogTeasersByState from '../components/BlogTeasersByState';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema, generateFAQSchema } from '../seo/schema';
 
+import StateHeroImage from '../components/StateHeroImage'
 const HealthClaimDeniedPennsylvania = () => {
   const meta = getMetaData('healthPA');
   const faqs = [
@@ -24,7 +25,9 @@ const HealthClaimDeniedPennsylvania = () => {
     },
   ];
 
-  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical });
+  const heroImageCanonical = new URL('/images/states/pennsylvania/health-1600.webp', meta.canonical).toString();
+
+  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical, imageUrl: heroImageCanonical});
   const faqSchema = generateFAQSchema(faqs);
 
   return (
@@ -43,6 +46,7 @@ const HealthClaimDeniedPennsylvania = () => {
 
       <main className="container">
         <h1>Health Insurance Claims Denied in Pennsylvania</h1>
+        <StateHeroImage stateSlug="pennsylvania" domain="health" alt="Health Insurance Claims Denied in Pennsylvania" />
         <p className="intro">Focus on what the denial relies on and answer it with specific records, policy language, and your provider’s support.</p>
 
         <p>

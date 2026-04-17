@@ -9,6 +9,7 @@ import BlogTeasersByState from '../components/BlogTeasersByState';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema, generateFAQSchema } from '../seo/schema';
 
+import StateHeroImage from '../components/StateHeroImage'
 const HealthClaimDeniedGeorgia = () => {
   const meta = getMetaData('healthGA');
   const faqs = [
@@ -29,7 +30,9 @@ const HealthClaimDeniedGeorgia = () => {
     },
   ];
 
-  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical });
+  const heroImageCanonical = new URL('/images/states/georgia/health-1600.webp', meta.canonical).toString();
+
+  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical, imageUrl: heroImageCanonical});
   const faqSchema = generateFAQSchema(faqs);
 
   return (
@@ -48,6 +51,7 @@ const HealthClaimDeniedGeorgia = () => {
 
       <main className="container">
         <h1>Health Insurance Claims Denied in Georgia</h1>
+        <StateHeroImage stateSlug="georgia" domain="health" alt="Health Insurance Claims Denied in Georgia" />
         <p className="intro">
           Strong appeals are criteria-based. Match your appeal headings to the denial reasons, request the plan’s medical policy or benefit
           provision, and submit documentation that answers each reason directly.

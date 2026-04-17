@@ -45,11 +45,14 @@ const Header = () => {
             <Link to="/" className="nav-link" onClick={closeMenu}>
               Home
             </Link>
-            <Link to="/about" className="nav-link" onClick={closeMenu}>
-              About Us
+            <Link to="/guides" className="nav-link" onClick={closeMenu}>
+              Guides
             </Link>
             <Link to="/blog" className="nav-link" onClick={closeMenu}>
               Blog
+            </Link>
+            <Link to="/about" className="nav-link" onClick={closeMenu}>
+              About Us
             </Link>
             <Link to="/contact" className="nav-link" onClick={closeMenu}>
               Contact

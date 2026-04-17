@@ -56,20 +56,25 @@ const buildOrder = (canonicals) => {
   const orderRoots = ['/', '/about', '/contact', '/privacy', '/terms']
   const roots = orderRoots.filter(p => set.has(p))
 
-  const blogRoot = ['/blog'].filter(p => set.has(p))
-  const blogStates = byPath.filter(p => /^\/blog\/[a-z-]+$/.test(p)).sort()
-  const blogPosts = byPath.filter(p => /^\/blog\/[a-z-]+\/[a-z0-9-]+$/.test(p)).sort()
+  const guidesRoot = ['/guides'].filter(p => set.has(p))
+  const guides = byPath.filter(p => /^\/guides\/[a-z0-9-]+$/.test(p)).sort()
 
   const autoHubs = byPath.filter(p => /^\/auto-insurance-claims-denied-[a-z-]+$/.test(p)).sort()
   const healthHubs = byPath.filter(p => /^\/health-insurance-claims-denied-[a-z-]+$/.test(p)).sort()
   const autoReasons = byPath.filter(p => /^\/auto-insurance-claims-denied-[a-z-]+\//.test(p)).sort()
   const healthReasons = byPath.filter(p => /^\/health-insurance-claims-denied-[a-z-]+\//.test(p)).sort()
-  const orderedPaths = [...roots, ...blogRoot, ...blogStates, ...blogPosts, ...autoHubs, ...healthHubs, ...autoReasons, ...healthReasons]
+
+  const blogRoot = ['/blog'].filter(p => set.has(p))
+  const blogStates = byPath.filter(p => /^\/blog\/[a-z-]+$/.test(p)).sort()
+  const blogPosts = byPath.filter(p => /^\/blog\/[a-z-]+\/[a-z0-9-]+$/.test(p)).sort()
+
+  const orderedPaths = [...roots, ...guidesRoot, ...guides, ...autoHubs, ...healthHubs, ...autoReasons, ...healthReasons, ...blogRoot, ...blogStates, ...blogPosts]
   const orderedSet = new Set(orderedPaths)
   const others = byPath.filter(p => set.has(p) && !orderedSet.has(p)).sort()
   const finalPaths = [...orderedPaths, ...others]
   return finalPaths.map(p => `${BASE_URL}${p}`)
 }
+
 
 const main = async () => {
   const existing = await readExisting(path.resolve(publicDir, 'sitemap.xml'))

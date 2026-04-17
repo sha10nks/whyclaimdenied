@@ -9,6 +9,7 @@ import BlogTeasersByState from '../components/BlogTeasersByState';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema, generateFAQSchema } from '../seo/schema';
 
+import StateHeroImage from '../components/StateHeroImage'
 const AutoClaimDeniedMichigan = () => {
   const meta = getMetaData('autoMI');
   const faqs = [
@@ -29,7 +30,9 @@ const AutoClaimDeniedMichigan = () => {
     },
   ];
 
-  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical });
+  const heroImageCanonical = new URL('/images/states/michigan/auto-1600.webp', meta.canonical).toString();
+
+  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical, imageUrl: heroImageCanonical});
   const faqSchema = generateFAQSchema(faqs);
 
   return (
@@ -48,7 +51,7 @@ const AutoClaimDeniedMichigan = () => {
 
       <main className="container">
         <h1>Auto Insurance Claims Denied in Michigan</h1>
-
+        <StateHeroImage stateSlug="michigan" domain="auto" alt="Auto Insurance Claims Denied in Michigan" />
         <p className="intro">
           When an auto claim is denied, the most productive next step is to turn the decision into a checklist. Ask for the exact reason in writing, the contract language cited, and the
           documents the insurer relied on. Then answer that reason directly with evidence.

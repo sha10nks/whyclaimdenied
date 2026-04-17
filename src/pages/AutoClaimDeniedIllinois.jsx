@@ -9,6 +9,7 @@ import BlogTeasersByState from '../components/BlogTeasersByState';
 import { getMetaData } from '../seo/meta';
 import { generateArticleSchema, generateFAQSchema } from '../seo/schema';
 
+import StateHeroImage from '../components/StateHeroImage'
 const AutoClaimDeniedIllinois = () => {
   const meta = getMetaData('autoIL');
   const faqs = [
@@ -26,7 +27,9 @@ const AutoClaimDeniedIllinois = () => {
     }
   ];
 
-  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical });
+  const heroImageCanonical = new URL('/images/states/illinois/auto-1600.webp', meta.canonical).toString();
+
+  const articleSchema = generateArticleSchema({ headline: meta.title, description: meta.description, canonicalUrl: meta.canonical, imageUrl: heroImageCanonical});
   const faqSchema = generateFAQSchema(faqs);
 
   return (
@@ -45,6 +48,7 @@ const AutoClaimDeniedIllinois = () => {
 
       <main className="container">
         <h1>Auto Insurance Claims Denied in Illinois</h1>
+        <StateHeroImage stateSlug="illinois" domain="auto" alt="Auto Insurance Claims Denied in Illinois" />
         <p className="intro">A clear, written denial is your starting point. Identify the exact reason and respond with short, specific evidence.</p>
         <p>Looking for health coverage? See <Link to="/health-insurance-claims-denied-illinois">Health Insurance Claims Denied in Illinois</Link>.</p>
 

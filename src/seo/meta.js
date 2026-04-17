@@ -1,6 +1,27 @@
+import { GUIDES } from '../guides/registry.js';
+
 export const BASE_URL = 'https://whyclaimdenied.com';
 
+const GUIDE_META = Object.fromEntries(
+  GUIDES.map((g) => {
+    const key = `guide_${g.slug.replace(/-/g, '_')}`
+    return [
+      key,
+      {
+        title: `${g.title} | WhyClaimDenied`,
+        description: g.description,
+        canonical: `${BASE_URL}${g.canonicalPath}`,
+      },
+    ]
+  }),
+);
+
 export const META = {
+    guidesIndex: {
+      title: 'Insurance Claim Denial Guides | WhyClaimDenied',
+      description: 'Step-by-step guides for denied insurance claims: appeals, paperwork, deadlines, and common denial reasons.',
+      canonical: `${BASE_URL}/guides`,
+    },
     home: {
       title: 'Auto Insurance Claims Denied in California',
       description: 'A practical, California-specific guide to common auto claim denials and what to do next.',
@@ -55,6 +76,26 @@ export const META = {
       title: 'Health Insurance Claims Denied in Michigan',
       description: 'Why health claims get denied in Michigan and how to use plan appeals and consumer help options.',
       canonical: `${BASE_URL}/health-insurance-claims-denied-michigan`,
+    },
+    autoNJ: {
+      title: 'Auto Insurance Claims Denied in New Jersey',
+      description: 'Common denial reasons, New Jersey context, and practical steps to challenge a denied auto claim.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-new-jersey`,
+    },
+    healthNJ: {
+      title: 'Health Insurance Claims Denied in New Jersey',
+      description: 'Why health claims get denied in New Jersey and how to use plan appeals and consumer help options.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-new-jersey`,
+    },
+    autoVA: {
+      title: 'Auto Insurance Claims Denied in Virginia',
+      description: 'Common denial reasons, Virginia context, and practical steps to challenge a denied auto claim.',
+      canonical: `${BASE_URL}/auto-insurance-claims-denied-virginia`,
+    },
+    healthVA: {
+      title: 'Health Insurance Claims Denied in Virginia',
+      description: 'Why health claims get denied in Virginia and how to use plan appeals and consumer help options.',
+      canonical: `${BASE_URL}/health-insurance-claims-denied-virginia`,
     },
     autoPA: {
       title: 'Auto Insurance Claims Denied in Pennsylvania',
@@ -787,6 +828,7 @@ export const META = {
       description: 'How coordination of benefits causes denials in Pennsylvania health claims and how to resolve COB holds.',
       canonical: `${BASE_URL}/health-insurance-claims-denied-pennsylvania/coordination-of-benefits`,
     },
+    ...GUIDE_META,
 };
 
 export const getMetaData = (page) => {

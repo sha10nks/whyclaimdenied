@@ -1,6 +1,7 @@
 import { Link } from './Link';
 import { META } from '../seo/meta';
 import { BLOG_STATES, getBlogPostsByState, normalizeBlogState } from '../blog/registry';
+import { getRecommendedGuidesForStateHub } from '../guides/related';
 
 const slugToLabel = (slug) =>
   slug
@@ -37,9 +38,24 @@ export default function StateHubLinks({ currentState }) {
   const stateSlug = normalizeBlogState(String(currentState || '').toLowerCase().replace(/\s+/g, '-'));
   const knownBlogState = BLOG_STATES.some((s) => s.slug === stateSlug);
   const blogPosts = knownBlogState ? getBlogPostsByState(stateSlug) : [];
+  const recommendedGuides = getRecommendedGuidesForStateHub();
 
   return (
     <>
+      <section>
+        <h2>Recommended Next-Step Guides</h2>
+        <p>
+          If you are dealing with a denial right now, these guides cover what to request, how to write an appeal, and how to keep deadlines safe.
+        </p>
+        <ul>
+          {recommendedGuides.map((g) => (
+            <li key={g.slug}>
+              <Link to={g.canonicalPath}>{g.title}</Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section>
         <h2>Insurance Claim Denial Guides by State</h2>
         {otherStates.length === 0 ? (
