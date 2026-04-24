@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { META } from '../src/seo/meta.js';
+import { DENIAL_PAGES } from '../src/denials/registry.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -34,11 +35,20 @@ const canonicalPaths = Object.values(META)
   .filter(Boolean)
   .map((canonical) => new URL(canonical).pathname);
 
+const denialPaths = DENIAL_PAGES
+  .map((p) => p?.canonicalUrl)
+  .filter(Boolean)
+  .map((canonical) => new URL(canonical).pathname);
+
 // Add blog state roots and post paths explicitly
 const blogStateRoots = BLOG_STATES.map((s) => `/blog/${s.slug}`);
 const blogPostPaths = BLOG_POSTS.map((p) => new URL(p.canonicalUrl || p.path, 'https://whyclaimdenied.com').pathname);
 
 const routes = Array.from(new Set([...extraRoutes, ...canonicalPaths, ...blogStateRoots, ...blogPostPaths]))
+  .filter((p) => p.startsWith('/'))
+  .sort((a, b) => a.localeCompare(b));
+
+const allKnownRoutes = Array.from(new Set([...routes, ...denialPaths]))
   .filter((p) => p.startsWith('/'))
   .sort((a, b) => a.localeCompare(b));
 
@@ -50,7 +60,7 @@ const routeRewrites = [
   '/blog/* /index.html 200',
   '/blog /index.html 200',
   // Explicit known routes
-  ...routes.map((p) => `${p} /index.html 200`),
+  ...allKnownRoutes.map((p) => `${p} /index.html 200`),
 ];
 
 const output = [...adsTxtRedirects, '', ...canonicalDomainRedirects, '', ...routeRewrites, '', '/* /404.html 404', ''].join('\n');
