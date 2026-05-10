@@ -891,6 +891,29 @@
   margin-bottom: 6px;
 }
 
+.editorial-block {
+  margin-top: var(--spacing-lg);
+  border: 1px solid var(--color-border-subtle);
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.editorial-block h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.editorial-block p {
+  margin-bottom: 0;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.editorial-block p + p {
+  margin-top: 10px;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 600px) {
   :root {

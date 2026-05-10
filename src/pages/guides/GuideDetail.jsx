@@ -6,8 +6,9 @@ import Footer from '../../components/Footer'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import { Link } from '../../components/Link'
 import { BASE_URL } from '../../seo/meta'
-import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema } from '../../seo/schema'
+import { generateArticleSchema, generateFAQSchema } from '../../seo/schema'
 import { getGuideBySlug } from '../../guides/registry.js'
+import EditorialBlock from '../../components/EditorialBlock'
 
 const toTitle = (guideTitle) => `${guideTitle} | WhyClaimDenied`
 
@@ -90,15 +91,6 @@ export default function GuideDetail() {
     canonicalUrl: canonical,
   })
 
-  const breadcrumbSchema = generateBreadcrumbSchema({
-    baseUrl: BASE_URL,
-    items: [
-      { name: 'Home', path: '/' },
-      { name: 'Guides', path: '/guides' },
-      { name: guide.title, path: guide.canonicalPath },
-    ],
-  })
-
   const hasFaq = Array.isArray(guide.faqs) && guide.faqs.length > 0
   const faqSchema = hasFaq ? generateFAQSchema(asFaqSchemaInput(guide.faqs)) : null
 
@@ -121,7 +113,6 @@ export default function GuideDetail() {
         <meta property="og:description" content={guide.description} />
         <meta property="og:url" content={canonical} />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         {hasFaq ? <script type="application/ld+json">{JSON.stringify(faqSchema)}</script> : null}
       </Helmet>
 
@@ -191,6 +182,8 @@ export default function GuideDetail() {
               ))}
             </ul>
           </section>
+
+          <EditorialBlock />
         </article>
       </main>
 

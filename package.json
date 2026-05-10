@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/validate-blog.mjs && node scripts/validate-guides.mjs && vite",
-    "prebuild": "node scripts/validate-blog.mjs && node scripts/validate-guides.mjs && node scripts/generate-netlify-redirects.mjs",
-    "build": "vite build",
-    "postbuild": "node scripts/sitemap-engine.mjs",
+    "prebuild": "node scripts/validate-blog.mjs && node scripts/validate-guides.mjs && node scripts/validate-denials.mjs && node scripts/validate-seo.mjs && node scripts/generate-netlify-redirects.mjs && node scripts/validate-redirects.mjs && node scripts/sitemap-engine.mjs",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
     "sitemap": "node scripts/sitemap-engine.mjs",
     "lint": "eslint .",
     "preview": "vite preview",

@@ -258,7 +258,7 @@ const HealthClaimDeniedVirginiaBenefitOrServiceExcluded = lazy(() => import("./p
 const HealthClaimDeniedVirginiaTimelyFilingIssue = lazy(() => import("./pages/HealthClaimDeniedVirginiaTimelyFilingIssue"));
 const HealthClaimDeniedVirginiaCoordinationOfBenefits = lazy(() => import("./pages/HealthClaimDeniedVirginiaCoordinationOfBenefits"));
 
-const router = createBrowserRouter([
+export const routes = [
   {
     path: "/",
     element: <RootLayout />,
@@ -1105,6 +1105,8 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+];
+
+const router = typeof window !== 'undefined' ? createBrowserRouter(routes) : null;
 
 export default router;

@@ -23,9 +23,9 @@ export const META = {
       canonical: `${BASE_URL}/guides`,
     },
     home: {
-      title: 'Auto Insurance Claims Denied in California',
-      description: 'A practical, California-specific guide to common auto claim denials and what to do next.',
-      canonical: `${BASE_URL}/auto-insurance-claims-denied-california`,
+      title: 'Why Insurance Claims Get Denied (+ What to Do Next) | WhyClaimDenied',
+      description: 'Independent, state-specific guides for denied auto and health insurance claims. Learn why denials happen, what to request, and how to appeal.',
+      canonical: `${BASE_URL}/`,
     },
     autoIL: {
       title: 'Auto Insurance Claims Denied in Illinois',

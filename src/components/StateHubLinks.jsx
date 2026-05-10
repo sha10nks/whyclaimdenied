@@ -2,6 +2,7 @@ import { Link } from './Link';
 import { META } from '../seo/meta';
 import { BLOG_STATES, getBlogPostsByState, normalizeBlogState } from '../blog/registry';
 import { getRecommendedGuidesForStateHub } from '../guides/related';
+import EditorialBlock from './EditorialBlock';
 
 const slugToLabel = (slug) =>
   slug
@@ -88,6 +89,8 @@ export default function StateHubLinks({ currentState }) {
           </ul>
         </section>
       ) : null}
+
+      <EditorialBlock />
     </>
   );
 }

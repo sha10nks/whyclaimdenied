@@ -1,16 +1,8 @@
-import { RouterProvider } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
-import { Suspense } from 'react';
 import router from './router';
+import AppShell from './AppShell';
 
 function App() {
-  return (
-    <HelmetProvider>
-      <Suspense fallback={<main className="container">Loading…</main>}>
-        <RouterProvider router={router} />
-      </Suspense>
-    </HelmetProvider>
-  );
+  return <AppShell router={router} />;
 }
 
 export default App;

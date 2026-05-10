@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 import Breadcrumbs from '../components/Breadcrumbs'
 import StateHubLinks from '../components/StateHubLinks'
 import { Link } from '../components/Link'
-import { generateArticleSchema } from '../seo/schema'
+import { generateArticleSchema, generateFAQSchema } from '../seo/schema'
 
 const DenialReasonTemplate = ({ page }) => {
   if (!page) return null
@@ -15,6 +15,10 @@ const DenialReasonTemplate = ({ page }) => {
     canonicalUrl: page.canonicalUrl,
   })
 
+  const faqSchema = Array.isArray(page.faq) && page.faq.length
+    ? generateFAQSchema(page.faq.map((qa) => ({ question: qa.q, answer: qa.a })))
+    : null
+
   return (
     <>
       <Helmet>
@@ -22,6 +26,7 @@ const DenialReasonTemplate = ({ page }) => {
         <meta name="description" content={page.metaDescription} />
         <link rel="canonical" href={page.canonicalUrl} />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+        {faqSchema ? <script type="application/ld+json">{JSON.stringify(faqSchema)}</script> : null}
       </Helmet>
 
       <Header />
@@ -51,6 +56,20 @@ const DenialReasonTemplate = ({ page }) => {
             <p key={idx}>{p}</p>
           ))}
         </section>
+
+        {Array.isArray(page.stateContext) && page.stateContext.length ? (
+          <section>
+            <h2>State-specific context ({page.stateLabel})</h2>
+            {page.stateContext.map((p, idx) => (
+              <p key={idx}>{p}</p>
+            ))}
+            {page.regulatorName ? (
+              <p>
+                If the insurer will not provide a clear written basis for the denial, consumer assistance resources from {page.regulatorName} may help you request a more specific explanation.
+              </p>
+            ) : null}
+          </section>
+        ) : null}
 
         <section>
           <h2>What to request from the insurer</h2>

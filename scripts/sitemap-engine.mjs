@@ -1,9 +1,8 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { META, BASE_URL } from '../src/seo/meta.js'
-import { BLOG_POSTS, BLOG_STATES } from '../src/blog/registry.js'
-import { DENIAL_PAGES } from '../src/denials/registry.js'
+import { BASE_URL } from '../src/seo/meta.js'
+import { getCanonicalUrls } from '../src/seo/canonicalRoutes.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -78,17 +77,7 @@ const buildOrder = (canonicals) => {
 
 const main = async () => {
   const existing = await readExisting(path.resolve(publicDir, 'sitemap.xml'))
-  const fromMeta = Object.values(META).map(m => m?.canonical).filter(Boolean)
-  const blogCanonicals = [
-    `${BASE_URL}/blog`,
-    ...BLOG_STATES.map(s => `${BASE_URL}/blog/${s.slug}`),
-    ...BLOG_POSTS.map(p => p.canonicalUrl || `${BASE_URL}${p.path}`),
-  ]
-
-  const denialCanonicals = DENIAL_PAGES.map((p) => p.canonicalUrl).filter(Boolean)
-
-  const combined = new Set([...existing.urls, ...fromMeta, ...blogCanonicals, ...denialCanonicals])
-  const canonicals = Array.from(combined).filter(isCanonical)
+  const canonicals = Array.from(new Set([...existing.urls, ...getCanonicalUrls()])).filter(isCanonical)
   const safe = canonicals.filter((loc) => {
     const p = new URL(loc).pathname
     return pathSlugsOk(p)

@@ -7,9 +7,10 @@ import Checklist from '../components/Checklist'
 import FAQ from '../components/FAQ'
 import RelatedGuides from '../components/RelatedGuides'
 import Callout from '../components/Callout'
-import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema } from '../../seo/schema'
+import { generateArticleSchema, generateFAQSchema } from '../../seo/schema'
 import { BASE_URL } from '../../seo/meta'
 import { buildRelatedGuides } from '../relatedGuides'
+import EditorialBlock from '../../components/EditorialBlock'
 
 const StandardPost = ({ post }) => {
   if (!post) return null
@@ -20,16 +21,6 @@ const StandardPost = ({ post }) => {
   const relatedGuides = Array.isArray(post.relatedGuides) && post.relatedGuides.length > 0
     ? post.relatedGuides
     : buildRelatedGuides({ stateSlug: state, currentSlug: post.slug, type: post.type })
-
-  const breadcrumbSchema = generateBreadcrumbSchema({
-    baseUrl: BASE_URL,
-    items: [
-      { name: 'Home', path: '/' },
-      { name: 'Blog', path: '/blog' },
-      { name: stateLabel, path: `/blog/${state}` },
-      { name: post.title, path: post.path },
-    ],
-  })
 
   const articleSchema = generateArticleSchema({
     headline: post.metaTitle || post.title,
@@ -54,7 +45,6 @@ const StandardPost = ({ post }) => {
         <meta name="twitter:title" content={post.metaTitle || post.title} />
         <meta name="twitter:description" content={post.metaDescription || post.description} />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         {faqSchema ? <script type="application/ld+json">{JSON.stringify(faqSchema)}</script> : null}
       </Helmet>
 
@@ -140,6 +130,8 @@ const StandardPost = ({ post }) => {
             <li><Link to={`/health-insurance-claims-denied-${state}`}>Health Insurance Claims Denied in {stateLabel}</Link></li>
           </ul>
         </section>
+
+        <EditorialBlock />
       </article>
     </>
   )

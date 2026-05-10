@@ -1,7 +1,10 @@
 import { Fragment, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Link } from './Link';
 import { getBlogStateLabel, normalizeBlogState } from '../blog/registry';
+import { BASE_URL } from '../seo/meta';
+import { generateBreadcrumbSchema } from '../seo/schema';
 
 const normalizeItems = (items, crumbs) => {
   const base = Array.isArray(items)
@@ -58,8 +61,25 @@ const Breadcrumbs = ({ items, crumbs }) => {
     return result;
   }, [location?.pathname, normalized]);
 
+  const schema = useMemo(() => {
+    const pathname = String(location?.pathname || '/');
+    const schemaItems = [
+      { name: 'Home', path: '/' },
+      ...derived.map((d, idx) => {
+        const isLast = idx === derived.length - 1;
+        const path = d.link || (isLast ? pathname : null) || pathname;
+        return { name: d.label, path };
+      }),
+    ];
+
+    return generateBreadcrumbSchema({ baseUrl: BASE_URL, items: schemaItems });
+  }, [derived, location?.pathname]);
+
   return (
     <nav className="breadcrumbs" aria-label="Breadcrumb">
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(schema)}</script>
+      </Helmet>
       <div className="container">
         <Link to="/">Home</Link>
         {derived.map((item, index) => (

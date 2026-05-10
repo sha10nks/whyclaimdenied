@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async'
 import { Link } from '../components/Link'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Breadcrumbs from '../components/Breadcrumbs'
 import StateHubLinks from '../components/StateHubLinks'
 import BlogTeasersByState from '../components/BlogTeasersByState'
 import StateHeroImage from '../components/StateHeroImage'
@@ -10,6 +11,7 @@ export default function HealthClaimDeniedNewYork() {
   return (
     <>
       <Header />
+      <Breadcrumbs />
       <main className="container">
       <Helmet>
         <title>Health Insurance Claims Denied in New York</title>
