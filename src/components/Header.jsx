@@ -1,8 +1,8 @@
 import { Link } from './Link';
-import { useEffect, useId, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Header = () => {
-  const navId = useId();
+  const navId = 'primary-nav';
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
