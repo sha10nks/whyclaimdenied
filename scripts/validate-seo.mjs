@@ -2,6 +2,8 @@ import { BASE_URL, META } from '../src/seo/meta.js'
 import { DENIAL_PAGES } from '../src/denials/registry.js'
 import { BLOG_POSTS } from '../src/blog/registry.js'
 import { GUIDES } from '../src/guides/registry.js'
+import fs from 'node:fs/promises'
+import path from 'node:path'
 
 const normalizeCanonical = (value) => {
   if (!value) return null
@@ -47,7 +49,42 @@ const validateCollection = (label, entries, { minTitle = 12, minDescription = 60
   return errors
 }
 
-const main = () => {
+const walkFiles = async (dir) => {
+  const out = []
+  const entries = await fs.readdir(dir, { withFileTypes: true })
+  for (const e of entries) {
+    const p = path.join(dir, e.name)
+    if (e.isDirectory()) {
+      if (e.name === 'node_modules' || e.name === 'dist' || e.name === 'dist-ssr') continue
+      out.push(...await walkFiles(p))
+      continue
+    }
+    out.push(p)
+  }
+  return out
+}
+
+const validateNoVisibleAdMarkers = async () => {
+  const errors = []
+  const srcRoot = path.resolve(process.cwd(), 'src')
+  const patterns = ['[AdSense Block', '[Adsterra Slot']
+  const files = await walkFiles(srcRoot)
+
+  for (const filePath of files) {
+    const ext = path.extname(filePath).toLowerCase()
+    if (!['.js', '.jsx', '.ts', '.tsx', '.md'].includes(ext)) continue
+    const body = await fs.readFile(filePath, 'utf8')
+    for (const pat of patterns) {
+      if (!body.includes(pat)) continue
+      const rel = path.relative(process.cwd(), filePath).replaceAll('\\', '/')
+      errors.push(`${rel} contains visible ad placeholder marker: ${pat}`)
+    }
+  }
+
+  return errors
+}
+
+const main = async () => {
   const errors = []
 
   const metaEntries = Object.entries(META).map(([key, m]) => ({ key, canonical: m?.canonical, title: m?.title, description: m?.description }))
@@ -68,7 +105,9 @@ const main = () => {
   const homeCanonical = normalizeCanonical(META?.home?.canonical)
   if (homeCanonical !== `${BASE_URL}/`) errors.push(`META.home.canonical must be ${BASE_URL}/ (got ${META?.home?.canonical})`)
 
+  errors.push(...await validateNoVisibleAdMarkers())
+
   die(errors)
 }
 
-main()
+await main()
