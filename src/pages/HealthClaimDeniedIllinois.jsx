@@ -3,7 +3,6 @@ import { Link } from '../components/Link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
-import CalloutBox from '../components/CalloutBox';
 import StateHubLinks from '../components/StateHubLinks';
 import BlogTeasersByState from '../components/BlogTeasersByState';
 import { getMetaData } from '../seo/meta';
@@ -47,8 +46,9 @@ const HealthClaimDeniedIllinois = () => {
         <StateHeroImage stateSlug="illinois" domain="health" alt="Health Insurance Claims Denied in Illinois" />
         <p className="intro">Match your appeal to the denial reason. Use plan criteria, medical records, and a short provider letter that addresses those criteria directly.</p>
         <p>Looking for auto claims? See <Link to="/auto-insurance-claims-denied-illinois">Auto Insurance Claims Denied in Illinois</Link>.</p>
-
-        <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[AdSense Block 1]</div>
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
+</div>
 
         <section>
           <h2>Common Illinois health denial reasons</h2>
@@ -63,8 +63,9 @@ const HealthClaimDeniedIllinois = () => {
             <li><Link to="/health-insurance-claims-denied-illinois/coordination-of-benefits">Coordination of benefits</Link></li>
           </ul>
         </section>
-
-        <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[AdSense Block 2]</div>
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
+</div>
 
         <section>
           <h2>Appeals & consumer help in Illinois</h2>
@@ -81,4 +82,6 @@ const HealthClaimDeniedIllinois = () => {
 };
 
 export default HealthClaimDeniedIllinois;
+
+
 

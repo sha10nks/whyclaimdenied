@@ -61,10 +61,8 @@ const AutoClaimDeniedNewJersey = () => {
           Need health coverage guidance? See our{' '}
           <Link to="/health-insurance-claims-denied-new-jersey">Health Insurance Claims Denied in New Jersey</Link> guide.
         </p>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
-          [AdSense Block 1]
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
         </div>
 
         <section>
@@ -89,10 +87,8 @@ const AutoClaimDeniedNewJersey = () => {
             <li><Link to="/auto-insurance-claims-denied-new-jersey/disputed-liability">Disputed liability or fault</Link></li>
           </ul>
         </section>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
-          [AdSense Block 2]
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
         </div>
 
         <section>
@@ -140,4 +136,7 @@ const AutoClaimDeniedNewJersey = () => {
 };
 
 export default AutoClaimDeniedNewJersey;
+
+
+
 

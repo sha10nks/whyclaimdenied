@@ -73,10 +73,8 @@ const AutoClaimDeniedCalifornia = () => {
         <p>
           Looking for health coverage denials instead? See our <Link to="/health-insurance-claims-denied-california">Health Insurance Claims Denied in California</Link> guide.
         </p>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
-          [AdSense Block 1]
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
         </div>
 
         <section>
@@ -121,10 +119,8 @@ const AutoClaimDeniedCalifornia = () => {
             </li>
           </ul>
         </section>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
-          [AdSense Block 2]
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
         </div>
 
         <section>
@@ -256,3 +252,6 @@ const AutoClaimDeniedCalifornia = () => {
 };
 
 export default AutoClaimDeniedCalifornia;
+
+
+

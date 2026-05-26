@@ -5,6 +5,8 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import { Link } from '../../components/Link';
 import { BLOG_STATES, getBlogPostsByState, getBlogStateLabel, normalizeBlogState } from '../../blog/registry';
 import BlogLayout from '../../layouts/BlogLayout';
+import ToolCtaSection from '../../components/tools/ToolCtaSection';
+import NotFound from '../NotFound';
 
 export default function BlogStateIndex() {
   const params = useParams();
@@ -24,11 +26,18 @@ export default function BlogStateIndex() {
   const posts = getBlogPostsByState(canonicalStateSlug);
   const known = BLOG_STATES.some((s) => s.slug === canonicalStateSlug);
 
+  if (!known) {
+    return <NotFound />;
+  }
+
+  const noIndex = posts.length === 0;
+
   return (
     <BlogLayout>
       <Helmet>
         <title>{label} Blog | WhyClaimDenied</title>
         <meta name="description" content={`Blog posts and claim-denial case examples for ${label}.`} />
+        {noIndex ? <meta name="robots" content="noindex,follow" /> : null}
         <link rel="canonical" href={`https://whyclaimdenied.com/blog/${canonicalStateSlug}`} />
       </Helmet>
 
@@ -37,51 +46,51 @@ export default function BlogStateIndex() {
       <div>
         <h1>{label} Blog</h1>
 
-        {!known ? (
-          <>
-            <p className="intro">We don’t have a blog section for this state yet.</p>
-            <p>
-              <Link to="/blog">Go back to Blog</Link>
-            </p>
-          </>
-        ) : (
-          <>
-            <p className="intro">Explore guides and real-world case examples for {label}.</p>
+        <>
+          <p className="intro">Explore guides and real-world case examples for {label}.</p>
 
-            <section>
-              <h2>Posts</h2>
-              {posts.length === 0 ? (
-                <p>No posts published yet.</p>
-              ) : (
-                <ul>
-                  {posts.map((p) => (
-                    <li key={`${p.state}/${p.slug}`}>
-                      <Link to={p.path}>{p.title}</Link>
-                      <div className="muted">{p.type} · {p.readingTime}</div>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </section>
-
-            <div className="ad-placeholder">
-              <span className="ad-label">Advertisement</span>
-              [AdSense Block]
-            </div>
-
-            <section>
-              <h2>Start With the State Guides</h2>
+          <section>
+            <h2>Posts</h2>
+            {posts.length === 0 ? (
+              <p>No posts published yet.</p>
+            ) : (
               <ul>
-                <li>
-                  <Link to={`/auto-insurance-claims-denied-${canonicalStateSlug}`}>Auto Insurance Claims Denied in {label}</Link>
-                </li>
-                <li>
-                  <Link to={`/health-insurance-claims-denied-${canonicalStateSlug}`}>Health Insurance Claims Denied in {label}</Link>
-                </li>
+                {posts.map((p) => (
+                  <li key={`${p.state}/${p.slug}`}>
+                    <Link to={p.path}>{p.title}</Link>
+                    <div className="muted">{p.type} · {p.readingTime}</div>
+                  </li>
+                ))}
               </ul>
-            </section>
-          </>
-        )}
+            )}
+          </section>
+
+          <div className="ad-placeholder">
+            <span className="ad-label">Advertisement</span>
+          </div>
+
+          <section>
+            <h2>Start With the State Guides</h2>
+            <p>
+              If you already have the insurer&apos;s letter, you can{' '}
+              <Link to="/tools/denial-letter-analyzer">analyze your insurance denial letter first</Link>{' '}
+              before choosing the most relevant {label} guide below.
+            </p>
+            <ul>
+              <li>
+                <Link to={`/auto-insurance-claims-denied-${canonicalStateSlug}`}>Auto Insurance Claims Denied in {label}</Link>
+              </li>
+              <li>
+                <Link to={`/health-insurance-claims-denied-${canonicalStateSlug}`}>Health Insurance Claims Denied in {label}</Link>
+              </li>
+            </ul>
+          </section>
+
+          <ToolCtaSection
+            title="Next Step After Reading These Posts"
+            intro="Analyze your denial letter first, then generate your appeal letter when ready to submit."
+          />
+        </>
       </div>
     </BlogLayout>
   );

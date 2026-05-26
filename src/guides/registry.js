@@ -10,10 +10,6 @@ export const GUIDE_CATEGORIES = {
 
 const d = (isoDate) => isoDate
 
-const includesAny = (values, candidates) => {
-  return candidates.some((c) => values.includes(c))
-}
-
 const buildAuthorityBaseSections = ({ claimTypes }) => {
   const isAuto = claimTypes.includes('auto')
   const isHealth = claimTypes.includes('health')

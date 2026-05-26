@@ -1,10 +1,9 @@
-import DenialReasonTemplate from '../denials/DenialReasonTemplate';
-import { getDenialPage } from '../denials/registry';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate'
+import { getDenialPage } from '../denials/registry'
 
 const AutoClaimDeniedNewJerseyMissedReportingDeadline = () => {
-  const page = getDenialPage({ domain: 'auto', stateSlug: 'new-jersey', reasonKey: 'missed-reporting-deadline' });
-  return <DenialReasonTemplate page={page} />;
-};
+  const page = getDenialPage({ domain: 'auto', stateSlug: 'new-jersey', reasonKey: 'missed-reporting-deadline' })
+  return <DenialReasonTemplate page={page} />
+}
 
-export default AutoClaimDeniedNewJerseyMissedReportingDeadline;
-
+export default AutoClaimDeniedNewJerseyMissedReportingDeadline

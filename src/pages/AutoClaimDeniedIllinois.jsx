@@ -51,8 +51,9 @@ const AutoClaimDeniedIllinois = () => {
         <StateHeroImage stateSlug="illinois" domain="auto" alt="Auto Insurance Claims Denied in Illinois" />
         <p className="intro">A clear, written denial is your starting point. Identify the exact reason and respond with short, specific evidence.</p>
         <p>Looking for health coverage? See <Link to="/health-insurance-claims-denied-illinois">Health Insurance Claims Denied in Illinois</Link>.</p>
-
-        <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[AdSense Block 1]</div>
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
+</div>
 
         <section>
           <h2>Why auto claims get denied</h2>
@@ -72,8 +73,9 @@ const AutoClaimDeniedIllinois = () => {
             <li><Link to="/auto-insurance-claims-denied-illinois/disputed-liability">Disputed liability or fault</Link></li>
           </ul>
         </section>
-
-        <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[AdSense Block 2]</div>
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
+</div>
 
         <section>
           <h2>What to do immediately after a denial</h2>
@@ -104,4 +106,7 @@ const AutoClaimDeniedIllinois = () => {
 };
 
 export default AutoClaimDeniedIllinois;
+
+
+
 

@@ -2,54 +2,6 @@
 <html lang="en">
   <head>
     <script>
-      window._ezaq = window._ezaq || [];
-      window.ezstandalone = window.ezstandalone || {};
-      window.ezstandalone.cmd = window.ezstandalone.cmd || [];
-      window.onerror = function (msg, src) {
-        var m = String(msg || '');
-        var s = String(src || '');
-        if (m.indexOf('identity') !== -1 || s.indexOf('identity') !== -1 || m.indexOf('bridging') !== -1) return true;
-      };
-    </script>
-    <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
-    <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/cmp.min.js"></script>
-    <script async src="https://www.ezojs.com/ezoic/sa.min.js"></script>
-    <script>
-      (function () {
-        var allowed = { 'whyclaimdenied.com': 1, 'www.whyclaimdenied.com': 1 };
-        if (!allowed[location.hostname]) return;
-
-        var requested = false;
-        function alreadyPresent() {
-          var list = document.getElementsByTagName('script');
-          for (var i = 0; i < list.length; i++) {
-            var src = list[i].src || '';
-            if (src.indexOf('ezojs.com/identity.js') !== -1) return true;
-          }
-          return false;
-        }
-
-        function loadIdentity() {
-          if (requested || alreadyPresent()) return;
-          requested = true;
-          var done = false;
-          var watchdog = setTimeout(function () { if (!done) { /* silent */ } }, 8000);
-          setTimeout(function () {
-            if (done) return;
-            var s = document.createElement('script');
-            s.src = 'https://www.ezojs.com/identity.js';
-            s.async = true;
-            s.onerror = function () { /* silent */ };
-            s.onload = function () { done = true; clearTimeout(watchdog); };
-            document.head.appendChild(s);
-          }, 1200);
-        }
-
-        if (document.readyState === 'complete') loadIdentity();
-        else window.addEventListener('load', loadIdentity, { once: true });
-      })();
-    </script>
-    <script>
       (() => {
         const allowedHosts = new Set(['whyclaimdenied.com', 'www.whyclaimdenied.com']);
         const isNonProductionHost = !allowedHosts.has(location.hostname);

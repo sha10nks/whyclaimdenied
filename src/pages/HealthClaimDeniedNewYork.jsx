@@ -26,8 +26,9 @@ export default function HealthClaimDeniedNewYork() {
       <section aria-labelledby="ny-health-why"><h2 id="ny-health-why">Why health claims get denied</h2>
         <p>Common reasons include missing prior authorization, medical necessity reviews, network restrictions, coding issues, or benefit exclusions. The plan’s evidence of coverage and denial letter explain the basis.</p>
       </section>
-
-      <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[AdSense Block 1]</div>
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
+</div>
       <section aria-labelledby="ny-health-common"><h2 id="ny-health-common">Common health claim denial reasons in New York</h2>
         <ul>
           <li><Link to="/health-insurance-claims-denied-new-york/prior-authorization-missing">Prior authorization missing</Link></li>
@@ -46,8 +47,9 @@ export default function HealthClaimDeniedNewYork() {
         <p><a href="https://www.dfs.ny.gov/consumers/health_insurance/External_Appeal">New York DFS External Appeal</a></p>
         <p><a href="https://www.dfs.ny.gov/complaint">New York DFS Insurance Complaint Portal</a></p>
       </section>
-
-      <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[AdSense Block 2]</div>
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
+</div>
       <section aria-labelledby="ny-health-next"><h2 id="ny-health-next">What to do after a denial</h2>
         <ul>
           <li>Request the clinical criteria and policy terms used to deny.</li>
@@ -85,3 +87,6 @@ export default function HealthClaimDeniedNewYork() {
     </>
   )
 }
+
+
+

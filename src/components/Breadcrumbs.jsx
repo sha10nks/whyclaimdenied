@@ -23,7 +23,7 @@ const normalizeItems = (items, crumbs) => {
   return base;
 };
 
-const Breadcrumbs = ({ items, crumbs }) => {
+const Breadcrumbs = ({ items, crumbs, hidden }) => {
   const location = useLocation();
   const normalized = normalizeItems(items, crumbs);
   const derived = useMemo(() => {
@@ -76,7 +76,7 @@ const Breadcrumbs = ({ items, crumbs }) => {
   }, [derived, location?.pathname]);
 
   return (
-    <nav className="breadcrumbs" aria-label="Breadcrumb">
+    <nav className="breadcrumbs" aria-label="Breadcrumb" style={hidden ? { display: 'none' } : undefined}>
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>

@@ -3,7 +3,6 @@ import { Link } from '../components/Link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
-import CalloutBox from '../components/CalloutBox';
 import StateHubLinks from '../components/StateHubLinks';
 import BlogTeasersByState from '../components/BlogTeasersByState';
 import { getMetaData } from '../seo/meta';
@@ -52,10 +51,8 @@ const HealthClaimDeniedPennsylvania = () => {
         <p>
           Looking for auto claims? See <Link to="/auto-insurance-claims-denied-pennsylvania">Auto Insurance Claims Denied in Pennsylvania</Link>.
         </p>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
-          [AdSense Block 1]
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
         </div>
 
         <section>
@@ -71,10 +68,8 @@ const HealthClaimDeniedPennsylvania = () => {
             <li><Link to="/health-insurance-claims-denied-pennsylvania/coordination-of-benefits">Coordination of benefits</Link></li>
           </ul>
         </section>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
-          [AdSense Block 2]
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
         </div>
 
         <section>
@@ -94,4 +89,6 @@ const HealthClaimDeniedPennsylvania = () => {
 };
 
 export default HealthClaimDeniedPennsylvania;
+
+
 

@@ -1,12 +1,20 @@
-http://whyclaimdenied.com/ads.txt https://srv.adstxtmanager.com/19390/whyclaimdenied.com 301!
-http://www.whyclaimdenied.com/ads.txt https://srv.adstxtmanager.com/19390/whyclaimdenied.com 301!
-https://www.whyclaimdenied.com/ads.txt https://srv.adstxtmanager.com/19390/whyclaimdenied.com 301!
-/ads.txt https://srv.adstxtmanager.com/19390/whyclaimdenied.com 301!
-
 http://whyclaimdenied.com/* https://whyclaimdenied.com/:splat 301!
 http://www.whyclaimdenied.com/* https://whyclaimdenied.com/:splat 301!
 https://www.whyclaimdenied.com/* https://whyclaimdenied.com/:splat 301!
 
+/Blog /blog 301!
+/Blog/* /blog/:splat 301!
+/BLOG /blog 301!
+/BLOG/* /blog/:splat 301!
+/Guides /guides 301!
+/Guides/* /guides/:splat 301!
+/GUIDES /guides 301!
+/GUIDES/* /guides/:splat 301!
+/Tools /tools 301!
+/Tools/* /tools/:splat 301!
+/TOOLS /tools 301!
+/TOOLS/* /tools/:splat 301!
+/(.+)/ /$1 301!
 /blog/newyork /blog/new-york 301!
 /blog/newyork/* /blog/new-york/:splat 301!
 

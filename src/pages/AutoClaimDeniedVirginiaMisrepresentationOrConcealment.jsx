@@ -1,10 +1,9 @@
-import DenialReasonTemplate from '../denials/DenialReasonTemplate';
-import { getDenialPage } from '../denials/registry';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate'
+import { getDenialPage } from '../denials/registry'
 
 const AutoClaimDeniedVirginiaMisrepresentationOrConcealment = () => {
-  const page = getDenialPage({ domain: 'auto', stateSlug: 'virginia', reasonKey: 'misrepresentation-or-concealment' });
-  return <DenialReasonTemplate page={page} />;
-};
+  const page = getDenialPage({ domain: 'auto', stateSlug: 'virginia', reasonKey: 'misrepresentation-or-concealment' })
+  return <DenialReasonTemplate page={page} />
+}
 
-export default AutoClaimDeniedVirginiaMisrepresentationOrConcealment;
-
+export default AutoClaimDeniedVirginiaMisrepresentationOrConcealment

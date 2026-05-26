@@ -1,11 +1,12 @@
 import { Helmet } from 'react-helmet-async';
-import { Search, Filter, BookOpen } from 'lucide-react';
+import { Search, BookOpen } from 'lucide-react';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import BlogLayout from '../../layouts/BlogLayout';
 import { Link } from '../../components/Link';
 import { BLOG_STATES } from '../../blog/registry';
 import { BlogCard, StateCard } from '../../components/BlogCards';
 import { useBlogFilters } from '../../hooks/useBlogFilters';
+import ToolCtaSection from '../../components/tools/ToolCtaSection';
 
 export default function BlogIndex() {
   const { search, setSearch, activeFilter, setFilter, filteredPosts, counts } = useBlogFilters();
@@ -94,6 +95,10 @@ export default function BlogIndex() {
         </div>
       </section>
 
+      <div className="ad-placeholder my-12">
+        <span className="ad-label">Advertisement</span>
+      </div>
+
       {/* Posts Grid */}
       <section className="posts-grid-section">
         <div className="section-header">
@@ -117,10 +122,10 @@ export default function BlogIndex() {
         )}
       </section>
 
-      <div className="ad-placeholder my-12">
-        <span className="ad-label">Advertisement</span>
-        [AdSense Block]
-      </div>
+      <ToolCtaSection
+        title="Next Step After Reading These Guides"
+        intro="Analyze your denial letter first, then generate your appeal letter when ready to submit."
+      />
     </BlogLayout>
   );
 }

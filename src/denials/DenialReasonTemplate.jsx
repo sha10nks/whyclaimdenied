@@ -5,7 +5,6 @@ import Breadcrumbs from '../components/Breadcrumbs'
 import StateHubLinks from '../components/StateHubLinks'
 import { Link } from '../components/Link'
 import { generateArticleSchema, generateFAQSchema } from '../seo/schema'
-
 const DenialReasonTemplate = ({ page }) => {
   if (!page) return null
 
@@ -47,7 +46,6 @@ const DenialReasonTemplate = ({ page }) => {
 
         <div className="ad-placeholder">
           <span className="ad-label">Advertisement</span>
-          [AdSense Block]
         </div>
 
         <section>
@@ -82,6 +80,11 @@ const DenialReasonTemplate = ({ page }) => {
 
         <section>
           <h2>What to do next</h2>
+          <p>
+            If you already received the insurer&apos;s denial notice, you can{' '}
+            <Link to="/tools/denial-letter-analyzer">analyze your insurance denial letter first</Link>{' '}
+            before organizing the appeal points below.
+          </p>
           <ol>
             {page.steps.map((item, idx) => (
               <li key={idx}>{item}</li>

@@ -78,10 +78,8 @@ const AutoClaimDeniedFlorida = () => {
         <p>
           Dealing with a health coverage denial instead? See <Link to="/health-insurance-claims-denied-florida">Health Insurance Claims Denied in Florida</Link>.
         </p>
-
-        <div className="ad-placeholder">
+        <div className="ad-placeholder" data-slot="mid-1">
           <span className="ad-label">Advertisement</span>
-          [AdSense Block 1]
         </div>
 
         <section>
@@ -126,10 +124,8 @@ const AutoClaimDeniedFlorida = () => {
             </li>
           </ul>
         </section>
-
-        <div className="ad-placeholder">
+        <div className="ad-placeholder" data-slot="mid-2">
           <span className="ad-label">Advertisement</span>
-          [AdSense Block 2]
         </div>
 
         <section>
@@ -251,3 +247,6 @@ const AutoClaimDeniedFlorida = () => {
 };
 
 export default AutoClaimDeniedFlorida;
+
+
+

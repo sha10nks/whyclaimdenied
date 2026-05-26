@@ -37,11 +37,8 @@ const HomeCalifornia = () => {
           first step to getting your claim back on track.
         </p>
 
-        {/* AdSense Placeholder */}
-        <div className="ad-placeholder">
+        <div className="ad-placeholder" data-slot="top-content">
           <span className="ad-label">Advertisement</span>
-          {/* AdSense Unit: Top of Content */}
-          [AdSense Block 1]
         </div>
 
         <section>
@@ -115,11 +112,8 @@ const HomeCalifornia = () => {
           </p>
         </section>
 
-        {/* AdSense Placeholder */}
-        <div className="ad-placeholder">
+        <div className="ad-placeholder" data-slot="in-article">
           <span className="ad-label">Advertisement</span>
-          {/* AdSense Unit: In-Article */}
-          [AdSense Block 2]
         </div>
 
         <section>

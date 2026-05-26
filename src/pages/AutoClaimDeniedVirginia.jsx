@@ -61,10 +61,8 @@ const AutoClaimDeniedVirginia = () => {
           Looking for health coverage guidance? See our{' '}
           <Link to="/health-insurance-claims-denied-virginia">Health Insurance Claims Denied in Virginia</Link> guide.
         </p>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
-          [AdSense Block 1]
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
         </div>
 
         <section>
@@ -88,10 +86,8 @@ const AutoClaimDeniedVirginia = () => {
             <li><Link to="/auto-insurance-claims-denied-virginia/disputed-liability">Disputed liability or fault</Link></li>
           </ul>
         </section>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
-          [AdSense Block 2]
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
         </div>
 
         <section>
@@ -136,4 +132,7 @@ const AutoClaimDeniedVirginia = () => {
 };
 
 export default AutoClaimDeniedVirginia;
+
+
+
 

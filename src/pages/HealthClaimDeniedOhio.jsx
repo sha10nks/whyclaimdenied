@@ -59,10 +59,8 @@ const HealthClaimDeniedOhio = () => {
         <p>
           Looking for auto claims? See <Link to="/auto-insurance-claims-denied-ohio">Auto Insurance Claims Denied in Ohio</Link>.
         </p>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
-          [AdSense Block 1]
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
         </div>
 
         <section>
@@ -78,10 +76,8 @@ const HealthClaimDeniedOhio = () => {
             <li><Link to="/health-insurance-claims-denied-ohio/coordination-of-benefits">Coordination of benefits</Link></li>
           </ul>
         </section>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
-          [AdSense Block 2]
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
         </div>
 
         <CalloutBox title="Start with the plan’s criteria">
@@ -128,4 +124,7 @@ const HealthClaimDeniedOhio = () => {
 };
 
 export default HealthClaimDeniedOhio;
+
+
+
 

@@ -1,88 +1,9 @@
-import { Helmet } from 'react-helmet-async';
-import Breadcrumbs from '../components/Breadcrumbs';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import StateHubLinks from '../components/StateHubLinks';
-import DenialReasonTemplate from '../denials/DenialReasonTemplate';
-import { getDenialPage } from '../denials/registry';
-import { Link } from '../components/Link';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate'
+import { getDenialPage } from '../denials/registry'
 
 const AutoClaimDeniedTexasExcludedDriver = () => {
-  const page = getDenialPage({ domain: 'auto', stateSlug: 'texas', reasonKey: 'excluded-driver' });
-  return <DenialReasonTemplate page={page} />;
+  const page = getDenialPage({ domain: 'auto', stateSlug: 'texas', reasonKey: 'excluded-driver' })
+  return <DenialReasonTemplate page={page} />
+}
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Excluded Driver - Texas Auto Insurance Denial Guide | What to Do",
-    "description": "Understand excluded-driver denials in Texas auto insurance and practical next steps, with Texas Department of Insurance resources.",
-    "author": { "@type": "Organization", "name": "WhyClaimDenied" }
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>Excluded Driver - Texas Auto Insurance Denial Guide | What to Do</title>
-        <meta name="description" content="Understand excluded-driver denials in Texas auto insurance and practical next steps, with Texas Department of Insurance resources." />
-        <link rel="canonical" href="https://whyclaimdenied.com/auto-insurance-claims-denied-texas/excluded-driver" />
-        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
-      </Helmet>
-
-      <Header />
-
-      <Breadcrumbs
-        items={[
-          { label: 'Texas', link: '/auto-insurance-claims-denied-texas' },
-          { label: 'Auto Claim Denials', link: '/auto-insurance-claims-denied-texas' },
-          { label: 'Excluded Driver', link: null },
-        ]}
-      />
-
-      <main className="container">
-        <h1>Excluded Driver — Texas Auto Insurance Denial</h1>
-        <p className="intro">Why insurers deny when a named excluded driver is behind the wheel and what you can do</p>
-
-        <section className="content-section">
-          <h2>Why this denial happens</h2>
-          <p>Many Texas personal auto policies allow a named driver exclusion. If an excluded person was driving at the time of the loss, the insurer may deny coverage under the policy terms.</p>
-          <p>Check your declarations page and any endorsements that list excluded drivers. If the person driving matches an excluded name, the insurer will usually cite that endorsement.</p>
-        </section>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
-        </div>
-
-        <section className="content-section">
-          <h2>Texas resources</h2>
-          <p>The Texas Department of Insurance (TDI) offers consumer help and information about auto policies and complaint filing.</p>
-          <ul>
-            <li>Texas Department of Insurance: tdi.texas.gov • Consumer Help: 1-800-252-3439</li>
-          </ul>
-        </section>
-
-        <section className="content-section">
-          <h2>What to do next</h2>
-          <ol>
-            <li>Request the specific endorsement or exclusion page the insurer relied on and the policy form citation.</li>
-            <li>Verify who was driving and whether any permissive-use or other coverage applies under your policy terms.</li>
-            <li>Respond in writing with any facts that change the driver identification or the applicability of the exclusion.</li>
-            <li>If you cannot get a clear, policy-based explanation, consider a complaint with TDI.</li>
-          </ol>
-        </section>
-
-        <section className="content-section">
-          <h2>Back to the Texas auto denial guide</h2>
-          <p>
-            <Link to="/auto-insurance-claims-denied-texas">Return to Auto Insurance Claims Denied in Texas</Link>
-          </p>
-        </section>
-
-        <StateHubLinks currentState="Texas" />
-      </main>
-
-      <Footer />
-    </>
-  );
-};
-
-export default AutoClaimDeniedTexasExcludedDriver;
+export default AutoClaimDeniedTexasExcludedDriver

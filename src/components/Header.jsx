@@ -45,6 +45,17 @@ const Header = () => {
             <Link to="/" className="nav-link" onClick={closeMenu}>
               Home
             </Link>
+            <details className="nav-dropdown" onClick={(e) => e.stopPropagation()}>
+              <summary className="nav-link nav-dropdown-summary">Tools</summary>
+              <div className="nav-dropdown-menu" role="menu" aria-label="Tools">
+                <Link to="/tools/appeal-letter-generator" className="nav-dropdown-item" onClick={closeMenu}>
+                  Insurance Appeal Letter Generator
+                </Link>
+                <Link to="/tools/denial-letter-analyzer" className="nav-dropdown-item" onClick={closeMenu}>
+                  Insurance Denial Letter Analyzer
+                </Link>
+              </div>
+            </details>
             <Link to="/guides" className="nav-link" onClick={closeMenu}>
               Guides
             </Link>

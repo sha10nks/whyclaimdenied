@@ -9,6 +9,7 @@ import { BASE_URL } from '../../seo/meta'
 import { generateArticleSchema, generateFAQSchema } from '../../seo/schema'
 import { getGuideBySlug } from '../../guides/registry.js'
 import EditorialBlock from '../../components/EditorialBlock'
+import ToolCtaSection from '../../components/tools/ToolCtaSection'
 
 const toTitle = (guideTitle) => `${guideTitle} | WhyClaimDenied`
 
@@ -171,6 +172,19 @@ export default function GuideDetail() {
               ))}
             </section>
           ) : null}
+
+          <section className="guide-section" aria-label="Tool transition">
+            <p>
+              If you already have the insurer&apos;s denial notice, you can{' '}
+              <Link to="/tools/denial-letter-analyzer">analyze your insurance denial letter first</Link>{' '}
+              and then use those details to prepare a cleaner appeal.
+            </p>
+          </section>
+
+          <ToolCtaSection
+            title="Next Step After Reading This Guide"
+            intro="Analyze your denial letter first, then generate your appeal letter when ready to submit."
+          />
 
           <section className="guide-section" aria-label="More guides">
             <h2>More high-intent guides</h2>

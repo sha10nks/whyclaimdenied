@@ -1,57 +1,9 @@
-import { Helmet } from 'react-helmet-async';
-import Breadcrumbs from '../components/Breadcrumbs';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import StateHubLinks from '../components/StateHubLinks';
-import { Link } from '../components/Link';
-import DenialReasonTemplate from '../denials/DenialReasonTemplate';
-import { getDenialPage } from '../denials/registry';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate'
+import { getDenialPage } from '../denials/registry'
 
 const HealthClaimDeniedTexasPriorAuth = () => {
-  const page = getDenialPage({ domain: 'health', stateSlug: 'texas', reasonKey: 'prior-authorization-missing' });
-  return <DenialReasonTemplate page={page} />;
+  const page = getDenialPage({ domain: 'health', stateSlug: 'texas', reasonKey: 'prior-authorization-missing' })
+  return <DenialReasonTemplate page={page} />
+}
 
-  const sd = { "@context": "https://schema.org", "@type": "Article", "headline": "Prior Authorization Missing — Texas Health Insurance Denial", "description": "Why prior authorization denials happen in Texas and how to respond, including plan documents and appeal routes." };
-  return (
-    <>
-      <Helmet>
-        <title>Prior Authorization Missing — Texas Health Insurance Denial</title>
-        <meta name="description" content="Why prior authorization denials happen in Texas and how to respond, including plan documents and appeal routes." />
-        <link rel="canonical" href="https://whyclaimdenied.com/health-insurance-claims-denied-texas/prior-authorization-missing" />
-        <script type="application/ld+json">{JSON.stringify(sd)}</script>
-      </Helmet>
-
-      <Header />
-
-      <Breadcrumbs
-        items={[
-          { label: 'Texas', link: '/health-insurance-claims-denied-texas' },
-          { label: 'Health Claim Denials', link: '/health-insurance-claims-denied-texas' },
-          { label: 'Prior Authorization Missing', link: null },
-        ]}
-      />
-
-      <main className="container">
-        <h1>Prior Authorization Missing — Texas Health Insurance Denial</h1>
-        <section className="content-section">
-          <h2>Why this denial happens</h2>
-          <p>Plans often require authorization before certain services. If it wasn’t obtained, claims may be denied.</p>
-        </section>
-        <section className="content-section">
-          <h2>What to do</h2>
-          <ol>
-            <li>Request the plan rule requiring authorization and the date it was applied to your claim.</li>
-            <li>Ask your provider for clinical notes and any prior auth submissions.</li>
-            <li>Use the plan appeal process; consider TDI complaint if timelines or notices are unclear.</li>
-          </ol>
-        </section>
-        <section className="content-section"><h2>Back to the Texas health denial guide</h2><p><Link to="/health-insurance-claims-denied-texas">Return to Health Insurance Claims Denied in Texas</Link></p></section>
-        <StateHubLinks currentState="Texas" />
-      </main>
-
-      <Footer />
-    </>
-  );
-};
-
-export default HealthClaimDeniedTexasPriorAuth;
+export default HealthClaimDeniedTexasPriorAuth

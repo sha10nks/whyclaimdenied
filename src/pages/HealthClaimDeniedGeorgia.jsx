@@ -59,10 +59,8 @@ const HealthClaimDeniedGeorgia = () => {
         <p>
           Looking for auto claims? See <Link to="/auto-insurance-claims-denied-georgia">Auto Insurance Claims Denied in Georgia</Link>.
         </p>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
-          [AdSense Block 1]
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
         </div>
 
         <section>
@@ -78,10 +76,8 @@ const HealthClaimDeniedGeorgia = () => {
             <li><Link to="/health-insurance-claims-denied-georgia/coordination-of-benefits">Coordination of benefits</Link></li>
           </ul>
         </section>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
-          [AdSense Block 2]
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
         </div>
 
         <CalloutBox title="Make the denial concrete">
@@ -128,4 +124,7 @@ const HealthClaimDeniedGeorgia = () => {
 };
 
 export default HealthClaimDeniedGeorgia;
+
+
+
 

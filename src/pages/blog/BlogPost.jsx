@@ -1,9 +1,9 @@
 import { Suspense, useMemo } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
-import { Link } from '../../components/Link';
-import { BLOG_STATES, getBlogPost, getBlogStateLabel, normalizeBlogState } from '../../blog/registry';
+import { BLOG_STATES, normalizeBlogState } from '../../blog/registry';
 import { getBlogPostComponent } from '../../blog/postLoader';
 import BlogLayout from '../../layouts/BlogLayout';
+import NotFound from '../NotFound';
 
 export default function BlogPost() {
   const params = useParams();
@@ -20,30 +20,17 @@ export default function BlogPost() {
     return <Navigate to={`/blog/${canonicalStateSlug}/${String(rawSlug || '').toLowerCase()}`} replace />;
   }
 
-  const post = getBlogPost({ state: canonicalStateSlug, slug: rawSlug });
-  const stateLabel = getBlogStateLabel(canonicalStateSlug);
   const PostComp = getBlogPostComponent(canonicalStateSlug, rawSlug);
+
+  if (!PostComp) {
+    return <NotFound />;
+  }
 
   return (
     <BlogLayout>
-      {PostComp ? (
-        <Suspense fallback={<p>Loading…</p>}>
-          <PostComp />
-        </Suspense>
-      ) : (
-        <>
-          <h1>Post not found</h1>
-          <p className="intro">This blog page doesn’t exist or may have been moved.</p>
-          <ul>
-            <li>
-              <Link to="/blog">Back to Blog</Link>
-            </li>
-            <li>
-              <Link to={`/blog/${canonicalStateSlug}`}>Browse {stateLabel} posts</Link>
-            </li>
-          </ul>
-        </>
-      )}
+      <Suspense fallback={<p>Loading…</p>}>
+        <PostComp />
+      </Suspense>
     </BlogLayout>
   );
 }

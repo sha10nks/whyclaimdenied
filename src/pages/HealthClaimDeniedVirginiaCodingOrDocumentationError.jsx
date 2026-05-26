@@ -1,10 +1,9 @@
-import DenialReasonTemplate from '../denials/DenialReasonTemplate';
-import { getDenialPage } from '../denials/registry';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate'
+import { getDenialPage } from '../denials/registry'
 
 const HealthClaimDeniedVirginiaCodingOrDocumentationError = () => {
-  const page = getDenialPage({ domain: 'health', stateSlug: 'virginia', reasonKey: 'coding-or-documentation-error' });
-  return <DenialReasonTemplate page={page} />;
-};
+  const page = getDenialPage({ domain: 'health', stateSlug: 'virginia', reasonKey: 'coding-or-documentation-error' })
+  return <DenialReasonTemplate page={page} />
+}
 
-export default HealthClaimDeniedVirginiaCodingOrDocumentationError;
-
+export default HealthClaimDeniedVirginiaCodingOrDocumentationError

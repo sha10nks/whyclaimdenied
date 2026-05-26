@@ -17,6 +17,16 @@ const GUIDE_META = Object.fromEntries(
 );
 
 export const META = {
+    toolsAppealLetterGenerator: {
+      title: 'Free Insurance Appeal Letter Generator (No Login Required) | WhyClaimDenied',
+      description: 'Generate professional insurance appeal letters instantly using our free AI-powered tool. No login required. Supports auto and health insurance claim denials.',
+      canonical: `${BASE_URL}/tools/appeal-letter-generator`,
+    },
+    toolsDenialLetterAnalyzer: {
+      title: 'Free Insurance Denial Letter Analyzer | WhyClaimDenied',
+      description: 'Upload or paste your insurance denial letter and instantly analyze the real denial reason, hidden issues, and possible appeal directions using AI.',
+      canonical: `${BASE_URL}/tools/denial-letter-analyzer`,
+    },
     guidesIndex: {
       title: 'Insurance Claim Denial Guides | WhyClaimDenied',
       description: 'Step-by-step guides for denied insurance claims: appeals, paperwork, deadlines, and common denial reasons.',
@@ -832,5 +842,9 @@ export const META = {
 };
 
 export const getMetaData = (page) => {
-  return META[page] || META.autoCA;
+  const meta = META[page];
+  if (!meta) {
+    throw new Error(`Missing SEO META key: ${String(page)}`);
+  }
+  return meta;
 };

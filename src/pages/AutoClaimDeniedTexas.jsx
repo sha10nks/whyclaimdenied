@@ -75,9 +75,8 @@ const AutoClaimDeniedTexas = () => {
           <p>Texas operates under a fault-based insurance system, meaning the at-fault driver's insurance typically pays for damages. However, your own insurance company might deny your claim even when you believe you're covered. Understanding why denials occur and what you can do about them is crucial for Texas drivers.</p>
           <p>The Texas Department of Insurance (TDI) regulates insurance companies and provides consumer protections. When insurers violate these rules, you have recourse through the TDI complaint process and potentially through legal action.</p>
         </section>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
           {/* AdSense ad placement - after first section */}
         </div>
 
@@ -126,9 +125,8 @@ const AutoClaimDeniedTexas = () => {
             </li>
           </ul>
         </section>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
           {/* AdSense ad placement - mid-content */}
         </div>
 
@@ -184,9 +182,8 @@ const AutoClaimDeniedTexas = () => {
             </li>
           </ol>
         </section>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
           {/* AdSense ad placement - before FAQs */}
         </div>
 
@@ -280,3 +277,6 @@ const AutoClaimDeniedTexas = () => {
 };
 
 export default AutoClaimDeniedTexas;
+
+
+

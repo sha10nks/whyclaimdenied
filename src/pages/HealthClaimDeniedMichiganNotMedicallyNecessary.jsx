@@ -1,10 +1,9 @@
-import DenialReasonTemplate from '../denials/DenialReasonTemplate';
-import { getDenialPage } from '../denials/registry';
+import DenialReasonTemplate from '../denials/DenialReasonTemplate'
+import { getDenialPage } from '../denials/registry'
 
 const HealthClaimDeniedMichiganNotMedicallyNecessary = () => {
-  const page = getDenialPage({ domain: 'health', stateSlug: 'michigan', reasonKey: 'not-medically-necessary' });
-  return <DenialReasonTemplate page={page} />;
-};
+  const page = getDenialPage({ domain: 'health', stateSlug: 'michigan', reasonKey: 'not-medically-necessary' })
+  return <DenialReasonTemplate page={page} />
+}
 
-export default HealthClaimDeniedMichiganNotMedicallyNecessary;
-
+export default HealthClaimDeniedMichiganNotMedicallyNecessary

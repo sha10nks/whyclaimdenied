@@ -61,10 +61,8 @@ const AutoClaimDeniedNorthCarolina = () => {
           Looking for health coverage instead? See our{' '}
           <Link to="/health-insurance-claims-denied-north-carolina">Health Insurance Claims Denied in North Carolina</Link> guide.
         </p>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
-          [AdSense Block 1]
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
         </div>
 
         <section>
@@ -94,10 +92,8 @@ const AutoClaimDeniedNorthCarolina = () => {
             <li><Link to="/auto-insurance-claims-denied-north-carolina/disputed-liability">Disputed liability or fault</Link></li>
           </ul>
         </section>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
-          [AdSense Block 2]
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
         </div>
 
         <section>
@@ -148,3 +144,6 @@ const AutoClaimDeniedNorthCarolina = () => {
 };
 
 export default AutoClaimDeniedNorthCarolina;
+
+
+

@@ -3,6 +3,7 @@ import { META } from '../seo/meta';
 import { BLOG_STATES, getBlogPostsByState, normalizeBlogState } from '../blog/registry';
 import { getRecommendedGuidesForStateHub } from '../guides/related';
 import EditorialBlock from './EditorialBlock';
+import ToolCtaSection from './tools/ToolCtaSection';
 
 const slugToLabel = (slug) =>
   slug
@@ -43,6 +44,11 @@ export default function StateHubLinks({ currentState }) {
 
   return (
     <>
+      <ToolCtaSection
+        title={`Next Step for ${currentState} Claim Denials`}
+        intro={`If you have a denial letter in hand, start by analyzing your insurance denial letter. Once you understand the reason and documents involved, generate an insurance appeal letter for ${currentState}.`}
+      />
+
       <section>
         <h2>Recommended Next-Step Guides</h2>
         <p>

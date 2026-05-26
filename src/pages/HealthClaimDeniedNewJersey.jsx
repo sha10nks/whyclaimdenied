@@ -60,10 +60,8 @@ const HealthClaimDeniedNewJersey = () => {
         <p>
           Need auto guidance? See <Link to="/auto-insurance-claims-denied-new-jersey">Auto Insurance Claims Denied in New Jersey</Link>.
         </p>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
-          [AdSense Block 1]
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
         </div>
 
         <section>
@@ -91,10 +89,8 @@ const HealthClaimDeniedNewJersey = () => {
             <li><Link to="/health-insurance-claims-denied-new-jersey/coordination-of-benefits">Coordination of benefits</Link></li>
           </ul>
         </section>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
-          [AdSense Block 2]
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
         </div>
 
         <section>
@@ -130,4 +126,7 @@ const HealthClaimDeniedNewJersey = () => {
 };
 
 export default HealthClaimDeniedNewJersey;
+
+
+
 

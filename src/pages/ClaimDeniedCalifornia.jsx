@@ -37,10 +37,8 @@ const ClaimDeniedCalifornia = () => {
             policy language they are citing. Compare this with your actual policy documents.
           </p>
         </section>
-
         <div className="ad-placeholder">
-          {/* AdSense Unit: In-Article */}
-          Advertisement
+          <span className="ad-label">Advertisement</span>
         </div>
 
         <section>
@@ -99,3 +97,5 @@ const ClaimDeniedCalifornia = () => {
 };
 
 export default ClaimDeniedCalifornia;
+
+

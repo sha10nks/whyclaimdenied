@@ -11,13 +11,13 @@ const buildPaths = ({ stateSlug, domain }) => {
 }
 
 const StateHeroImage = ({ stateSlug, domain, alt, preload = true }) => {
-  const { src800, src1600, srcSet, sizes } = buildPaths({ stateSlug, domain })
+  const { src1600, srcSet, sizes } = buildPaths({ stateSlug, domain })
 
   return (
     <div className="state-hero-image-wrapper">
       {preload ? (
         <Helmet>
-          <link rel="preload" as="image" href={src1600} imagesrcset={srcSet} imagesizes={sizes} />
+          <link rel="preload" as="image" href={src1600} imageSrcSet={srcSet} imageSizes={sizes} />
         </Helmet>
       ) : null}
 
@@ -29,7 +29,6 @@ const StateHeroImage = ({ stateSlug, domain, alt, preload = true }) => {
           width="1600"
           height="900"
           loading="eager"
-          fetchpriority="high"
           decoding="async"
           className="state-hero-image"
         />
@@ -39,4 +38,3 @@ const StateHeroImage = ({ stateSlug, domain, alt, preload = true }) => {
 }
 
 export default StateHeroImage
-

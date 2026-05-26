@@ -7,6 +7,8 @@ const GuidesIndex = lazy(() => import("./pages/guides/GuidesIndex"));
 const GuideDetail = lazy(() => import("./pages/guides/GuideDetail"));
 const RouteError = lazy(() => import("./pages/RouteError"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const DenialLetterAnalyzer = lazy(() => import("./pages/tools/DenialLetterAnalyzer"));
+const AppealLetterGenerator = lazy(() => import("./pages/tools/AppealLetterGenerator"));
 const ClaimDeniedCalifornia = lazy(() => import("./pages/ClaimDeniedCalifornia"));
 const AutoClaimDeniedCalifornia = lazy(() => import("./pages/AutoClaimDeniedCalifornia"));
 const HealthClaimDeniedCalifornia = lazy(() => import("./pages/HealthClaimDeniedCalifornia"));
@@ -267,6 +269,14 @@ export const routes = [
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "tools/appeal-letter-generator",
+        element: <AppealLetterGenerator />,
+      },
+      {
+        path: "tools/denial-letter-analyzer",
+        element: <DenialLetterAnalyzer />,
       },
       {
         path: "guides",

@@ -27,8 +27,9 @@ export default function AutoClaimDeniedNewYork() {
         <p>Insurers deny or delay claims when contract terms, coverage conditions, or reporting requirements aren’t met, or when liability and facts are disputed. New York policy language and claim handling standards apply; the specifics come from your policy and the denial letter.</p>
         <p>Start by reviewing your declarations page, endorsements, and the insurer’s written explanation. Ask for the exact policy provisions relied upon and any investigative notes used to reach the decision.</p>
       </section>
-
-      <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[AdSense Block 1]</div>
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
+</div>
       <section aria-labelledby="ny-auto-common"><h2 id="ny-auto-common">Common auto claim denial reasons in New York</h2>
         <ul>
           <li><Link to="/auto-insurance-claims-denied-new-york/no-coverage-at-time-of-loss">No coverage at time of loss</Link></li>
@@ -54,8 +55,9 @@ export default function AutoClaimDeniedNewYork() {
           <li>If you believe the decision conflicts with policy language, consider a complaint with New York’s regulator.</li>
         </ul>
       </section>
-
-      <div className="ad-placeholder"><span className="ad-label">Advertisement</span>[AdSense Block 2]</div>
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
+</div>
       <section aria-labelledby="ny-auto-appeals"><h2 id="ny-auto-appeals">Appeals and complaints in New York</h2>
         <p>Consumers can file complaints with the New York Department of Financial Services (DFS). DFS provides guidance on insurance issues and accepts complaints online.</p>
         <p><a href="https://www.dfs.ny.gov/complaint">New York DFS Insurance Complaint Portal</a></p>
@@ -93,3 +95,6 @@ export default function AutoClaimDeniedNewYork() {
     </>
   )
 }
+
+
+

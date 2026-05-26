@@ -3,6 +3,7 @@ import { CheckCircle2 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Link } from '../components/Link';
+import ToolCtaSection from '../components/tools/ToolCtaSection';
 import { META } from '../seo/meta';
 import { DENIAL_PAGES } from '../denials/registry';
 import { FEATURED_GUIDE_SLUGS, getGuideBySlug } from '../guides/registry.js';
@@ -137,8 +138,8 @@ export default function Home() {
           rel="preload"
           as="image"
           href="/images/hero/hero-bg-1920.webp"
-          imagesrcset="/images/hero/hero-bg-1280.webp 1280w, /images/hero/hero-bg-1920.webp 1920w, /images/hero/hero-bg-3840.webp 3840w"
-          imagesizes="100vw"
+          imageSrcSet="/images/hero/hero-bg-1280.webp 1280w, /images/hero/hero-bg-1920.webp 1920w, /images/hero/hero-bg-3840.webp 3840w"
+          imageSizes="100vw"
         />
       </Helmet>
 
@@ -159,7 +160,6 @@ export default function Home() {
                 width="1920"
                 height="1080"
                 loading="eager"
-                fetchpriority="high"
                 decoding="async"
               />
             </picture>
@@ -179,16 +179,25 @@ export default function Home() {
               </ul>
 
               <div className="home-hero-actions">
-                <a className="home-cta home-cta-primary" href="#guides-by-state">
-                  Explore Claim Denial Guides by State
-                </a>
+                <Link className="home-cta home-cta-primary" to="/tools/denial-letter-analyzer">
+                  Analyze My Denial
+                </Link>
+                <Link className="home-cta home-cta-secondary" to="/tools/appeal-letter-generator">
+                  Generate Appeal Letter
+                </Link>
                 <a className="home-cta home-cta-secondary" href="#guides-by-state">
-                  Understand Your Denial Letter
+                  Browse Claim Denial Guides by State
                 </a>
               </div>
             </div>
           </div>
         </section>
+
+        <ToolCtaSection
+          className="home-tool-priority"
+          title="Start With the Tools"
+          intro="If you have a denial letter in hand, start with the Denial Letter Analyzer to identify the denial reason, missing documents, deadlines, and likely next steps. When you are ready to submit, move to the Appeal Letter Generator."
+        />
 
         <section className="home-start" aria-labelledby="start-here-title">
           <div className="home-start-header">

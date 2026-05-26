@@ -10,7 +10,6 @@ const BlogLayout = ({ children }) => {
       const el = mainRef.current
       if (!el || !el.classList.contains('container')) {
         // Soft guard in dev: surface if someone bypasses the container
-        // eslint-disable-next-line no-console
         console.warn('[BlogLayout] Blog page rendered without .container – please wrap content in BlogLayout')
       }
     }
@@ -30,4 +29,3 @@ const BlogLayout = ({ children }) => {
 }
 
 export default BlogLayout
-

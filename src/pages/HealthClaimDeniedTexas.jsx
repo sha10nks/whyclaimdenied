@@ -75,9 +75,8 @@ const HealthClaimDeniedTexas = () => {
           <p>Texas residents have strong protections under both Texas law and federal regulations, including the Affordable Care Act (ACA). Understanding why denials happen and what you can do about them is crucial for getting the coverage you need and deserve.</p>
           <p>The Texas Department of Insurance (TDI) regulates health insurance companies and provides consumer protections. When insurers violate these rules, you have recourse through the appeals process, external review, and potentially through legal action.</p>
         </section>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
           {/* AdSense ad placement - after first section */}
         </div>
 
@@ -126,9 +125,8 @@ const HealthClaimDeniedTexas = () => {
             </li>
           </ul>
         </section>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
           {/* AdSense ad placement - mid-content */}
         </div>
 
@@ -193,9 +191,8 @@ const HealthClaimDeniedTexas = () => {
             </li>
           </ol>
         </section>
-
-        <div className="ad-placeholder">
-          <span className="ad-label">Advertisement</span>
+<div className="ad-placeholder">
+  <span className="ad-label">Advertisement</span>
           {/* AdSense ad placement - before FAQs */}
         </div>
 
@@ -297,3 +294,6 @@ const HealthClaimDeniedTexas = () => {
 };
 
 export default HealthClaimDeniedTexas;
+
+
+

@@ -8,9 +8,9 @@ import FAQ from '../components/FAQ'
 import RelatedGuides from '../components/RelatedGuides'
 import Callout from '../components/Callout'
 import { generateArticleSchema, generateFAQSchema } from '../../seo/schema'
-import { BASE_URL } from '../../seo/meta'
 import { buildRelatedGuides } from '../relatedGuides'
 import EditorialBlock from '../../components/EditorialBlock'
+import ToolCtaSection from '../../components/tools/ToolCtaSection'
 
 const StandardPost = ({ post }) => {
   if (!post) return null
@@ -101,6 +101,11 @@ const StandardPost = ({ post }) => {
           {post.timeline?.map((p, idx) => (
             <p key={idx}>{p}</p>
           ))}
+          <p>
+            If you already received the insurer&apos;s denial notice, you can{' '}
+            <Link to="/tools/denial-letter-analyzer">analyze your insurance denial letter first</Link>{' '}
+            before preparing your appeal so you can confirm the exact denial reason and deadline language.
+          </p>
           <Callout title="Important">
             Always verify deadlines using your policy, denial letter, and plan documents. This site is educational and does not provide legal advice.
           </Callout>
@@ -119,6 +124,11 @@ const StandardPost = ({ post }) => {
         </section>
 
         <FAQ items={post.faq} />
+
+        <ToolCtaSection
+          title="Next Step After Reading This Guide"
+          intro="Analyze your denial letter first, then generate your appeal letter when ready to submit."
+        />
 
         <RelatedGuides title="Related Guides" links={relatedGuides} />
 
